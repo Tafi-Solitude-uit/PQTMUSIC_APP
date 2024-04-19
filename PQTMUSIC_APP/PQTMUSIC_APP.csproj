@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D9570E8-4781-42B1-84E4-85B20D19B827}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PQTMUSIC_APP</RootNamespace>
+    <AssemblyName>PQTMUSIC_APP</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\Guna_lib_crack\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frm_Offline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Offline.Designer.cs">
+      <DependentUpon>frm_Offline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_Offline.resx">
+      <DependentUpon>frm_Offline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ab67616d00001e024b18f196222db6c99f952839.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %285%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %286%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %283%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artworks-lE9pHuzXI8PY-0-t500x500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Son-Tung-01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artist %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\artist color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explore_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\genres color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\genres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-album %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-album.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-internet %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-internet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playlist_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranking %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recent_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\songs color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\songs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mute %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mute %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mix %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rewind %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-and-pause-button %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-and-pause-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noti 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-button-arrowhead %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-button-arrowhead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cd.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
