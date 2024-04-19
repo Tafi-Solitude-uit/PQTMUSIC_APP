@@ -176,6 +176,7 @@
             this.btn_Playlist3.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Playlist3.CheckedState.Parent = this.btn_Playlist3;
             this.btn_Playlist3.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Playlist3.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("btn_Playlist3.CustomImages.HoveredImage")));
             this.btn_Playlist3.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Playlist3.CustomImages.Image")));
             this.btn_Playlist3.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Playlist3.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -209,6 +210,7 @@
             this.btn_Playlist2.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Playlist2.CheckedState.Parent = this.btn_Playlist2;
             this.btn_Playlist2.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Playlist2.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("btn_Playlist2.CustomImages.HoveredImage")));
             this.btn_Playlist2.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Playlist2.CustomImages.Image")));
             this.btn_Playlist2.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Playlist2.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -242,6 +244,7 @@
             this.btn_Playlist1.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Playlist1.CheckedState.Parent = this.btn_Playlist1;
             this.btn_Playlist1.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Playlist1.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.playlist_color;
             this.btn_Playlist1.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Playlist1.CustomImages.Image")));
             this.btn_Playlist1.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Playlist1.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -275,6 +278,7 @@
             this.btn_Ranks.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Ranks.CheckedState.Parent = this.btn_Ranks;
             this.btn_Ranks.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Ranks.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.ranking;
             this.btn_Ranks.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Ranks.CustomImages.Image")));
             this.btn_Ranks.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Ranks.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -336,6 +340,7 @@
             this.btn_Offline.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Offline.CheckedState.Parent = this.btn_Offline;
             this.btn_Offline.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Offline.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.no_internet;
             this.btn_Offline.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Offline.CustomImages.Image")));
             this.btn_Offline.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Offline.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -370,6 +375,7 @@
             this.btn_Download.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Download.CheckedState.Parent = this.btn_Download;
             this.btn_Download.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Download.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.down_color;
             this.btn_Download.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Download.CustomImages.Image")));
             this.btn_Download.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Download.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -403,6 +409,7 @@
             this.btn_Albums.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Albums.CheckedState.Parent = this.btn_Albums;
             this.btn_Albums.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Albums.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.music_album__1_;
             this.btn_Albums.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Albums.CustomImages.Image")));
             this.btn_Albums.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Albums.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -436,6 +443,7 @@
             this.btn_Favorite.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Favorite.CheckedState.Parent = this.btn_Favorite;
             this.btn_Favorite.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Favorite.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.heart_color;
             this.btn_Favorite.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Favorite.CustomImages.Image")));
             this.btn_Favorite.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Favorite.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -469,6 +477,7 @@
             this.btn_Recent_Played.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Recent_Played.CheckedState.Parent = this.btn_Recent_Played;
             this.btn_Recent_Played.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Recent_Played.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.recent_color;
             this.btn_Recent_Played.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Recent_Played.CustomImages.Image")));
             this.btn_Recent_Played.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Recent_Played.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -502,6 +511,7 @@
             this.btn_Artists.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Artists.CheckedState.Parent = this.btn_Artists;
             this.btn_Artists.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Artists.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.artist_color;
             this.btn_Artists.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Artists.CustomImages.Image")));
             this.btn_Artists.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Artists.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
@@ -535,6 +545,7 @@
             this.btn_Genres.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Genres.CheckedState.Parent = this.btn_Genres;
             this.btn_Genres.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btn_Genres.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.genres_color;
             this.btn_Genres.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Genres.CustomImages.Image")));
             this.btn_Genres.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Genres.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
