@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSignIn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Cooper Black, 14.25pt</value>
+  </data>
+  <data name="btnSignIn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 295</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSignIn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnSignIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 39</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSignIn.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnSignIn.Text" xml:space="preserve">
+    <value>SIGN IN</value>
+  </data>
+  <data name="&gt;&gt;btnSignIn.Name" xml:space="preserve">
+    <value>btnSignIn</value>
+  </data>
+  <data name="&gt;&gt;btnSignIn.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GradientTileButton, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnSignIn.Parent" xml:space="preserve">
+    <value>pn_SignIn</value>
+  </data>
+  <data name="&gt;&gt;btnSignIn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 350</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 15</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Don't have an account ?</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>pn_SignIn</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnCTSU.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.2pt, style=Bold</value>
+  </data>
+  <data name="btnCTSU.Location" type="System.Drawing.Point, System.Drawing">
+    <value>180, 345</value>
+  </data>
+  <data name="btnCTSU.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnCTSU.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 30</value>
+  </data>
+  <data name="btnCTSU.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnCTSU.Text" xml:space="preserve">
+    <value>Create account</value>
+  </data>
+  <data name="&gt;&gt;btnCTSU.Name" xml:space="preserve">
+    <value>btnCTSU</value>
+  </data>
+  <data name="&gt;&gt;btnCTSU.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GradientTileButton, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnCTSU.Parent" xml:space="preserve">
+    <value>pn_SignIn</value>
+  </data>
+  <data name="&gt;&gt;btnCTSU.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="checkShowPass.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkShowPass.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.2pt, style=Bold</value>
+  </data>
+  <data name="checkShowPass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 191</value>
+  </data>
+  <data name="checkShowPass.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkShowPass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 23</value>
+  </data>
+  <data name="checkShowPass.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="checkShowPass.Text" xml:space="preserve">
+    <value>Show password</value>
+  </data>
+  <data name="&gt;&gt;checkShowPass.Name" xml:space="preserve">
+    <value>checkShowPass</value>
+  </data>
+  <data name="&gt;&gt;checkShowPass.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CheckBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;checkShowPass.Parent" xml:space="preserve">
+    <value>pn_SignIn</value>
+  </data>
+  <data name="&gt;&gt;checkShowPass.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Cooper Black, 20.25pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 29</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 31</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>SIGN IN</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>pn_SignIn</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtSIpass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 149</value>
+  </data>
+  <data name="txtSIpass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 37</value>
+  </data>
+  <data name="txtSIpass.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtSIpass.Name" xml:space="preserve">
+    <value>txtSIpass</value>
+  </data>
+  <data name="&gt;&gt;txtSIpass.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;txtSIpass.Parent" xml:space="preserve">
+    <value>pn_SignIn</value>
+  </data>
+  <data name="&gt;&gt;txtSIpass.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtSIusername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 103</value>
+  </data>
+  <data name="txtSIusername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 39</value>
+  </data>
+  <data name="txtSIusername.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtSIusername.Name" xml:space="preserve">
+    <value>txtSIusername</value>
+  </data>
+  <data name="&gt;&gt;txtSIusername.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;txtSIusername.Parent" xml:space="preserve">
+    <value>pn_SignIn</value>
+  </data>
+  <data name="&gt;&gt;txtSIusername.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="pn_SignIn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>503, 31</value>
+  </data>
+  <data name="pn_SignIn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pn_SignIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 443</value>
+  </data>
+  <data name="pn_SignIn.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;pn_SignIn.Name" xml:space="preserve">
+    <value>pn_SignIn</value>
+  </data>
+  <data name="&gt;&gt;pn_SignIn.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ShadowPanel, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;pn_SignIn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pn_SignIn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="guna2ControlBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="guna2ControlBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 2</value>
+  </data>
+  <data name="guna2ControlBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="guna2ControlBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 22</value>
+  </data>
+  <data name="guna2ControlBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;guna2ControlBox2.Name" xml:space="preserve">
+    <value>guna2ControlBox2</value>
+  </data>
+  <data name="&gt;&gt;guna2ControlBox2.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ControlBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;guna2ControlBox2.Parent" xml:space="preserve">
+    <value>PANELControl</value>
+  </data>
+  <data name="&gt;&gt;guna2ControlBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="guna2ControlBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="guna2ControlBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>301, 2</value>
+  </data>
+  <data name="guna2ControlBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="guna2ControlBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 24</value>
+  </data>
+  <data name="guna2ControlBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;guna2ControlBox1.Name" xml:space="preserve">
+    <value>guna2ControlBox1</value>
+  </data>
+  <data name="&gt;&gt;guna2ControlBox1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ControlBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;guna2ControlBox1.Parent" xml:space="preserve">
+    <value>PANELControl</value>
+  </data>
+  <data name="&gt;&gt;guna2ControlBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PANELControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>503, 1</value>
+  </data>
+  <data name="PANELControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="PANELControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 28</value>
+  </data>
+  <data name="PANELControl.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;PANELControl.Name" xml:space="preserve">
+    <value>PANELControl</value>
+  </data>
+  <data name="&gt;&gt;PANELControl.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Panel, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;PANELControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PANELControl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>756, 17</value>
+  </metadata>
+  <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>943, 17</value>
+  </metadata>
+  <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>209, 58</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>843, 484</value>
+  </data>
+  <data name="guna2PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-5, -6</value>
+  </data>
+  <data name="guna2PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>503, 489</value>
+  </data>
+  <data name="guna2PictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;guna2PictureBox1.Name" xml:space="preserve">
+    <value>guna2PictureBox1</value>
+  </data>
+  <data name="&gt;&gt;guna2PictureBox1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2PictureBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;guna2PictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;guna2PictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbmGender.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="cbmGender.ItemHeight" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="cbmGender.Items" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="cbmGender.Items1" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="cbmGender.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 291</value>
+  </data>
+  <data name="cbmGender.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 36</value>
+  </data>
+  <data name="cbmGender.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;cbmGender.Name" xml:space="preserve">
+    <value>cbmGender</value>
+  </data>
+  <data name="&gt;&gt;cbmGender.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ComboBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;cbmGender.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;cbmGender.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtBirthyear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 246</value>
+  </data>
+  <data name="txtBirthyear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 39</value>
+  </data>
+  <data name="txtBirthyear.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txtBirthyear.Name" xml:space="preserve">
+    <value>txtBirthyear</value>
+  </data>
+  <data name="&gt;&gt;txtBirthyear.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;txtBirthyear.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;txtBirthyear.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtRealName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 201</value>
+  </data>
+  <data name="txtRealName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 39</value>
+  </data>
+  <data name="txtRealName.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtRealName.Name" xml:space="preserve">
+    <value>txtRealName</value>
+  </data>
+  <data name="&gt;&gt;txtRealName.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;txtRealName.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;txtRealName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtSUcomPass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 138</value>
+  </data>
+  <data name="txtSUcomPass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 34</value>
+  </data>
+  <data name="txtSUcomPass.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtSUcomPass.Name" xml:space="preserve">
+    <value>txtSUcomPass</value>
+  </data>
+  <data name="&gt;&gt;txtSUcomPass.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;txtSUcomPass.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;txtSUcomPass.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Cooper Black, 20.25pt</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 11</value>
+  </data>
+  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 31</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>SIGN UP</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 399</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 15</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Already have an account ?</value>
+  </data>
+  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnCTLG.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.2pt, style=Bold</value>
+  </data>
+  <data name="btnCTLG.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 390</value>
+  </data>
+  <data name="btnCTLG.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnCTLG.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 30</value>
+  </data>
+  <data name="btnCTLG.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnCTLG.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;btnCTLG.Name" xml:space="preserve">
+    <value>btnCTLG</value>
+  </data>
+  <data name="&gt;&gt;btnCTLG.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GradientTileButton, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnCTLG.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;btnCTLG.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="checkShPassSignUp.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkShPassSignUp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10.2pt, style=Bold</value>
+  </data>
+  <data name="checkShPassSignUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 173</value>
+  </data>
+  <data name="checkShPassSignUp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="checkShPassSignUp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 23</value>
+  </data>
+  <data name="checkShPassSignUp.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="checkShPassSignUp.Text" xml:space="preserve">
+    <value>Show password</value>
+  </data>
+  <data name="&gt;&gt;checkShPassSignUp.Name" xml:space="preserve">
+    <value>checkShPassSignUp</value>
+  </data>
+  <data name="&gt;&gt;checkShPassSignUp.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CheckBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;checkShPassSignUp.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;checkShPassSignUp.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtSUpass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 91</value>
+  </data>
+  <data name="txtSUpass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 37</value>
+  </data>
+  <data name="txtSUpass.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtSUpass.Name" xml:space="preserve">
+    <value>txtSUpass</value>
+  </data>
+  <data name="&gt;&gt;txtSUpass.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;txtSUpass.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;txtSUpass.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnSignUp.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Cooper Black, 14.25pt</value>
+  </data>
+  <data name="btnSignUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 344</value>
+  </data>
+  <data name="btnSignUp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnSignUp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 39</value>
+  </data>
+  <data name="btnSignUp.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnSignUp.Text" xml:space="preserve">
+    <value>SIGN UP</value>
+  </data>
+  <data name="&gt;&gt;btnSignUp.Name" xml:space="preserve">
+    <value>btnSignUp</value>
+  </data>
+  <data name="&gt;&gt;btnSignUp.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2GradientTileButton, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;btnSignUp.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;btnSignUp.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtSUusername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 45</value>
+  </data>
+  <data name="txtSUusername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 39</value>
+  </data>
+  <data name="txtSUusername.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtSUusername.Name" xml:space="preserve">
+    <value>txtSUusername</value>
+  </data>
+  <data name="&gt;&gt;txtSUusername.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;txtSUusername.Parent" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;txtSUusername.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="pn_SignUp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>503, 33</value>
+  </data>
+  <data name="pn_SignUp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pn_SignUp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 441</value>
+  </data>
+  <data name="pn_SignUp.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;pn_SignUp.Name" xml:space="preserve">
+    <value>pn_SignUp</value>
+  </data>
+  <data name="&gt;&gt;pn_SignUp.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ShadowPanel, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;pn_SignUp.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pn_SignUp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Newest</value>
+  </data>
+  <data name="&gt;&gt;guna2DragControl1.Name" xml:space="preserve">
+    <value>guna2DragControl1</value>
+  </data>
+  <data name="&gt;&gt;guna2DragControl1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2DragControl, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;guna2AnimateWindow1.Name" xml:space="preserve">
+    <value>guna2AnimateWindow1</value>
+  </data>
+  <data name="&gt;&gt;guna2AnimateWindow1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2AnimateWindow, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;guna2Elipse1.Name" xml:space="preserve">
+    <value>guna2Elipse1</value>
+  </data>
+  <data name="&gt;&gt;guna2Elipse1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Elipse, Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Newest</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
