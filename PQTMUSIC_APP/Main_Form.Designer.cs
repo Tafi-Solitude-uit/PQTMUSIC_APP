@@ -704,7 +704,6 @@
             this.pic_User.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_User.TabIndex = 52;
             this.pic_User.TabStop = false;
-            this.pic_User.Click += new System.EventHandler(this.pic_User_Click);
             // 
             // btn_notification
             // 
@@ -978,7 +977,6 @@
             this.Controls.Add(this.panel_Menu_Bar);
             this.Controls.Add(this.guna_drag);
             this.Controls.Add(this.Panel_PlayMusic);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main_Form";
