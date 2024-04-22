@@ -160,6 +160,7 @@
     <Compile Include="showIn4.Designer.cs">
       <DependentUpon>showIn4.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserData.cs" />
     <EmbeddedResource Include="frm_Explore.resx">
       <DependentUpon>frm_Explore.cs</DependentUpon>
     </EmbeddedResource>
