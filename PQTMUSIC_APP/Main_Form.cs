@@ -15,23 +15,37 @@ namespace PQTMUSIC_APP
         public Main_Form()
         {
             InitializeComponent();
+            frm_Explore explore = new frm_Explore();
+            addForm_Child(explore);
         }
 
-        private void Main_Form_Load(object sender, EventArgs e)
+        private void addForm_Child(Form frm_child)
         {
-
-        }
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            frm_child.Dock = DockStyle.Fill;
+            frm_child.TopLevel = false;
+            panel_Child.Controls.Clear();
+            panel_Child.Controls.Add(frm_child);
+            frm_child.Show();
         }
 
         private void btn_Offline_Click(object sender, EventArgs e)
         {
             frm_Offline Offline = new frm_Offline();
-            Offline.Show();
+            addForm_Child(Offline);
         }
+
+        private void btn_Explore_Click(object sender, EventArgs e)
+        {
+            frm_Explore explore = new frm_Explore();
+            addForm_Child(explore);
+        }
+        
+
+        private void btn_img_Play_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
