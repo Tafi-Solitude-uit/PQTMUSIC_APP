@@ -55,14 +55,14 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnl_store_Playlist = new Guna.UI2.WinForms.Guna2Panel();
-            this.datagrid_Playlist = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.lbl_Playlist = new System.Windows.Forms.Label();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.datagrid_Playlist = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnl_tittle.SuspendLayout();
             this.panel_WaveSong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Wv)).BeginInit();
@@ -78,8 +78,7 @@
             // 
             // lbl_Song
             // 
-            this.lbl_Song.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Song.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Song.AutoSize = true;
             this.lbl_Song.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Song.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,6 +115,7 @@
             // 
             // iconPlay
             // 
+            this.iconPlay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.iconPlay.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.iconPlay.CheckedState.Parent = this.iconPlay;
             this.iconPlay.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("iconPlay.HoverState.Image")));
@@ -149,6 +149,7 @@
             // 
             // btn_img_Play_Pause
             // 
+            this.btn_img_Play_Pause.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_img_Play_Pause.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn_img_Play_Pause.CheckedState.Parent = this.btn_img_Play_Pause;
             this.btn_img_Play_Pause.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btn_img_Play_Pause.HoverState.Image")));
@@ -250,6 +251,7 @@
             // 
             // panel_WaveSong
             // 
+            this.panel_WaveSong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel_WaveSong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.panel_WaveSong.Controls.Add(this.pic_Wv);
             this.panel_WaveSong.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -271,6 +273,7 @@
             // 
             // btn_Upload
             // 
+            this.btn_Upload.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Upload.BorderRadius = 12;
             this.btn_Upload.CheckedState.Parent = this.btn_Upload;
             this.btn_Upload.CustomImages.Parent = this.btn_Upload;
@@ -289,6 +292,7 @@
             // 
             // lbl_App_Name
             // 
+            this.lbl_App_Name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_App_Name.AutoSize = true;
             this.lbl_App_Name.Font = new System.Drawing.Font("Stencil", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_App_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
@@ -300,8 +304,7 @@
             // 
             // lbl_Artist
             // 
-            this.lbl_Artist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Artist.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Artist.AutoSize = true;
             this.lbl_Artist.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Artist.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -314,6 +317,7 @@
             // 
             // guna2ShadowPanel1
             // 
+            this.guna2ShadowPanel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel1.Controls.Add(this.pic_Player);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.Transparent;
@@ -338,7 +342,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "Audio file|*.mp3";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // timer1
@@ -348,6 +351,7 @@
             // 
             // pnl_store_Playlist
             // 
+            this.pnl_store_Playlist.AllowDrop = true;
             this.pnl_store_Playlist.AutoScroll = true;
             this.pnl_store_Playlist.Controls.Add(this.datagrid_Playlist);
             this.pnl_store_Playlist.Controls.Add(this.guna2Separator1);
@@ -359,6 +363,64 @@
             this.pnl_store_Playlist.Size = new System.Drawing.Size(1100, 454);
             this.pnl_store_Playlist.TabIndex = 129;
             // 
+            // lbl_Playlist
+            // 
+            this.lbl_Playlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Playlist.AutoSize = true;
+            this.lbl_Playlist.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Playlist.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Playlist.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lbl_Playlist.Location = new System.Drawing.Point(14, 3);
+            this.lbl_Playlist.Name = "lbl_Playlist";
+            this.lbl_Playlist.Size = new System.Drawing.Size(135, 46);
+            this.lbl_Playlist.TabIndex = 133;
+            this.lbl_Playlist.Text = "Playlist";
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.FillColor = System.Drawing.Color.DimGray;
+            this.guna2Separator1.Location = new System.Drawing.Point(14, 50);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(297, 10);
+            this.guna2Separator1.TabIndex = 134;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Duration";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Artist";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Genre";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Song";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 20F;
+            this.Column1.HeaderText = "";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // datagrid_Playlist
             // 
             this.datagrid_Playlist.AllowDrop = true;
@@ -367,6 +429,9 @@
             this.datagrid_Playlist.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.datagrid_Playlist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.datagrid_Playlist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.datagrid_Playlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagrid_Playlist.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.datagrid_Playlist.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -427,64 +492,6 @@
             this.datagrid_Playlist.ThemeStyle.RowsStyle.Height = 24;
             this.datagrid_Playlist.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.datagrid_Playlist.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 20F;
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Song";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Genre";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Artist";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Duration";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.FillColor = System.Drawing.Color.DimGray;
-            this.guna2Separator1.Location = new System.Drawing.Point(14, 50);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(297, 10);
-            this.guna2Separator1.TabIndex = 134;
-            // 
-            // lbl_Playlist
-            // 
-            this.lbl_Playlist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Playlist.AutoSize = true;
-            this.lbl_Playlist.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Playlist.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Playlist.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_Playlist.Location = new System.Drawing.Point(14, 3);
-            this.lbl_Playlist.Name = "lbl_Playlist";
-            this.lbl_Playlist.Size = new System.Drawing.Size(135, 46);
-            this.lbl_Playlist.TabIndex = 133;
-            this.lbl_Playlist.Text = "Playlist";
             // 
             // frm_Offline
             // 
