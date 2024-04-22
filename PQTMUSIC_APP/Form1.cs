@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PQTMUSIC_APP
 {
-    public partial class frm_Explore : Form
+    public partial class Form1 : Form
     {
-        public frm_Explore()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
