@@ -1,4 +1,5 @@
-﻿using System;
+﻿using login_register;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace PQTMUSIC_APP
 {
@@ -45,7 +48,12 @@ namespace PQTMUSIC_APP
         {
 
         }
-
         
+
+        private void pic_User_Click(object sender, EventArgs e)
+        {
+            showIn4 in4= new showIn4();
+            in4.Show();
+        }
     }
 }
