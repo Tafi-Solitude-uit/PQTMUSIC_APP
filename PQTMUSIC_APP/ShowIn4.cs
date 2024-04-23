@@ -31,7 +31,7 @@ namespace PQTMUSIC_APP
         }
         private async void showIn4_Load(object sender, EventArgs e)
         {
-            FirebaseResponse response = await client.GetAsync("Users/" + currentUser.ToString());
+            FirebaseResponse response = await client.GetAsync("Users/" + currentUser);
             if (response.Body != "null")
             {
                 var userData = response.ResultAs<Dictionary<string, object>>();
