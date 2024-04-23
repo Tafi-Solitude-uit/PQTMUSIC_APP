@@ -49,5 +49,10 @@ namespace PQTMUSIC_APP
         {
             this.Close();
         }
+
+        private void btn_exitShowIN4_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

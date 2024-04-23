@@ -63,6 +63,26 @@ namespace PQTMUSIC_APP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _767wBRIM {
+            get {
+                object obj = ResourceManager.GetObject("767wBRIM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _785 {
+            get {
+                object obj = ResourceManager.GetObject("785", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ab67616d00001e024b18f196222db6c99f952839 {
             get {
                 object obj = ResourceManager.GetObject("ab67616d00001e024b18f196222db6c99f952839", resourceCulture);
@@ -126,6 +146,26 @@ namespace PQTMUSIC_APP.Properties {
         internal static System.Drawing.Bitmap backroundSignIN {
             get {
                 object obj = ResourceManager.GetObject("backroundSignIN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boy {
+            get {
+                object obj = ResourceManager.GetObject("boy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boy55 {
+            get {
+                object obj = ResourceManager.GetObject("boy55", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +286,46 @@ namespace PQTMUSIC_APP.Properties {
         internal static System.Drawing.Bitmap icons8_birthday_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-birthday-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_birthday_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-birthday-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_password_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-password-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -676,6 +756,16 @@ namespace PQTMUSIC_APP.Properties {
         internal static System.Drawing.Bitmap volume__1_ {
             get {
                 object obj = ResourceManager.GetObject("volume (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xv6p7tda {
+            get {
+                object obj = ResourceManager.GetObject("xv6p7tda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

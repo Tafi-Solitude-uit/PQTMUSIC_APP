@@ -53,10 +53,10 @@ namespace PQTMUSIC_APP
             // Xác thực thông tin đăng nhập
             if (await IsValidLogin(username, password))
             {
-                // Hiển thị thông báo đăng nhập thành công
-                MessageBox.Show("Đăng nhập thành công!");
                 
-                this.Hide();
+               
+                
+                Hide();
 
                 string currentUser = await WhoInShiftNow();
                 if (currentUser != null)
@@ -64,12 +64,12 @@ namespace PQTMUSIC_APP
                     Main_Form secondForm = new Main_Form(currentUser);
                     secondForm.ShowDialog();
                 }
-                this.Close();
+                Close();
 
             }
             else
             {
-                // Hiển thị thông báo lỗi đăng nhập
+             
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!");
             }
         }
@@ -79,9 +79,12 @@ namespace PQTMUSIC_APP
             if (usernameResponse.Body != "null")
             {
                 var data = usernameResponse.ResultAs<UserData>();
-                if (data.password.ToString() == password)
+                if (password != null)
                 {
-                    return true;
+                    if (data.password.ToString() == password)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
@@ -182,6 +185,7 @@ namespace PQTMUSIC_APP
                 txtSUcomPass.PasswordChar = '*';
             }
         }
-       
+
+        
     }
 }
