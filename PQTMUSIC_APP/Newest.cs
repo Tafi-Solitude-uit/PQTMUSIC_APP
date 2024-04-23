@@ -97,28 +97,29 @@ namespace PQTMUSIC_APP
                 txtSIpass.PasswordChar = '*';
             }
         }
-        private async void UserIDLogic()
+        private async Task<int> GetNextUserId()
         {
             FirebaseResponse usersResponse = await client.GetAsync("Users");
             var usersData = usersResponse.ResultAs<Dictionary<string, UserData>>();
 
             if (usersData != null && usersData.Count > 0)
             {
-                currentUserId = usersData.Values.Max(u => u.userid) + 1;
+                return usersData.Values.Max(u => u.userid) + 1;
             }
             else
             {
-                currentUserId = 1;
+                return 1;
             }
         }
         private async void btnSignUp_Click(object sender, EventArgs e)
         {
-            UserIDLogic();
+
+            int nextUserId = await GetNextUserId();
             UserData userData = new UserData()
             {
                 username = txtSUusername.Text,
                 password = txtSUpass.Text,
-                userid = currentUserId,
+                userid = nextUserId,
                 realname = txtRealName.Text,
                 gender = cbmGender.SelectedItem.ToString(),
                 birthday = int.Parse(txtBirthyear.Text),
@@ -131,12 +132,12 @@ namespace PQTMUSIC_APP
                 return;
             }
             FirebaseResponse response = await client.SetAsync("Users/" + userData.username, userData);
-            currentUserId++;
+           
             MessageBox.Show("Đăng ký thành công! Mời về trang đăng nhập");
             pn_SignUp.Visible=false;
             pn_SignIn.Visible=true;
         }
-        private int currentUserId;
+       
         private bool IsValidSignUp(string username, string password)
         {
 
