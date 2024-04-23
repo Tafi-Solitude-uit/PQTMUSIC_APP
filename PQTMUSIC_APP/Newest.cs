@@ -47,8 +47,8 @@ namespace PQTMUSIC_APP
         }
         private async void btnSignIn_Click(object sender, EventArgs e)
         {
-            string username = txtSIusername.Text;
-            string password = txtSIpass.Text;
+            string username = txtSUusername.Text;
+            string password = txtSUpass.Text;
 
             // Xác thực thông tin đăng nhập
             if (await IsValidLogin(username, password))

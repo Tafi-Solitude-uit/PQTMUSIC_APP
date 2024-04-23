@@ -74,7 +74,7 @@
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
             this.btnSignIn.HoverState.Parent = this.btnSignIn;
             this.btnSignIn.Location = new System.Drawing.Point(131, 179);
-            this.btnSignIn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSignIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.ShadowDecoration.Parent = this.btnSignIn;
             this.btnSignIn.Size = new System.Drawing.Size(122, 34);
@@ -93,14 +93,14 @@
             this.pn_SignIn.Controls.Add(this.txtSIusername);
             this.pn_SignIn.Controls.Add(this.txtSIpass);
             this.pn_SignIn.FillColor = System.Drawing.Color.White;
-            this.pn_SignIn.Location = new System.Drawing.Point(415, 31);
-            this.pn_SignIn.Margin = new System.Windows.Forms.Padding(2);
+            this.pn_SignIn.Location = new System.Drawing.Point(424, 29);
+            this.pn_SignIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pn_SignIn.Name = "pn_SignIn";
             this.pn_SignIn.ShadowColor = System.Drawing.Color.Black;
             this.pn_SignIn.ShadowDepth = 80;
             this.pn_SignIn.ShadowShift = 15;
             this.pn_SignIn.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.pn_SignIn.Size = new System.Drawing.Size(366, 415);
+            this.pn_SignIn.Size = new System.Drawing.Size(357, 415);
             this.pn_SignIn.TabIndex = 2;
             // 
             // label3
@@ -132,7 +132,7 @@
             this.checkShowPass.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.checkShowPass.ForeColor = System.Drawing.Color.DarkGreen;
             this.checkShowPass.Location = new System.Drawing.Point(160, 155);
-            this.checkShowPass.Margin = new System.Windows.Forms.Padding(2);
+            this.checkShowPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkShowPass.Name = "checkShowPass";
             this.checkShowPass.Size = new System.Drawing.Size(136, 20);
             this.checkShowPass.TabIndex = 3;
@@ -157,7 +157,7 @@
             this.btnCTSU.ForeColor = System.Drawing.Color.White;
             this.btnCTSU.HoverState.Parent = this.btnCTSU;
             this.btnCTSU.Location = new System.Drawing.Point(246, 233);
-            this.btnCTSU.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCTSU.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCTSU.Name = "btnCTSU";
             this.btnCTSU.ShadowDecoration.Parent = this.btnCTSU;
             this.btnCTSU.Size = new System.Drawing.Size(80, 25);
@@ -184,6 +184,7 @@
             this.txtSIusername.HoverState.Parent = this.txtSIusername;
             this.txtSIusername.IconLeft = global::PQTMUSIC_APP.Properties.Resources.user1;
             this.txtSIusername.Location = new System.Drawing.Point(68, 72);
+            this.txtSIusername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSIusername.Name = "txtSIusername";
             this.txtSIusername.PasswordChar = '\0';
             this.txtSIusername.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -210,6 +211,7 @@
             this.txtSIpass.HoverState.Parent = this.txtSIpass;
             this.txtSIpass.IconLeft = global::PQTMUSIC_APP.Properties.Resources.padlock1;
             this.txtSIpass.Location = new System.Drawing.Point(68, 114);
+            this.txtSIpass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSIpass.Name = "txtSIpass";
             this.txtSIpass.PasswordChar = '*';
             this.txtSIpass.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -227,7 +229,7 @@
             this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
             this.guna2ControlBox2.Location = new System.Drawing.Point(709, 1);
-            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
             this.guna2ControlBox2.Size = new System.Drawing.Size(34, 24);
@@ -241,7 +243,7 @@
             this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
             this.guna2ControlBox1.Location = new System.Drawing.Point(747, 1);
-            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(34, 24);
@@ -250,11 +252,11 @@
             // PANELControl
             // 
             this.PANELControl.BackColor = System.Drawing.Color.White;
-            this.PANELControl.Location = new System.Drawing.Point(417, -1);
-            this.PANELControl.Margin = new System.Windows.Forms.Padding(2);
+            this.PANELControl.Location = new System.Drawing.Point(424, -1);
+            this.PANELControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PANELControl.Name = "PANELControl";
             this.PANELControl.ShadowDecoration.Parent = this.PANELControl;
-            this.PANELControl.Size = new System.Drawing.Size(287, 28);
+            this.PANELControl.Size = new System.Drawing.Size(280, 28);
             this.PANELControl.TabIndex = 3;
             // 
             // txtBirthyear
@@ -276,6 +278,7 @@
             this.txtBirthyear.HoverState.Parent = this.txtBirthyear;
             this.txtBirthyear.IconLeft = global::PQTMUSIC_APP.Properties.Resources.icons8_birthday_30;
             this.txtBirthyear.Location = new System.Drawing.Point(80, 286);
+            this.txtBirthyear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBirthyear.Name = "txtBirthyear";
             this.txtBirthyear.PasswordChar = '\0';
             this.txtBirthyear.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -307,7 +310,7 @@
             this.btnSignUp.ForeColor = System.Drawing.Color.White;
             this.btnSignUp.HoverState.Parent = this.btnSignUp;
             this.btnSignUp.Location = new System.Drawing.Point(137, 327);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.ShadowDecoration.Parent = this.btnSignUp;
             this.btnSignUp.Size = new System.Drawing.Size(126, 32);
@@ -324,7 +327,7 @@
             this.checkShPassSignUp.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.checkShPassSignUp.ForeColor = System.Drawing.Color.DarkGreen;
             this.checkShPassSignUp.Location = new System.Drawing.Point(169, 175);
-            this.checkShPassSignUp.Margin = new System.Windows.Forms.Padding(2);
+            this.checkShPassSignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkShPassSignUp.Name = "checkShPassSignUp";
             this.checkShPassSignUp.Size = new System.Drawing.Size(139, 20);
             this.checkShPassSignUp.TabIndex = 7;
@@ -349,7 +352,7 @@
             this.btnCTLG.ForeColor = System.Drawing.Color.White;
             this.btnCTLG.HoverState.Parent = this.btnCTLG;
             this.btnCTLG.Location = new System.Drawing.Point(257, 365);
-            this.btnCTLG.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCTLG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCTLG.Name = "btnCTLG";
             this.btnCTLG.ShadowDecoration.Parent = this.btnCTLG;
             this.btnCTLG.Size = new System.Drawing.Size(60, 25);
@@ -369,9 +372,12 @@
             this.cbmGender.FormattingEnabled = true;
             this.cbmGender.HoverState.Parent = this.cbmGender;
             this.cbmGender.ItemHeight = 30;
+            this.cbmGender.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
             this.cbmGender.ItemsAppearance.Parent = this.cbmGender;
             this.cbmGender.Location = new System.Drawing.Point(80, 245);
-            this.cbmGender.Margin = new System.Windows.Forms.Padding(2);
+            this.cbmGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbmGender.Name = "cbmGender";
             this.cbmGender.ShadowDecoration.Parent = this.cbmGender;
             this.cbmGender.Size = new System.Drawing.Size(228, 36);
@@ -395,6 +401,7 @@
             this.txtSUcomPass.HoverState.Parent = this.txtSUcomPass;
             this.txtSUcomPass.IconLeft = global::PQTMUSIC_APP.Properties.Resources.padlock1;
             this.txtSUcomPass.Location = new System.Drawing.Point(80, 134);
+            this.txtSUcomPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSUcomPass.Name = "txtSUcomPass";
             this.txtSUcomPass.PasswordChar = '*';
             this.txtSUcomPass.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -422,6 +429,7 @@
             this.txtSUpass.HoverState.Parent = this.txtSUpass;
             this.txtSUpass.IconLeft = global::PQTMUSIC_APP.Properties.Resources.padlock1;
             this.txtSUpass.Location = new System.Drawing.Point(80, 92);
+            this.txtSUpass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSUpass.Name = "txtSUpass";
             this.txtSUpass.PasswordChar = '*';
             this.txtSUpass.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -450,6 +458,7 @@
             this.txtSUusername.HoverState.Parent = this.txtSUusername;
             this.txtSUusername.IconLeft = global::PQTMUSIC_APP.Properties.Resources.user1;
             this.txtSUusername.Location = new System.Drawing.Point(80, 50);
+            this.txtSUusername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSUusername.Name = "txtSUusername";
             this.txtSUusername.PasswordChar = '\0';
             this.txtSUusername.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -474,14 +483,14 @@
             this.pn_SignUp.Controls.Add(this.btnSignUp);
             this.pn_SignUp.Controls.Add(this.label1);
             this.pn_SignUp.FillColor = System.Drawing.Color.White;
-            this.pn_SignUp.Location = new System.Drawing.Point(415, 29);
-            this.pn_SignUp.Margin = new System.Windows.Forms.Padding(2);
+            this.pn_SignUp.Location = new System.Drawing.Point(424, 29);
+            this.pn_SignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pn_SignUp.Name = "pn_SignUp";
             this.pn_SignUp.ShadowColor = System.Drawing.Color.Black;
             this.pn_SignUp.ShadowDepth = 80;
             this.pn_SignUp.ShadowShift = 15;
             this.pn_SignUp.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.pn_SignUp.Size = new System.Drawing.Size(366, 417);
+            this.pn_SignUp.Size = new System.Drawing.Size(357, 417);
             this.pn_SignUp.TabIndex = 1;
             // 
             // label4
@@ -513,6 +522,7 @@
             this.txtRealName.HoverState.Parent = this.txtRealName;
             this.txtRealName.IconLeft = global::PQTMUSIC_APP.Properties.Resources.user1;
             this.txtRealName.Location = new System.Drawing.Point(80, 205);
+            this.txtRealName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRealName.Name = "txtRealName";
             this.txtRealName.PasswordChar = '\0';
             this.txtRealName.PlaceholderForeColor = System.Drawing.Color.Black;
@@ -535,8 +545,8 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::PQTMUSIC_APP.Properties.Resources.backroundSignIN;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-231, -1);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-224, -1);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(644, 457);
@@ -556,7 +566,7 @@
             this.Controls.Add(this.PANELControl);
             this.Controls.Add(this.guna2PictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Newest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Newest";
