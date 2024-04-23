@@ -12,11 +12,13 @@ namespace PQTMUSIC_APP
 {
     public partial class Main_Form : Form
     {
-        public Main_Form()
+        private string currentUser;
+        public Main_Form(string currentUser)
         {
             InitializeComponent();
             frm_Explore explore = new frm_Explore();
             addForm_Child(explore);
+            this.currentUser = currentUser;
         }
 
         private void addForm_Child(Form frm_child)
@@ -46,6 +48,10 @@ namespace PQTMUSIC_APP
 
         }
 
-        
+        private void pic_User_Click(object sender, EventArgs e)
+        {
+            ShowIn4 showINFO = new ShowIn4(currentUser);
+            showINFO.ShowDialog();
+        }
     }
 }
