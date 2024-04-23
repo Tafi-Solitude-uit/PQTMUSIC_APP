@@ -134,11 +134,11 @@
     <Compile Include="Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Newest.cs">
+    <Compile Include="Frm_LgSU.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Newest.Designer.cs">
-      <DependentUpon>Newest.cs</DependentUpon>
+    <Compile Include="Frm_LgSU.Designer.cs">
+      <DependentUpon>Frm_LgSU.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,8 +158,8 @@
     <EmbeddedResource Include="Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Newest.resx">
-      <DependentUpon>Newest.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_LgSU.resx">
+      <DependentUpon>Frm_LgSU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

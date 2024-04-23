@@ -1,6 +1,6 @@
 ﻿namespace PQTMUSIC_APP
 {
-    partial class Newest
+    partial class Frm_LgSU
     {
         /// <summary>
         /// Required designer variable.
