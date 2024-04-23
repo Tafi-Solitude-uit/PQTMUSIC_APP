@@ -17,9 +17,6 @@ namespace PQTMUSIC_APP
             InitializeComponent();
         }
 
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
