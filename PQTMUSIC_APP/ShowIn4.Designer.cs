@@ -177,8 +177,8 @@
             // pn_showIN4
             // 
             this.pn_showIN4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_showIN4.FillColor = System.Drawing.Color.Lavender;
-            this.pn_showIN4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pn_showIN4.FillColor = System.Drawing.Color.Transparent;
+            this.pn_showIN4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.pn_showIN4.Location = new System.Drawing.Point(0, 0);
             this.pn_showIN4.Margin = new System.Windows.Forms.Padding(4);
             this.pn_showIN4.Name = "pn_showIN4";

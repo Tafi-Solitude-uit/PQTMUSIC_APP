@@ -17,7 +17,7 @@ using TagLib;
 
 namespace PQTMUSIC_APP
 {
-    public partial class Newest : Form
+    public partial class Frm_LgSU : Form
     {
         IFirebaseClient client;
         IFirebaseConfig config = new FirebaseConfig()
@@ -25,7 +25,7 @@ namespace PQTMUSIC_APP
             AuthSecret = "CkIjEA3D7s7dxH1BWr0WF4VcU0ab7M068ojHUlDG",
             BasePath = "https://loginandregister-f73c6-default-rtdb.asia-southeast1.firebasedatabase.app/",
         };
-        public Newest()
+        public Frm_LgSU()
         {
             InitializeComponent();
             client = new FireSharp.FirebaseClient(config);
@@ -47,8 +47,8 @@ namespace PQTMUSIC_APP
         }
         private async void btnSignIn_Click(object sender, EventArgs e)
         {
-            string username = txtSUusername.Text;
-            string password = txtSUpass.Text;
+            string username = txtSIusername.Text;
+            string password = txtSIpass.Text;
 
             // Xác thực thông tin đăng nhập
             if (await IsValidLogin(username, password))
@@ -79,7 +79,7 @@ namespace PQTMUSIC_APP
             if (usernameResponse.Body != "null")
             {
                 var data = usernameResponse.ResultAs<UserData>();
-                if (data.password == password)
+                if (data.password.ToString() == password)
                 {
                     return true;
                 }

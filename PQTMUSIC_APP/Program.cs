@@ -16,7 +16,7 @@ namespace PQTMUSIC_APP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Newest());
+            Application.Run(new Frm_LgSU());
         }
     }
 }
