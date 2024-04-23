@@ -52,11 +52,12 @@
             this.txtShowName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtShowName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtShowName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtShowName.Location = new System.Drawing.Point(12, 73);
+            this.txtShowName.Location = new System.Drawing.Point(16, 90);
+            this.txtShowName.Margin = new System.Windows.Forms.Padding(4);
             this.txtShowName.Name = "txtShowName";
             this.txtShowName.PasswordChar = '\0';
             this.txtShowName.SelectedText = "";
-            this.txtShowName.Size = new System.Drawing.Size(298, 51);
+            this.txtShowName.Size = new System.Drawing.Size(397, 63);
             this.txtShowName.TabIndex = 0;
             // 
             // txtShowGender
@@ -69,11 +70,12 @@
             this.txtShowGender.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtShowGender.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtShowGender.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtShowGender.Location = new System.Drawing.Point(12, 156);
+            this.txtShowGender.Location = new System.Drawing.Point(16, 192);
+            this.txtShowGender.Margin = new System.Windows.Forms.Padding(4);
             this.txtShowGender.Name = "txtShowGender";
             this.txtShowGender.PasswordChar = '\0';
             this.txtShowGender.SelectedText = "";
-            this.txtShowGender.Size = new System.Drawing.Size(298, 51);
+            this.txtShowGender.Size = new System.Drawing.Size(397, 63);
             this.txtShowGender.TabIndex = 1;
             // 
             // txtShowYear
@@ -86,11 +88,12 @@
             this.txtShowYear.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtShowYear.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtShowYear.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtShowYear.Location = new System.Drawing.Point(12, 237);
+            this.txtShowYear.Location = new System.Drawing.Point(16, 292);
+            this.txtShowYear.Margin = new System.Windows.Forms.Padding(4);
             this.txtShowYear.Name = "txtShowYear";
             this.txtShowYear.PasswordChar = '\0';
             this.txtShowYear.SelectedText = "";
-            this.txtShowYear.Size = new System.Drawing.Size(146, 51);
+            this.txtShowYear.Size = new System.Drawing.Size(195, 63);
             this.txtShowYear.TabIndex = 2;
             // 
             // txtShowID
@@ -103,11 +106,12 @@
             this.txtShowID.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtShowID.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtShowID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtShowID.Location = new System.Drawing.Point(164, 237);
+            this.txtShowID.Location = new System.Drawing.Point(219, 292);
+            this.txtShowID.Margin = new System.Windows.Forms.Padding(4);
             this.txtShowID.Name = "txtShowID";
             this.txtShowID.PasswordChar = '\0';
             this.txtShowID.SelectedText = "";
-            this.txtShowID.Size = new System.Drawing.Size(146, 51);
+            this.txtShowID.Size = new System.Drawing.Size(195, 63);
             this.txtShowID.TabIndex = 3;
             // 
             // label1
@@ -115,9 +119,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 20);
+            this.label1.Location = new System.Drawing.Point(76, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 21);
+            this.label1.Size = new System.Drawing.Size(278, 27);
             this.label1.TabIndex = 4;
             this.label1.Text = "USER INFORMATION";
             // 
@@ -125,9 +130,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Location = new System.Drawing.Point(16, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 15);
+            this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "NAME";
             // 
@@ -135,9 +141,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 138);
+            this.label3.Location = new System.Drawing.Point(16, 170);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 15);
+            this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "GENDER";
             // 
@@ -145,9 +152,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 219);
+            this.label4.Location = new System.Drawing.Point(16, 270);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 15);
+            this.label4.Size = new System.Drawing.Size(119, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "BIRTHYEAR";
             // 
@@ -155,9 +163,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(164, 219);
+            this.label5.Location = new System.Drawing.Point(219, 270);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 15);
+            this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "USER ID";
             // 
@@ -171,16 +180,17 @@
             this.pn_showIN4.FillColor = System.Drawing.Color.Lavender;
             this.pn_showIN4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pn_showIN4.Location = new System.Drawing.Point(0, 0);
+            this.pn_showIN4.Margin = new System.Windows.Forms.Padding(4);
             this.pn_showIN4.Name = "pn_showIN4";
             this.pn_showIN4.ShadowDecoration.Parent = this.pn_showIN4;
-            this.pn_showIN4.Size = new System.Drawing.Size(324, 450);
+            this.pn_showIN4.Size = new System.Drawing.Size(432, 554);
             this.pn_showIN4.TabIndex = 9;
             // 
             // ShowIn4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 450);
+            this.ClientSize = new System.Drawing.Size(432, 554);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -192,8 +202,11 @@
             this.Controls.Add(this.txtShowName);
             this.Controls.Add(this.pn_showIN4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ShowIn4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShowIn4";
+            this.Load += new System.EventHandler(this.showIn4_Load);
             this.Leave += new System.EventHandler(this.ShowIn4_Leave);
             this.ResumeLayout(false);
             this.PerformLayout();

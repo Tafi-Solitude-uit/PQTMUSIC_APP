@@ -57,8 +57,13 @@ namespace PQTMUSIC_APP
                 MessageBox.Show("Đăng nhập thành công!");
                 
                 this.Hide();
-                Main_Form Homepage = new Main_Form(currentUser);
-                Homepage.ShowDialog();
+
+                string currentUser = await WhoInShiftNow();
+                if (currentUser != null)
+                {
+                    Main_Form secondForm = new Main_Form(currentUser);
+                    secondForm.ShowDialog();
+                }
                 this.Close();
 
             }

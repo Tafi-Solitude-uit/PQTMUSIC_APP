@@ -51,7 +51,7 @@ namespace PQTMUSIC_APP
         private void pic_User_Click(object sender, EventArgs e)
         {
             ShowIn4 showINFO = new ShowIn4(currentUser);
-            showINFO.ShowDialog();
+            showINFO.Show();
         }
     }
 }
