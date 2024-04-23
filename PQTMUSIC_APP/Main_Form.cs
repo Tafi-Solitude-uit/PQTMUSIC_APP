@@ -53,5 +53,11 @@ namespace PQTMUSIC_APP
             ShowIn4 showINFO = new ShowIn4(currentUser);
             showINFO.Show();
         }
+
+        private void btn_Genres_Click(object sender, EventArgs e)
+        {
+            ShowGenres showGenres = new ShowGenres();
+            addForm_Child(showGenres);
+        }
     }
 }
