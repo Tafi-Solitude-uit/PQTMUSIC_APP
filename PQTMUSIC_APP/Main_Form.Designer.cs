@@ -110,7 +110,7 @@
             this.btn_Playlist3.FillColor = System.Drawing.Color.Transparent;
             this.btn_Playlist3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Playlist3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Playlist3.ForeColor = System.Drawing.Color.White;
+            this.btn_Playlist3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Playlist3.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Playlist3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Playlist3.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -145,7 +145,7 @@
             this.btn_Playlist2.FillColor = System.Drawing.Color.Transparent;
             this.btn_Playlist2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Playlist2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Playlist2.ForeColor = System.Drawing.Color.White;
+            this.btn_Playlist2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Playlist2.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Playlist2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Playlist2.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -180,7 +180,7 @@
             this.btn_Playlist1.FillColor = System.Drawing.Color.Transparent;
             this.btn_Playlist1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Playlist1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Playlist1.ForeColor = System.Drawing.Color.White;
+            this.btn_Playlist1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Playlist1.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Playlist1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Playlist1.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -215,7 +215,7 @@
             this.btn_Ranks.FillColor = System.Drawing.Color.Transparent;
             this.btn_Ranks.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Ranks.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Ranks.ForeColor = System.Drawing.Color.White;
+            this.btn_Ranks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Ranks.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Ranks.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Ranks.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -282,7 +282,7 @@
             this.btn_Offline.FillColor = System.Drawing.Color.Transparent;
             this.btn_Offline.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Offline.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Offline.ForeColor = System.Drawing.Color.White;
+            this.btn_Offline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Offline.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Offline.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Offline.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -318,7 +318,7 @@
             this.btn_Download.FillColor = System.Drawing.Color.Transparent;
             this.btn_Download.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Download.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Download.ForeColor = System.Drawing.Color.White;
+            this.btn_Download.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Download.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Download.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Download.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -353,7 +353,7 @@
             this.btn_Albums.FillColor = System.Drawing.Color.Transparent;
             this.btn_Albums.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Albums.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Albums.ForeColor = System.Drawing.Color.White;
+            this.btn_Albums.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Albums.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Albums.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Albums.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -388,7 +388,7 @@
             this.btn_Favorite.FillColor = System.Drawing.Color.Transparent;
             this.btn_Favorite.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Favorite.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Favorite.ForeColor = System.Drawing.Color.White;
+            this.btn_Favorite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Favorite.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Favorite.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Favorite.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -423,7 +423,7 @@
             this.btn_Recent_Played.FillColor = System.Drawing.Color.Transparent;
             this.btn_Recent_Played.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Recent_Played.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Recent_Played.ForeColor = System.Drawing.Color.White;
+            this.btn_Recent_Played.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Recent_Played.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Recent_Played.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Recent_Played.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -458,7 +458,7 @@
             this.btn_Artists.FillColor = System.Drawing.Color.Transparent;
             this.btn_Artists.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Artists.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Artists.ForeColor = System.Drawing.Color.White;
+            this.btn_Artists.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Artists.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Artists.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Artists.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -493,7 +493,7 @@
             this.btn_Genres.FillColor = System.Drawing.Color.Transparent;
             this.btn_Genres.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Genres.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Genres.ForeColor = System.Drawing.Color.White;
+            this.btn_Genres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Genres.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Genres.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Genres.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -529,7 +529,7 @@
             this.btn_Songs.FillColor = System.Drawing.Color.Transparent;
             this.btn_Songs.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Songs.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Songs.ForeColor = System.Drawing.Color.White;
+            this.btn_Songs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Songs.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Songs.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Songs.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -567,7 +567,7 @@
             this.btn_Explore.FillColor = System.Drawing.Color.Transparent;
             this.btn_Explore.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Explore.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Explore.ForeColor = System.Drawing.Color.White;
+            this.btn_Explore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btn_Explore.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
             this.btn_Explore.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.btn_Explore.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
@@ -770,7 +770,7 @@
             this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_Search.FocusedState.Parent = this.txt_Search;
             this.txt_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_Search.ForeColor = System.Drawing.Color.White;
+            this.txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.txt_Search.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.txt_Search.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
@@ -780,7 +780,7 @@
             this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
-            this.txt_Search.PlaceholderForeColor = System.Drawing.Color.White;
+            this.txt_Search.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txt_Search.PlaceholderText = "Search";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
