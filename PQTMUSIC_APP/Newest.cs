@@ -99,7 +99,7 @@ namespace PQTMUSIC_APP
         }
         private async void UserIDLogic()
         {
-            FirebaseResponse usersResponse = await client.GetAsync("users");
+            FirebaseResponse usersResponse = await client.GetAsync("Users");
             var usersData = usersResponse.ResultAs<Dictionary<string, UserData>>();
 
             if (usersData != null && usersData.Count > 0)
@@ -116,8 +116,8 @@ namespace PQTMUSIC_APP
             UserIDLogic();
             UserData userData = new UserData()
             {
-                username = txtSIusername.Text,
-                password = txtSIpass.Text,
+                username = txtSUusername.Text,
+                password = txtSUpass.Text,
                 userid = currentUserId,
                 realname = txtRealName.Text,
                 gender = cbmGender.SelectedItem.ToString(),
@@ -133,7 +133,8 @@ namespace PQTMUSIC_APP
             FirebaseResponse response = await client.SetAsync("Users/" + userData.username, userData);
             currentUserId++;
             MessageBox.Show("Đăng ký thành công! Mời về trang đăng nhập");
-            this.Close();
+            pn_SignUp.Visible=false;
+            pn_SignIn.Visible=true;
         }
         private int currentUserId;
         private bool IsValidSignUp(string username, string password)
