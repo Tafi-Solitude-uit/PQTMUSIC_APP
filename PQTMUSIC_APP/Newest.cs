@@ -127,7 +127,7 @@ namespace PQTMUSIC_APP
             // Xác thực thông tin đăng ký
             if (!IsValidSignUp(userData.username, userData.password))
             {
-                MessageBox.Show("Thông tin đăng ký không hợp lệ!");
+                MessageBox.Show("Thông tin đăng ký không hợp lệ hoặc tên người dùng đã tồn tại !");
                 return;
             }
             FirebaseResponse response = await client.SetAsync("Users/" + userData.username, userData);
