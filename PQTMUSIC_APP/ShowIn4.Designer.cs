@@ -35,12 +35,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pn_showIN4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtShowID = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtShowYear = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtShowGender = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtShowName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_exitShowIN4 = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.pn_showIN4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,11 +117,24 @@
             this.pn_showIN4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.pn_showIN4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.pn_showIN4.Location = new System.Drawing.Point(0, 0);
-            this.pn_showIN4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pn_showIN4.Margin = new System.Windows.Forms.Padding(4);
             this.pn_showIN4.Name = "pn_showIN4";
             this.pn_showIN4.ShadowDecoration.Parent = this.pn_showIN4;
             this.pn_showIN4.Size = new System.Drawing.Size(432, 554);
             this.pn_showIN4.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label4.Location = new System.Drawing.Point(45, 325);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "BIRTHYEAR";
             // 
             // txtShowID
             // 
@@ -141,7 +154,7 @@
             this.txtShowID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.txtShowID.HoverState.Parent = this.txtShowID;
             this.txtShowID.Location = new System.Drawing.Point(236, 350);
-            this.txtShowID.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtShowID.Margin = new System.Windows.Forms.Padding(5);
             this.txtShowID.Name = "txtShowID";
             this.txtShowID.PasswordChar = '\0';
             this.txtShowID.PlaceholderText = "";
@@ -169,7 +182,7 @@
             this.txtShowYear.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.txtShowYear.HoverState.Parent = this.txtShowYear;
             this.txtShowYear.Location = new System.Drawing.Point(37, 350);
-            this.txtShowYear.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtShowYear.Margin = new System.Windows.Forms.Padding(5);
             this.txtShowYear.Name = "txtShowYear";
             this.txtShowYear.PasswordChar = '\0';
             this.txtShowYear.PlaceholderText = "";
@@ -197,7 +210,7 @@
             this.txtShowGender.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.txtShowGender.HoverState.Parent = this.txtShowGender;
             this.txtShowGender.Location = new System.Drawing.Point(18, 230);
-            this.txtShowGender.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtShowGender.Margin = new System.Windows.Forms.Padding(5);
             this.txtShowGender.Name = "txtShowGender";
             this.txtShowGender.PasswordChar = '\0';
             this.txtShowGender.PlaceholderText = "";
@@ -226,7 +239,7 @@
             this.txtShowName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.txtShowName.HoverState.Parent = this.txtShowName;
             this.txtShowName.Location = new System.Drawing.Point(18, 137);
-            this.txtShowName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtShowName.Margin = new System.Windows.Forms.Padding(5);
             this.txtShowName.Name = "txtShowName";
             this.txtShowName.PasswordChar = '\0';
             this.txtShowName.PlaceholderText = "";
@@ -238,7 +251,8 @@
             // 
             // btn_exitShowIN4
             // 
-            this.btn_exitShowIN4.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exitShowIN4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
+            this.btn_exitShowIN4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.btn_exitShowIN4.BorderRadius = 15;
             this.btn_exitShowIN4.CheckedState.Parent = this.btn_exitShowIN4;
             this.btn_exitShowIN4.CustomImages.Parent = this.btn_exitShowIN4;
@@ -250,26 +264,14 @@
             this.btn_exitShowIN4.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
             this.btn_exitShowIN4.HoverState.Parent = this.btn_exitShowIN4;
             this.btn_exitShowIN4.Location = new System.Drawing.Point(125, 489);
-            this.btn_exitShowIN4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_exitShowIN4.Margin = new System.Windows.Forms.Padding(4);
             this.btn_exitShowIN4.Name = "btn_exitShowIN4";
+            this.btn_exitShowIN4.PressedColor = System.Drawing.Color.Empty;
             this.btn_exitShowIN4.ShadowDecoration.Parent = this.btn_exitShowIN4;
             this.btn_exitShowIN4.Size = new System.Drawing.Size(157, 52);
             this.btn_exitShowIN4.TabIndex = 0;
             this.btn_exitShowIN4.Text = "Close";
             this.btn_exitShowIN4.Click += new System.EventHandler(this.btn_exitShowIN4_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
-            this.label4.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label4.Location = new System.Drawing.Point(45, 325);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "BIRTHYEAR";
             // 
             // ShowIn4
             // 
@@ -279,7 +281,7 @@
             this.ClientSize = new System.Drawing.Size(432, 554);
             this.Controls.Add(this.pn_showIN4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ShowIn4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShowIn4";
