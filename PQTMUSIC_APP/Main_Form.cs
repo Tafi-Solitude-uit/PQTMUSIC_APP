@@ -32,8 +32,7 @@ namespace PQTMUSIC_APP
 
         private void btn_Offline_Click(object sender, EventArgs e)
         {
-            frm_Offline Offline = new frm_Offline();
-            addForm_Child(Offline);
+            
         }
 
         private void btn_Explore_Click(object sender, EventArgs e)
