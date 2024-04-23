@@ -360,11 +360,20 @@
     <None Include="Resources\cd.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\767wBRIM.png" />
+    <None Include="Resources\785.png" />
     <Content Include="Resources\backroundSignIN.jpg" />
+    <None Include="Resources\xv6p7tda.png" />
     <None Include="Resources\user1.png" />
     <None Include="Resources\padlock1.png" />
     <None Include="Resources\backroundSignIN1.jpg" />
     <None Include="Resources\icons8-birthday-30.png" />
+    <None Include="Resources\boy.png" />
+    <None Include="Resources\boy55.png" />
+    <None Include="Resources\icons8-user-50.png" />
+    <None Include="Resources\icons8-password-50.png" />
+    <None Include="Resources\icons8-user-501.png" />
+    <None Include="Resources\icons8-birthday-50.png" />
     <Content Include="Resources\Image1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
