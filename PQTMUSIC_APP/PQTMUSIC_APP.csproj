@@ -122,6 +122,12 @@
     <Compile Include="frm_Explore.Designer.cs">
       <DependentUpon>frm_Explore.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_OffineMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_OffineMode.Designer.cs">
+      <DependentUpon>frm_OffineMode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     <Compile Include="UserData.cs" />
     <EmbeddedResource Include="frm_Explore.resx">
       <DependentUpon>frm_Explore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_OffineMode.resx">
+      <DependentUpon>frm_OffineMode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
