@@ -46,14 +46,14 @@
             this.btn_Play = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_Mix = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_mute = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
+            this.lbl_timeEnd = new System.Windows.Forms.Label();
+            this.lbl_timeStart = new System.Windows.Forms.Label();
             this.TrackBar_Volumn = new Guna.UI2.WinForms.Guna2TrackBar();
             this.TrackBar_Play = new Guna.UI2.WinForms.Guna2TrackBar();
             this.btn_Rewind = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_Next = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_Pause = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnReplay = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btn_Stop = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_Upload = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbl_App_Name = new System.Windows.Forms.Label();
             this.lbl_Artist = new System.Windows.Forms.Label();
@@ -62,6 +62,7 @@
             this.lbl_Song = new System.Windows.Forms.Label();
             this.musicPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timerPlayBack = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Playlist)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -212,14 +213,14 @@
             this.guna2Panel1.Controls.Add(this.btn_Play);
             this.guna2Panel1.Controls.Add(this.btn_Mix);
             this.guna2Panel1.Controls.Add(this.btn_mute);
-            this.guna2Panel1.Controls.Add(this.label38);
-            this.guna2Panel1.Controls.Add(this.label37);
+            this.guna2Panel1.Controls.Add(this.lbl_timeEnd);
+            this.guna2Panel1.Controls.Add(this.lbl_timeStart);
             this.guna2Panel1.Controls.Add(this.TrackBar_Volumn);
             this.guna2Panel1.Controls.Add(this.TrackBar_Play);
             this.guna2Panel1.Controls.Add(this.btn_Rewind);
             this.guna2Panel1.Controls.Add(this.btn_Next);
             this.guna2Panel1.Controls.Add(this.btn_Pause);
-            this.guna2Panel1.Controls.Add(this.btnReplay);
+            this.guna2Panel1.Controls.Add(this.btn_Stop);
             this.guna2Panel1.Controls.Add(this.btn_Upload);
             this.guna2Panel1.Controls.Add(this.lbl_App_Name);
             this.guna2Panel1.Controls.Add(this.lbl_Artist);
@@ -248,6 +249,7 @@
             this.btn_Play.PressedState.Parent = this.btn_Play;
             this.btn_Play.Size = new System.Drawing.Size(44, 46);
             this.btn_Play.TabIndex = 188;
+            this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
             // 
             // btn_Mix
             // 
@@ -283,31 +285,31 @@
             this.btn_mute.Size = new System.Drawing.Size(44, 46);
             this.btn_mute.TabIndex = 186;
             // 
-            // label38
+            // lbl_timeEnd
             // 
-            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.Transparent;
-            this.label38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label38.Location = new System.Drawing.Point(1041, 216);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(40, 20);
-            this.label38.TabIndex = 185;
-            this.label38.Text = "3:10";
+            this.lbl_timeEnd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_timeEnd.AutoSize = true;
+            this.lbl_timeEnd.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_timeEnd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_timeEnd.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbl_timeEnd.Location = new System.Drawing.Point(1041, 216);
+            this.lbl_timeEnd.Name = "lbl_timeEnd";
+            this.lbl_timeEnd.Size = new System.Drawing.Size(40, 20);
+            this.lbl_timeEnd.TabIndex = 185;
+            this.lbl_timeEnd.Text = "3:10";
             // 
-            // label37
+            // lbl_timeStart
             // 
-            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label37.Location = new System.Drawing.Point(480, 216);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(40, 20);
-            this.label37.TabIndex = 184;
-            this.label37.Text = "1:10";
+            this.lbl_timeStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_timeStart.AutoSize = true;
+            this.lbl_timeStart.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_timeStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_timeStart.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbl_timeStart.Location = new System.Drawing.Point(480, 216);
+            this.lbl_timeStart.Name = "lbl_timeStart";
+            this.lbl_timeStart.Size = new System.Drawing.Size(40, 20);
+            this.lbl_timeStart.TabIndex = 184;
+            this.lbl_timeStart.Text = "1:10";
             // 
             // TrackBar_Volumn
             // 
@@ -320,6 +322,7 @@
             this.TrackBar_Volumn.Size = new System.Drawing.Size(109, 23);
             this.TrackBar_Volumn.TabIndex = 183;
             this.TrackBar_Volumn.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
+            this.TrackBar_Volumn.Scroll += new System.Windows.Forms.ScrollEventHandler(this.TrackBar_Volumn_Scroll);
             // 
             // TrackBar_Play
             // 
@@ -385,22 +388,24 @@
             this.btn_Pause.PressedState.Parent = this.btn_Pause;
             this.btn_Pause.Size = new System.Drawing.Size(44, 46);
             this.btn_Pause.TabIndex = 179;
+            this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
             // 
-            // btnReplay
+            // btn_Stop
             // 
-            this.btnReplay.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReplay.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnReplay.CheckedState.Parent = this.btnReplay;
-            this.btnReplay.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnReplay.HoverState.Parent = this.btnReplay;
-            this.btnReplay.Image = global::PQTMUSIC_APP.Properties.Resources.rewind;
-            this.btnReplay.ImageSize = new System.Drawing.Size(27, 27);
-            this.btnReplay.Location = new System.Drawing.Point(658, 166);
-            this.btnReplay.Name = "btnReplay";
-            this.btnReplay.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnReplay.PressedState.Parent = this.btnReplay;
-            this.btnReplay.Size = new System.Drawing.Size(44, 46);
-            this.btnReplay.TabIndex = 178;
+            this.btn_Stop.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Stop.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Stop.CheckedState.Parent = this.btn_Stop;
+            this.btn_Stop.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Stop.HoverState.Parent = this.btn_Stop;
+            this.btn_Stop.Image = global::PQTMUSIC_APP.Properties.Resources.rewind;
+            this.btn_Stop.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_Stop.Location = new System.Drawing.Point(658, 166);
+            this.btn_Stop.Name = "btn_Stop";
+            this.btn_Stop.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Stop.PressedState.Parent = this.btn_Stop;
+            this.btn_Stop.Size = new System.Drawing.Size(44, 46);
+            this.btn_Stop.TabIndex = 178;
+            this.btn_Stop.Click += new System.EventHandler(this.btn_Stop_Click);
             // 
             // btn_Upload
             // 
@@ -419,6 +424,7 @@
             this.btn_Upload.Size = new System.Drawing.Size(180, 45);
             this.btn_Upload.TabIndex = 177;
             this.btn_Upload.Text = "Upload new song";
+            this.btn_Upload.Click += new System.EventHandler(this.btn_Upload_Click);
             // 
             // lbl_App_Name
             // 
@@ -485,17 +491,25 @@
             // musicPlayer
             // 
             this.musicPlayer.Enabled = true;
-            this.musicPlayer.Location = new System.Drawing.Point(484, 274);
+            this.musicPlayer.Location = new System.Drawing.Point(562, 274);
             this.musicPlayer.Name = "musicPlayer";
             this.musicPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("musicPlayer.OcxState")));
             this.musicPlayer.Size = new System.Drawing.Size(451, 35);
             this.musicPlayer.TabIndex = 174;
             this.musicPlayer.Visible = false;
+            this.musicPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.musicPlayer_PlayStateChange);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "MP3 File | *.mp3";
+            this.openFileDialog1.Multiselect = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // timerPlayBack
+            // 
+            this.timerPlayBack.Interval = 850;
+            this.timerPlayBack.Tick += new System.EventHandler(this.timerPlayBack_Tick);
             // 
             // frm_OffineMode
             // 
@@ -538,14 +552,14 @@
         private Guna.UI2.WinForms.Guna2ImageButton btn_Play;
         private Guna.UI2.WinForms.Guna2ImageButton btn_Mix;
         private Guna.UI2.WinForms.Guna2ImageButton btn_mute;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label lbl_timeEnd;
+        private System.Windows.Forms.Label lbl_timeStart;
         private Guna.UI2.WinForms.Guna2TrackBar TrackBar_Volumn;
         private Guna.UI2.WinForms.Guna2TrackBar TrackBar_Play;
         private Guna.UI2.WinForms.Guna2ImageButton btn_Rewind;
         private Guna.UI2.WinForms.Guna2ImageButton btn_Next;
         private Guna.UI2.WinForms.Guna2ImageButton btn_Pause;
-        private Guna.UI2.WinForms.Guna2ImageButton btnReplay;
+        private Guna.UI2.WinForms.Guna2ImageButton btn_Stop;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Upload;
         private System.Windows.Forms.Label lbl_App_Name;
         private System.Windows.Forms.Label lbl_Artist;
@@ -554,5 +568,6 @@
         private System.Windows.Forms.Label lbl_Song;
         private AxWMPLib.AxWindowsMediaPlayer musicPlayer;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Timer timerPlayBack;
     }
 }
