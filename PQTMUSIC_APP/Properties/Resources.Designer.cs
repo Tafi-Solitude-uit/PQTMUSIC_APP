@@ -83,6 +83,16 @@ namespace PQTMUSIC_APP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _99__MCK {
+            get {
+                object obj = ResourceManager.GetObject("99%-MCK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ab67616d00001e024b18f196222db6c99f952839 {
             get {
                 object obj = ResourceManager.GetObject("ab67616d00001e024b18f196222db6c99f952839", resourceCulture);
@@ -256,6 +266,16 @@ namespace PQTMUSIC_APP.Properties {
         internal static System.Drawing.Bitmap heart_color {
             get {
                 object obj = ResourceManager.GetObject("heart color", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hieuthuhai {
+            get {
+                object obj = ResourceManager.GetObject("Hieuthuhai", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

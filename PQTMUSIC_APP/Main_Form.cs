@@ -59,5 +59,11 @@ namespace PQTMUSIC_APP
             ShowGenres showGenres = new ShowGenres();
             addForm_Child(showGenres);
         }
+
+        private void btn_Albums_Click(object sender, EventArgs e)
+        {
+            frm_Album showAlbum = new frm_Album();
+            addForm_Child(showAlbum);
+        }
     }
 }
