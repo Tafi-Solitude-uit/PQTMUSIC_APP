@@ -53,5 +53,16 @@ namespace PQTMUSIC_APP
             ShowIn4 showINFO = new ShowIn4(currentUser);
             showINFO.Show();
         }
+
+        private void panel_Child_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_Albums_Click(object sender, EventArgs e)
+        {
+            frm_AlbumPage albumPage = new frm_AlbumPage();
+            addForm_Child(albumPage);
+        }
     }
 }

@@ -49,5 +49,10 @@ namespace PQTMUSIC_APP
         {
             this.Close();
         }
+
+        private void pn_showIN4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

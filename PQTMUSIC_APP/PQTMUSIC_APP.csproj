@@ -116,6 +116,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_AlbumPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AlbumPage.Designer.cs">
+      <DependentUpon>frm_AlbumPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Explore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
       <DependentUpon>ShowIn4.cs</DependentUpon>
     </Compile>
     <Compile Include="UserData.cs" />
+    <EmbeddedResource Include="frm_AlbumPage.resx">
+      <DependentUpon>frm_AlbumPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Explore.resx">
       <DependentUpon>frm_Explore.cs</DependentUpon>
     </EmbeddedResource>
