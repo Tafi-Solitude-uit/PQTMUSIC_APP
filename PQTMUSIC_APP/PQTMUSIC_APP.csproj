@@ -116,6 +116,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_Album.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Album.Designer.cs">
+      <DependentUpon>frm_Album.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Explore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
       <DependentUpon>ShowIn4.cs</DependentUpon>
     </Compile>
     <Compile Include="UserData.cs" />
+    <EmbeddedResource Include="frm_Album.resx">
+      <DependentUpon>frm_Album.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Explore.resx">
       <DependentUpon>frm_Explore.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +380,7 @@
   <ItemGroup>
     <None Include="Resources\767wBRIM.png" />
     <None Include="Resources\785.png" />
+    <None Include="Resources\99%25-MCK1.jpg" />
     <Content Include="Resources\backroundSignIN.jpg" />
     <None Include="Resources\xv6p7tda.png" />
     <None Include="Resources\user1.png" />
@@ -383,6 +393,7 @@
     <None Include="Resources\icons8-password-50.png" />
     <None Include="Resources\icons8-user-501.png" />
     <None Include="Resources\icons8-birthday-50.png" />
+    <None Include="Resources\Hieuthuhai1.jpg" />
     <Content Include="Resources\Image1.png" />
   </ItemGroup>
   <ItemGroup>
