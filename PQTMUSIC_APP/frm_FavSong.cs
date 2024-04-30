@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PQTMUSIC_APP
 {
-    public partial class Form4 : Form
+    public partial class frm_FavSong : Form
     {
-        public Form4()
+        public frm_FavSong()
         {
             InitializeComponent();
+        }
+
+        private void label36_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

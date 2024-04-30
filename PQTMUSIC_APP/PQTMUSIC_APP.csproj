@@ -116,23 +116,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form2.cs">
+    <Compile Include="frm_FavSong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="frm_FavSong.Designer.cs">
+      <DependentUpon>frm_FavSong.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Album.cs">
       <SubType>Form</SubType>
@@ -179,26 +167,14 @@
       <DependentUpon>ShowIn4.cs</DependentUpon>
     </Compile>
     <Compile Include="UserData.cs" />
-    <EmbeddedResource Include="Form2.dje.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.vi-VN.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Album.resx">
       <DependentUpon>frm_Album.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Explore.resx">
       <DependentUpon>frm_Explore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_FavSong.resx">
+      <DependentUpon>frm_FavSong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_OffineMode.resx">
       <DependentUpon>frm_OffineMode.cs</DependentUpon>

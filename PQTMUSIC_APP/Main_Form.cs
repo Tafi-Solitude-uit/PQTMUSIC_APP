@@ -65,5 +65,11 @@ namespace PQTMUSIC_APP
             frm_Album showAlbum = new frm_Album();
             addForm_Child(showAlbum);
         }
+
+        private void btn_Favorite_Click(object sender, EventArgs e)
+        {
+            frm_FavSong showFavSong = new frm_FavSong();
+            addForm_Child(showFavSong);
+        }
     }
 }
