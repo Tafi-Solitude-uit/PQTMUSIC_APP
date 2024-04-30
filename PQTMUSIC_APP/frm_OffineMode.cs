@@ -18,37 +18,44 @@ namespace PQTMUSIC_APP
         
         private string Current_Song;    
         private bool isPause;
-        private bool isChanging_Position;
-        
+        private bool isChanging_Position; //Kiểm tra xem có đang thay đổi vị trí phát nhạc không
+
         public frm_OffineMode()
         {
             InitializeComponent();
+
             music_Files = new List<string>();
             isPause = false;
             isChanging_Position = false;
 
-            datagrid_Playlist.Columns[0].DefaultCellStyle.NullValue = null;
+            datagrid_Playlist.Columns[0].DefaultCellStyle.NullValue = null; // Đặt hình ảnh mặc định cho cột hình ảnh
         }
 
         private void btn_Play_Click(object sender, EventArgs e)
         {
-            if (isPause)
+            //sự kiện khi click vào nút phát
+            if (datagrid_Playlist.RowCount > 0)
             {
-                musicPlayer.Ctlcontrols.play();
-                isPause = false;
-            }
-            else
-            {
-                int selectedIndex = datagrid_Playlist.CurrentCell.RowIndex;
-                if (selectedIndex >= 0 && selectedIndex < music_Files.Count)
+                if (isPause) // Nếu đang dừng thì phát
                 {
-                    Current_Song = music_Files[selectedIndex];
-                    musicPlayer.URL = Current_Song;
                     musicPlayer.Ctlcontrols.play();
+                    isPause = false;
                 }
-            }
+                else 
+                {
+                    // Nếu đang phát thì chuyển đến bài hát được chọn
+                    int selectedIndex = datagrid_Playlist.CurrentCell.RowIndex;
+                    if (selectedIndex >= 0 && selectedIndex < music_Files.Count)
+                    {
+                        Current_Song = music_Files[selectedIndex];
+                        musicPlayer.URL = Current_Song;
+                        musicPlayer.Ctlcontrols.play();
+                    }
+                }
 
-            timerPlayBack.Enabled = true;
+                //Bắt đầu tính thời gian phát
+                timerPlayBack.Start();
+            }
         }
 
         private void frm_OffineMode_Load(object sender, EventArgs e)
@@ -58,44 +65,54 @@ namespace PQTMUSIC_APP
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-            foreach (var item in openFileDialog1.FileNames)
-            {
-                FileInfo fi = new FileInfo(item);
-                TagLib.File f = TagLib.File.Create(fi.FullName);
-                var r = datagrid_Playlist.Rows.Add(new object[]
-                {
-                    null,
-                    fi.Name,
-                    f.Tag.JoinedGenres,
-                    f.Tag.JoinedAlbumArtists,
-                    Math.Round(f.Properties.Duration.TotalMinutes, 2) + " Mins"
-                });
+            // Khi chọn file xong
+            var fileNames = openFileDialog1.FileNames;
+            var rowsToAdd = new List<DataGridViewRow>(); // Danh sách các dòng để thêm vào datagrid
 
-                datagrid_Playlist.Rows[r].Tag = fi;
+            foreach (var fileName in fileNames)
+            {
+                // Lấy thông tin file
+                FileInfo fi = new FileInfo(fileName);
+                TagLib.File f = TagLib.File.Create(fi.FullName);
+                var duration = Math.Round(f.Properties.Duration.TotalMinutes, 2) + " Mins";
+                var row = new DataGridViewRow();
+                row.CreateCells(datagrid_Playlist, null, fi.Name, f.Tag.JoinedGenres, f.Tag.JoinedAlbumArtists, duration); // Tạo dòng mới
+                row.Tag = fi;
+                rowsToAdd.Add(row); // Thêm vào danh sách dòng
+                music_Files.Add(fi.FullName); // Thêm vào danh sách bài hát
             }
+
+            datagrid_Playlist.Rows.AddRange(rowsToAdd.ToArray()); // Thêm các dòng vào datagrid
         }
         private void datagrid_Playlist_DragDrop(object sender, DragEventArgs e)
         {
+            // Khi kéo thả file vào datagrid
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             foreach (string item in files)
             {
+                // Lấy thông tin file
                 FileInfo fi = new FileInfo(item);
                 TagLib.File f = TagLib.File.Create(fi.FullName);
-                var r = datagrid_Playlist.Rows.Add(new object[]
+                var duration = Math.Round(f.Properties.Duration.TotalMinutes, 2) + " Mins";
+                var row = new object[]
                 {
                     null,
                     fi.Name,
                     f.Tag.JoinedGenres,
                     f.Tag.JoinedAlbumArtists,
-                    Math.Round(f.Properties.Duration.TotalMinutes, 2) + " Mins"
-                });
+                    duration
+                };
 
-                datagrid_Playlist.Rows[r].Tag = fi;
+                // Thêm vào datagrid
+                int rowIndex = datagrid_Playlist.Rows.Add(row);
+                datagrid_Playlist.Rows[rowIndex].Tag = fi;
+                music_Files.Add(fi.FullName);
             }
         }
 
         private void datagrid_Playlist_DragEnter(object sender, DragEventArgs e)
         {
+            // Khi kéo thả file vào datagrid
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 e.Effect = DragDropEffects.Copy;
@@ -104,76 +121,145 @@ namespace PQTMUSIC_APP
 
         private void datagrid_Playlist_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow selectedRow = datagrid_Playlist.SelectedRows[0]; // Lấy hàng được chọn
-            int selectedIndex = selectedRow.Index;
-            if (selectedIndex >= 0 && selectedIndex < music_Files.Count)
+            //sự kiện khi click vào 1 bài hát trong playlist
+            if (datagrid_Playlist.RowCount > 0)
             {
-                Current_Song = music_Files[selectedIndex];
-                musicPlayer.URL = Current_Song;
-                musicPlayer.Ctlcontrols.play();
-                isPause = false;
+                // Nếu đang phát thì dừng
+                int selectedIndex = datagrid_Playlist.CurrentCell.RowIndex;
+                if (selectedIndex >= 0 && selectedIndex < music_Files.Count)
+                {
+                    // Chuyển đến bài hát được chọn
+                    Current_Song = music_Files[selectedIndex];
+                    musicPlayer.URL = Current_Song;
+                    musicPlayer.Ctlcontrols.play();
+                }
             }
         }
 
-        private void btn_Next_Click(object sender, EventArgs e)
+            private void btn_Next_Click(object sender, EventArgs e)
         {
-            
+            //sự kiện khi click vào nút tiếp theo
+            if (datagrid_Playlist.RowCount > 0)
+            {
+                int selectedIndex = datagrid_Playlist.CurrentCell.RowIndex;
+                int nextIndex = selectedIndex + 1;
+
+                // Nếu bài hát tiếp theo tồn tại
+                if (nextIndex < music_Files.Count)
+                {
+                    datagrid_Playlist.CurrentCell = datagrid_Playlist.Rows[nextIndex].Cells[0];
+                    datagrid_Playlist.ClearSelection();
+                    datagrid_Playlist.Rows[nextIndex].Selected = true;
+                    datagrid_Playlist.FirstDisplayedScrollingRowIndex = nextIndex;
+
+                    // Chuyển đến bài hát tiếp theo
+                    Current_Song = music_Files[nextIndex];
+                    musicPlayer.URL = Current_Song;
+                    musicPlayer.Ctlcontrols.play();
+                    isPause = false;
+                }
+            }
         }
 
         private void btn_Rewind_Click(object sender, EventArgs e)
         {
-            
+            //sự kiện khi click vào nút quay lại
+            if (datagrid_Playlist.RowCount > 0)
+            {
+                int selectedIndex = datagrid_Playlist.CurrentCell.RowIndex;
+                int previousIndex = selectedIndex - 1;
+
+                // Nếu bài hát trước đó tồn tại
+                if (previousIndex >= 0)
+                {
+                    datagrid_Playlist.CurrentCell = datagrid_Playlist.Rows[previousIndex].Cells[0];
+                    datagrid_Playlist.ClearSelection();
+                    datagrid_Playlist.Rows[previousIndex].Selected = true;
+                    datagrid_Playlist.FirstDisplayedScrollingRowIndex = previousIndex;
+
+                    // Chuyển đến bài hát trước đó
+                    Current_Song = music_Files[previousIndex];
+                    musicPlayer.URL = Current_Song;
+                    musicPlayer.Ctlcontrols.play();
+                    isPause = false;
+                }
+            }
         }
 
         private void timerPlayBack_Tick(object sender, EventArgs e)
         {
+            // Nếu đang thay đổi vị trí phát nhạc thì không cập nhật thời gian
             if (!isChanging_Position && musicPlayer != null && musicPlayer.currentMedia != null)
             {
-                lbl_timeStart.Text = FormatTime(musicPlayer.Ctlcontrols.currentPosition);
-                lbl_timeEnd.Text = FormatTime(musicPlayer.currentMedia.duration);
+                // Lấy thời gian hiện tại và tổng thời gian của bài hát
+                var currentPosition = musicPlayer.Ctlcontrols.currentPosition;
+                var duration = musicPlayer.currentMedia.duration;
+
+                lbl_timeStart.Text = FormatTime(currentPosition);
+                lbl_timeEnd.Text = FormatTime(duration);
+
+                // Update the trackbar's value
+                TrackBar_Play.Value = (int)((currentPosition / duration) * 100);
             }
-        }
+            
+    }
 
         private void btn_Upload_Click(object sender, EventArgs e)
         {
+            // Mở cửa sổ chọn file
             openFileDialog1.ShowDialog();
-
         }
 
         private void btn_Pause_Click(object sender, EventArgs e)
         {
-            if(isPause == false)
-            {
-                musicPlayer.Ctlcontrols.pause();
-                isPause = true;
-            }
-            else
+            // Nếu đang phát thì dừng, nếu đang dừng thì phát
+            if (isPause)
             {
                 musicPlayer.Ctlcontrols.play();
-                isPause = false;
             }
+            // Nếu đang phát thì dừng
+            else
+            {
+                musicPlayer.Ctlcontrols.pause();
+            }
+            // Đảo trạng thái phát/dừng
+            isPause = !isPause;
         }
 
         private void btn_Stop_Click(object sender, EventArgs e)
         {
+            // Nếu đang phát thì dừng
+            if (!musicPlayer.Ctlcontrols.currentPosition.Equals(0))
+            {
+                // Đặt thời gian phát về 0
+                musicPlayer.Ctlcontrols.currentPosition = 0;
+            }
+            // Dừng phát
             musicPlayer.Ctlcontrols.stop();
             isPause = false;
+            // Tắt timer
             timerPlayBack.Enabled = false;
         }
 
         private string FormatTime(double second)
         {
-            TimeSpan time = TimeSpan.FromSeconds(second);
-            return time.ToString(@"mm\:ss");
+            // Chuyển giây sang dạng mm:ss
+            return TimeSpan.FromSeconds(second).ToString(@"mm\:ss");
         }
 
         private void musicPlayer_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
+            // Nếu bài hát kết thúc
             if (e.newState == 8) // MediaEnded
             {
+                // Chuyển bài hát tiếp theo
                 int nextIndex = datagrid_Playlist.CurrentCell.RowIndex + 1;
                 if (nextIndex < music_Files.Count)
                 {
+                    // Chuyển đến bài hát tiếp theo
+                    datagrid_Playlist.CurrentCell = datagrid_Playlist.Rows[nextIndex].Cells[0];
+
+                    // Chọn bài hát tiếp theo
                     datagrid_Playlist.ClearSelection();
                     datagrid_Playlist.Rows[nextIndex].Selected = true;
                     datagrid_Playlist.FirstDisplayedScrollingRowIndex = nextIndex;
@@ -184,6 +270,7 @@ namespace PQTMUSIC_APP
                 }
                 else
                 {
+                    // Dừng phát
                     musicPlayer.Ctlcontrols.stop();
                     isPause = false;
                 }
@@ -192,7 +279,24 @@ namespace PQTMUSIC_APP
 
         private void TrackBar_Volumn_Scroll(object sender, ScrollEventArgs e)
         {
+            // Đặt âm lượng phát nhạc
             musicPlayer.settings.volume = TrackBar_Volumn.Value;
+        }
+
+        private void TrackBar_Play_Scroll(object sender, ScrollEventArgs e)
+        {
+            // Đang thay đổi vị trí phát nhạc
+            int trackbarValue = TrackBar_Play.Value;
+
+            // Kiểm tra xem musicPlayer và currentMedia có null hay không
+            if (musicPlayer != null && musicPlayer.currentMedia != null)
+            {
+                // Tính vị trí mới của bài hát dựa vào giá trị của trackbar
+                double newPosition = (musicPlayer.currentMedia.duration / 100) * trackbarValue;
+
+                // currentPosition là vị trí hiện tại của bài hát sau khi thay đổi
+                musicPlayer.Ctlcontrols.currentPosition = newPosition;
+            }
         }
     }
 }
