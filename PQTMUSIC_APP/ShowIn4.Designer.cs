@@ -285,7 +285,7 @@
             this.Name = "ShowIn4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShowIn4";
-            this.Load += new System.EventHandler(this.showIn4_Load);
+            this.Load += new System.EventHandler(this.ShowIn4_Load);
             this.Leave += new System.EventHandler(this.ShowIn4_Leave);
             this.pn_showIN4.ResumeLayout(false);
             this.pn_showIN4.PerformLayout();
