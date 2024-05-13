@@ -16,33 +16,32 @@ namespace PQTMUSIC_APP
 {
     public partial class ShowIn4 : Form
     {
-        IFirebaseClient client;
-        IFirebaseConfig config = new FirebaseConfig()
+        private IFirebaseClient client;
+        private IFirebaseConfig config = new FirebaseConfig()
         {
             AuthSecret = "CkIjEA3D7s7dxH1BWr0WF4VcU0ab7M068ojHUlDG",
             BasePath = "https://loginandregister-f73c6-default-rtdb.asia-southeast1.firebasedatabase.app/",
         };
         private string currentUser;
+
         public ShowIn4(string currentUser)
         {
             InitializeComponent();
-            client = new FireSharp.FirebaseClient(config);
             this.currentUser = currentUser;
+            client = new FireSharp.FirebaseClient(config);
         }
-        private async void showIn4_Load(object sender, EventArgs e)
+
+        private async void ShowIn4_Load(object sender, EventArgs e)
         {
-            FirebaseResponse response = await client.GetAsync("Users/" + currentUser);
+            FirebaseResponse response = await client.GetAsync($"Users/{currentUser}");
             if (response.Body != "null")
             {
                 var userData = response.ResultAs<Dictionary<string, object>>();
-                {
-                    txtShowName.Text = userData["realname"].ToString();
-                    txtShowID.Text = userData["userid"].ToString();
-                    txtShowYear.Text = userData["birthday"].ToString();
-                    txtShowGender.Text = userData["gender"].ToString();
-                }
+                txtShowName.Text = userData["realname"].ToString();
+                txtShowID.Text = userData["userid"].ToString();
+                txtShowYear.Text = userData["birthday"].ToString();
+                txtShowGender.Text = userData["gender"].ToString();
             }
-
         }
 
         private void ShowIn4_Leave(object sender, EventArgs e)
@@ -53,11 +52,6 @@ namespace PQTMUSIC_APP
         private void btn_exitShowIN4_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

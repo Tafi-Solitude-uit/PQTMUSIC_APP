@@ -90,6 +90,7 @@ namespace PQTMUSIC_APP
             }
             return false;
         }
+
         private void checkShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkShowPass.Checked)
