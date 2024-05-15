@@ -16,9 +16,12 @@ namespace PQTMUSIC_APP
 {
     public partial class frm_Explore : Form
     {
-        private HttpClient client = new HttpClient();
-        private string clientId = "65252f95054a4037be2b62a238222bd9";
-        private string clientSecret = "40a851303a474018a57b7f09284e72f8";
+        private readonly HttpClient client = new HttpClient
+        {
+            BaseAddress = new Uri("https://api.spotify.com/")
+        };
+        private const string clientId = "65252f95054a4037be2b62a238222bd9";
+        private const string clientSecret = "40a851303a474018a57b7f09284e72f8";
         private string accessToken;
 
         public frm_Explore()
@@ -28,9 +31,11 @@ namespace PQTMUSIC_APP
 
         private async Task GetAccessToken()
         {
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://accounts.spotify.com/api/token");
-            request.Headers.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes($"{clientId}:{clientSecret}")));
-            request.Content = new StringContent("grant_type=client_credentials", Encoding.UTF8, "application/x-www-form-urlencoded");
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://accounts.spotify.com/api/token")
+            {
+                Headers = { Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes($"{clientId}:{clientSecret}"))) },
+                Content = new StringContent("grant_type=client_credentials", Encoding.UTF8, "application/x-www-form-urlencoded")
+            };
 
             var response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode)
@@ -40,57 +45,55 @@ namespace PQTMUSIC_APP
                 accessToken = jsonObject.Value<string>("access_token");
 
                 var expiresIn = jsonObject.Value<int>("expires_in");
-                Task.Delay(TimeSpan.FromSeconds(expiresIn)).ContinueWith(async _ => await GetAccessToken());
+                _ = Task.Delay(TimeSpan.FromSeconds(expiresIn)).ContinueWith(async _ => await GetAccessToken());
             }
             else
             {
-                // The status code indicates an error
                 var errorResponse = await response.Content.ReadAsStringAsync();
                 var errorObject = JObject.Parse(errorResponse);
                 var errorMessage = errorObject.Value<string>("error_description");
 
-                // Handle the error
-                // For example, you can log the error message or show it to the user
                 Console.WriteLine($"Error getting access token: {errorMessage}");
             }
         }
 
-        private async Task RefreshAccessToken()
-        {
-            // The client credentials flow does not support refreshing the access token.
-            // You need to request a new access token when the current one expires.
-            await GetAccessToken();
-        }
-
         private async Task DisplaySongs(List<Song> songs)
         {
-            listView1.Items.Clear();
             listView1.LargeImageList = new ImageList();
 
             foreach (var song in songs)
             {
                 var image = await DownloadImage(song.ImageUrl);
-                listView1.LargeImageList.Images.Add(image);
+                if (image != null)
+                {
+                    listView1.LargeImageList.Images.Add(image);
 
-                var listViewItem = new ListViewItem(song.Name);
-                listViewItem.SubItems.Add(song.Artist);
-                listViewItem.ImageIndex = listView1.LargeImageList.Images.Count - 1;
-                listView1.Items.Add(listViewItem);
+                    var listViewItem = new ListViewItem(song.Name) { ImageIndex = listView1.LargeImageList.Images.Count - 1 };
+                    listViewItem.SubItems.Add(song.Artist);
+                    listView1.Items.Add(listViewItem);
+                }
+                else
+                {
+                    Console.WriteLine($"No image found for song: {song.Name}");
+                }
             }
         }
 
         private async Task<Image> DownloadImage(string url)
         {
             var response = await client.GetAsync(url);
-            using (var stream = await response.Content.ReadAsStreamAsync())
+            if (response.Content.Headers.ContentType.MediaType.StartsWith("image/"))
             {
-                return Image.FromStream(stream);
+                using (var stream = await response.Content.ReadAsStreamAsync())
+                {
+                    return Image.FromStream(stream);
+                }
             }
-        }
-
-        private void panel_Child_Paint(object sender, PaintEventArgs e)
-        {
-
+            else
+            {
+                Console.WriteLine($"URL does not return an image: {url}");
+                return null;
+            }
         }
 
         private async void frm_Explore_Load(object sender, EventArgs e)
@@ -99,23 +102,30 @@ namespace PQTMUSIC_APP
             var songs = await GetSongsFromApi();
             await DisplaySongs(songs);
         }
+
         private async Task<List<Song>> GetSongsFromApi()
         {
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-            var response = await client.GetAsync("https://api.spotify.com/v1/browse/new-releases"); // Replace with the correct URL
+            var response = await client.GetAsync("https://api.spotify.com/v1/browse/new-releases");
+            Console.WriteLine($"Response status code: {response.StatusCode}");
+            var responseContent = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"Response content: {responseContent}");
             if (response.IsSuccessStatusCode)
             {
                 var jsonResponse = await response.Content.ReadAsStringAsync();
                 var jsonObject = JObject.Parse(jsonResponse);
                 var songs = jsonObject["albums"]["items"].ToObject<List<Song>>();
+
+                Console.WriteLine($"Retrieved {songs.Count} songs from the API.");
+
                 return songs;
             }
             else
             {
-                // Handle the error
+                Console.WriteLine("Error retrieving songs from the API.");
                 return new List<Song>();
             }
         }
@@ -125,6 +135,5 @@ namespace PQTMUSIC_APP
         public string Name { get; set; }
         public string Artist { get; set; }
         public string ImageUrl { get; set; }
-        // Add other properties as needed
     }
 }
