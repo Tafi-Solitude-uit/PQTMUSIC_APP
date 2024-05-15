@@ -118,7 +118,6 @@ namespace PQTMUSIC_APP
                 var jsonResponse = await response.Content.ReadAsStringAsync();
                 var jsonObject = JObject.Parse(jsonResponse);
                 var songs = jsonObject["albums"]["items"].ToObject<List<Song>>();
-
                 Console.WriteLine($"Retrieved {songs.Count} songs from the API.");
 
                 return songs;
