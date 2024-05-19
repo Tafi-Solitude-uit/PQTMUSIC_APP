@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json.Linq;
+using System.IO;
+using System.Net;
 
 
 namespace PQTMUSIC_APP
@@ -23,6 +25,7 @@ namespace PQTMUSIC_APP
         private const string clientId = "65252f95054a4037be2b62a238222bd9";
         private const string clientSecret = "40a851303a474018a57b7f09284e72f8";
         private string accessToken;
+        private string cacheDuration;
 
         public frm_Explore()
         {
@@ -40,6 +43,7 @@ namespace PQTMUSIC_APP
             var response = await client.SendAsync(request);
             if (response.IsSuccessStatusCode)
             {
+                Console.WriteLine("Access token retrieved successfully");
                 var jsonResponse = await response.Content.ReadAsStringAsync();
                 var jsonObject = JObject.Parse(jsonResponse);
                 accessToken = jsonObject.Value<string>("access_token");
@@ -56,83 +60,75 @@ namespace PQTMUSIC_APP
                 Console.WriteLine($"Error getting access token: {errorMessage}");
             }
         }
+      
 
-        private async Task DisplaySongs(List<Song> songs)
-        {
-            listView1.LargeImageList = new ImageList();
-
-            foreach (var song in songs)
-            {
-                var image = await DownloadImage(song.ImageUrl);
-                if (image != null)
-                {
-                    listView1.LargeImageList.Images.Add(image);
-
-                    var listViewItem = new ListViewItem(song.Name) { ImageIndex = listView1.LargeImageList.Images.Count - 1 };
-                    listViewItem.SubItems.Add(song.Artist);
-                    listView1.Items.Add(listViewItem);
-                }
-                else
-                {
-                    Console.WriteLine($"No image found for song: {song.Name}");
-                }
-            }
-        }
-
-        private async Task<Image> DownloadImage(string url)
-        {
-            var response = await client.GetAsync(url);
-            if (response.Content.Headers.ContentType.MediaType.StartsWith("image/"))
-            {
-                using (var stream = await response.Content.ReadAsStreamAsync())
-                {
-                    return Image.FromStream(stream);
-                }
-            }
-            else
-            {
-                Console.WriteLine($"URL does not return an image: {url}");
-                return null;
-            }
-        }
-
+      
         private async void frm_Explore_Load(object sender, EventArgs e)
         {
-            await GetAccessToken();
-            var songs = await GetSongsFromApi();
-            await DisplaySongs(songs);
+          await DisplayNewReleases();
         }
 
-        private async Task<List<Song>> GetSongsFromApi()
+        private async Task getTrackDuration(string TrackID) 
         {
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
-            var response = await client.GetAsync("https://api.spotify.com/v1/browse/new-releases");
-            Console.WriteLine($"Response status code: {response.StatusCode}");
-            var responseContent = await response.Content.ReadAsStringAsync();
-            Console.WriteLine($"Response content: {responseContent}");
+            var response = await client.GetAsync("v1/tracks/" + TrackID);
             if (response.IsSuccessStatusCode)
             {
                 var jsonResponse = await response.Content.ReadAsStringAsync();
                 var jsonObject = JObject.Parse(jsonResponse);
-                var songs = jsonObject["albums"]["items"].ToObject<List<Song>>();
-                Console.WriteLine($"Retrieved {songs.Count} songs from the API.");
+                this.cacheDuration = jsonObject["duration_ms"].ToString();
+            }
+            else {
+                this.cacheDuration = "";
+            }  
+        }
 
-                return songs;
+
+        private async Task DisplayNewReleases()
+        {
+            await GetAccessToken();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            var response = await client.GetAsync("v1/browse/new-releases");
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+                var jsonObject = JObject.Parse(jsonResponse);
+                var albums = jsonObject["albums"]["items"];
+
+                listSong.Items.Clear();
+                listSong.View = View.Details;
+                listSong.Columns.Add("Image", -2, HorizontalAlignment.Left);
+                listSong.Columns.Add("Track Name", -2, HorizontalAlignment.Left);
+                listSong.Columns.Add("Track Duration", -2, HorizontalAlignment.Left);
+
+                foreach (var album in albums)
+                {
+                    var albumArtist = album["artists"].FirstOrDefault()["name"].ToString();
+                    var albumImage = album["images"].ToString();
+                    var albumName = album["name"].ToString();
+                    var albumId = album["id"].ToString();
+                    
+                    await getTrackDuration(albumId);
+                    
+                    var item = new ListViewItem(new[] { albumImage, albumName ,this.cacheDuration });
+                    listSong.Items.Add(item);
+                    this.cacheDuration = "";
+                }
+                /*  var track = album["name"].ToString();
+
+                  var duration = album["duration_ms"].ToString();
+
+                  var imageToken = album["images"] != null ? album["images"].FirstOrDefault() : null;
+
+                  var imageUrl = imageToken != null ? (string)imageToken["url"] : null;*/
+
             }
             else
             {
-                Console.WriteLine("Error retrieving songs from the API.");
-                return new List<Song>();
+                var errorResponse = await response.Content.ReadAsStringAsync();
+                var errorObject = JObject.Parse(errorResponse);
+                var errorMessage = errorObject.Value<string>("error_description");
+                Console.WriteLine($"Error getting new releases: {errorMessage}");
             }
         }
-    }
-    public class Song
-    {
-        public string Name { get; set; }
-        public string Artist { get; set; }
-        public string ImageUrl { get; set; }
     }
 }

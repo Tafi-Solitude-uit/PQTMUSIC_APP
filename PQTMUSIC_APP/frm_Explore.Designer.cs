@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Explore));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel_Child = new Guna.UI2.WinForms.Guna2Panel();
-            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
@@ -76,8 +74,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lbl_title1 = new System.Windows.Forms.Label();
             this.lbl_Tittle = new System.Windows.Forms.Label();
+            this.listSong = new System.Windows.Forms.ListView();
             this.panel_Child.SuspendLayout();
-            this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).BeginInit();
@@ -101,7 +99,7 @@
             // 
             this.panel_Child.AutoScroll = true;
             this.panel_Child.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
-            this.panel_Child.Controls.Add(this.gunaElipsePanel1);
+            this.panel_Child.Controls.Add(this.listSong);
             this.panel_Child.Controls.Add(this.pictureBox1);
             this.panel_Child.Controls.Add(this.label27);
             this.panel_Child.Controls.Add(this.guna2Panel7);
@@ -119,26 +117,6 @@
             this.panel_Child.ShadowDecoration.Parent = this.panel_Child;
             this.panel_Child.Size = new System.Drawing.Size(1092, 900);
             this.panel_Child.TabIndex = 9;
-            
-            // 
-            // gunaElipsePanel1
-            // 
-            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel1.Controls.Add(this.listView1);
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(12, 294);
-            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(1068, 403);
-            this.gunaElipsePanel1.TabIndex = 144;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1058, 397);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // pictureBox1
             // 
@@ -745,6 +723,15 @@
             this.lbl_Tittle.TabIndex = 126;
             this.lbl_Tittle.Text = "Billboard";
             // 
+            // listSong
+            // 
+            this.listSong.HideSelection = false;
+            this.listSong.Location = new System.Drawing.Point(12, 294);
+            this.listSong.Name = "listSong";
+            this.listSong.Size = new System.Drawing.Size(1040, 369);
+            this.listSong.TabIndex = 144;
+            this.listSong.UseCompatibleStateImageBehavior = false;
+            // 
             // frm_Explore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -758,7 +745,6 @@
             this.Load += new System.EventHandler(this.frm_Explore_Load);
             this.panel_Child.ResumeLayout(false);
             this.panel_Child.PerformLayout();
-            this.gunaElipsePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel7.PerformLayout();
@@ -828,7 +814,6 @@
         private System.Windows.Forms.Label label39;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox18;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listSong;
     }
 }
