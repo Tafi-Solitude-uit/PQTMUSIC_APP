@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FireSharp.Config;
@@ -89,6 +90,7 @@ namespace PQTMUSIC_APP
             }
             return false;
         }
+
         private void checkShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkShowPass.Checked)
@@ -114,6 +116,7 @@ namespace PQTMUSIC_APP
                 return 1;
             }
         }
+       
         private async void btnSignUp_Click(object sender, EventArgs e)
         {
 
@@ -185,7 +188,49 @@ namespace PQTMUSIC_APP
                 txtSUcomPass.PasswordChar = '*';
             }
         }
+        //valid pass, username when sign up
+        private void txtSUpass_TextChanged(object sender, EventArgs e)
+        {
+            string password = txtSUpass.Text;
 
-        
+            if (password.Length < 6 || password.Length > 12)
+            {
+                lbSUPassError.Visible = true;
+                
+                txtSUpass.FillColor = Color.Plum;
+                btnSignUp.Enabled = false;
+            }
+            else
+            {
+                lbSUPassError.Visible = false;
+                txtSUpass.FillColor = Color.Transparent;
+                btnSignUp.Enabled = true;
+            }
+
+        }
+        private void txtSUusername_TextChanged(object sender, EventArgs e)
+        {
+            string username = txtSUusername.Text;
+
+            if (ContainsSpecialCharacters(username))
+            {
+                
+                txtSUusername.FillColor = Color.Plum;
+                lblSIusernameError.Visible = true;
+                btnSignUp.Enabled=false;
+            }
+            else
+            {
+                lblSIusernameError.Visible = false;
+                txtSUusername.FillColor = Color.Transparent;
+                btnSignUp.Enabled = true;
+            }
+        }
+
+        private bool ContainsSpecialCharacters(string input)
+        {
+            Regex regex = new Regex("[^a-zA-Z0-9]");
+            return regex.IsMatch(input);
+        }
     }
 }
