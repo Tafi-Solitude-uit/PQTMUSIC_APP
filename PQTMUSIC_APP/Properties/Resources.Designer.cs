@@ -783,6 +783,16 @@ namespace PQTMUSIC_APP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap white_heart {
+            get {
+                object obj = ResourceManager.GetObject("white heart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap xv6p7tda {
             get {
                 object obj = ResourceManager.GetObject("xv6p7tda", resourceCulture);

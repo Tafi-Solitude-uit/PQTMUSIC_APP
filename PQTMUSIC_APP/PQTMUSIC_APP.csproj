@@ -133,7 +133,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIService.cs" />
+
     <Compile Include="frm_Album.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Explore.resx">
       <DependentUpon>frm_Explore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_FavSong.resx">
+      <DependentUpon>frm_FavSong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_OffineMode.resx">
       <DependentUpon>frm_OffineMode.cs</DependentUpon>
@@ -396,6 +399,7 @@
     <None Include="Resources\cd.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\white heart.png" />
     <None Include="Resources\767wBRIM.png" />
     <None Include="Resources\785.png" />
     <None Include="Resources\99%25-MCK1.jpg" />
