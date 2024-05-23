@@ -126,6 +126,7 @@
             this.listSong.Size = new System.Drawing.Size(1061, 403);
             this.listSong.TabIndex = 144;
             this.listSong.UseCompatibleStateImageBehavior = false;
+            this.listSong.View = System.Windows.Forms.View.List;
             // 
             // pictureBox1
             // 
