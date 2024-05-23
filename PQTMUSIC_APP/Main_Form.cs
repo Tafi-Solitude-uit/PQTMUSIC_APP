@@ -45,7 +45,7 @@ namespace PQTMUSIC_APP
 
         private void btn_img_Play_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pic_User_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace PQTMUSIC_APP
         private void btn_Favorite_Click(object sender, EventArgs e)
         {
             //frm_FavSong showFavSong = new frm_FavSong();
-            ///addForm_Child(showFavSong);
+
         }
     }
 }
