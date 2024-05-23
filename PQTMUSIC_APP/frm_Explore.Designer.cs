@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Explore));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel_Child = new Guna.UI2.WinForms.Guna2Panel();
+            this.listSong = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
@@ -74,7 +75,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lbl_title1 = new System.Windows.Forms.Label();
             this.lbl_Tittle = new System.Windows.Forms.Label();
-            this.listSong = new System.Windows.Forms.ListView();
             this.panel_Child.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel7.SuspendLayout();
@@ -117,6 +117,16 @@
             this.panel_Child.ShadowDecoration.Parent = this.panel_Child;
             this.panel_Child.Size = new System.Drawing.Size(1092, 900);
             this.panel_Child.TabIndex = 9;
+            // 
+            // listSong
+            // 
+            this.listSong.HideSelection = false;
+            this.listSong.Location = new System.Drawing.Point(12, 294);
+            this.listSong.Name = "listSong";
+            this.listSong.Size = new System.Drawing.Size(1040, 369);
+            this.listSong.TabIndex = 144;
+            this.listSong.UseCompatibleStateImageBehavior = false;
+            this.listSong.SelectedIndexChanged += new System.EventHandler(this.listSong_SelectedIndexChanged_1);
             // 
             // pictureBox1
             // 
@@ -722,15 +732,6 @@
             this.lbl_Tittle.Size = new System.Drawing.Size(324, 89);
             this.lbl_Tittle.TabIndex = 126;
             this.lbl_Tittle.Text = "Billboard";
-            // 
-            // listSong
-            // 
-            this.listSong.HideSelection = false;
-            this.listSong.Location = new System.Drawing.Point(12, 294);
-            this.listSong.Name = "listSong";
-            this.listSong.Size = new System.Drawing.Size(1040, 369);
-            this.listSong.TabIndex = 144;
-            this.listSong.UseCompatibleStateImageBehavior = false;
             // 
             // frm_Explore
             // 

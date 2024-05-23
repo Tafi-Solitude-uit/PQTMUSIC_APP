@@ -130,5 +130,18 @@ namespace PQTMUSIC_APP
                 Console.WriteLine($"Error getting new releases: {errorMessage}");
             }
         }
+
+        
+
+        private void listSong_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (listSong.SelectedItems.Count > 0)
+            {
+                var item = listSong.SelectedItems[0];
+                var trackName = item.SubItems[1].Text;
+                var trackDuration = item.SubItems[2].Text;
+                MessageBox.Show($"Track Name: {trackName}\nTrack Duration: {trackDuration}");
+            }
+        }
     }
 }
