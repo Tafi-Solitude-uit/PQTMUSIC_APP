@@ -61,8 +61,8 @@
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.TrackBar_Volumn = new Guna.UI2.WinForms.Guna2TrackBar();
             this.TrackBar_Play = new Guna.UI2.WinForms.Guna2TrackBar();
-            this.lbl_Artist_Playing = new System.Windows.Forms.Label();
-            this.lbl_Music_Playing = new System.Windows.Forms.Label();
+            this.lbl_Artist_Playing_MainFrom = new System.Windows.Forms.Label();
+            this.lbl_Music_Playing_MainForm = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Panel_PlayMusic = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_img_Mix = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -71,13 +71,13 @@
             this.btn_img_Next = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_img_Play = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_img_Replay = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.pic_currently_Playing = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pic_currently_Playing_MainForm = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel_Child = new Guna.UI2.WinForms.Guna2Panel();
             this.panel_Menu_Bar.SuspendLayout();
             this.guna_drag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_User)).BeginInit();
             this.Panel_PlayMusic.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_currently_Playing)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_currently_Playing_MainForm)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_App_Name
@@ -815,29 +815,29 @@
             this.TrackBar_Play.TabIndex = 59;
             this.TrackBar_Play.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             // 
-            // lbl_Artist_Playing
+            // lbl_Artist_Playing_MainFrom
             // 
-            this.lbl_Artist_Playing.AutoSize = true;
-            this.lbl_Artist_Playing.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Artist_Playing.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Artist_Playing.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbl_Artist_Playing.Location = new System.Drawing.Point(96, 57);
-            this.lbl_Artist_Playing.Name = "lbl_Artist_Playing";
-            this.lbl_Artist_Playing.Size = new System.Drawing.Size(28, 20);
-            this.lbl_Artist_Playing.TabIndex = 51;
-            this.lbl_Artist_Playing.Text = "Vũ";
+            this.lbl_Artist_Playing_MainFrom.AutoSize = true;
+            this.lbl_Artist_Playing_MainFrom.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Artist_Playing_MainFrom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Artist_Playing_MainFrom.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbl_Artist_Playing_MainFrom.Location = new System.Drawing.Point(96, 57);
+            this.lbl_Artist_Playing_MainFrom.Name = "lbl_Artist_Playing_MainFrom";
+            this.lbl_Artist_Playing_MainFrom.Size = new System.Drawing.Size(28, 20);
+            this.lbl_Artist_Playing_MainFrom.TabIndex = 51;
+            this.lbl_Artist_Playing_MainFrom.Text = "Vũ";
             // 
-            // lbl_Music_Playing
+            // lbl_Music_Playing_MainForm
             // 
-            this.lbl_Music_Playing.AutoSize = true;
-            this.lbl_Music_Playing.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Music_Playing.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Music_Playing.ForeColor = System.Drawing.Color.White;
-            this.lbl_Music_Playing.Location = new System.Drawing.Point(95, 32);
-            this.lbl_Music_Playing.Name = "lbl_Music_Playing";
-            this.lbl_Music_Playing.Size = new System.Drawing.Size(83, 25);
-            this.lbl_Music_Playing.TabIndex = 50;
-            this.lbl_Music_Playing.Text = "Lạ Lùng";
+            this.lbl_Music_Playing_MainForm.AutoSize = true;
+            this.lbl_Music_Playing_MainForm.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Music_Playing_MainForm.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Music_Playing_MainForm.ForeColor = System.Drawing.Color.White;
+            this.lbl_Music_Playing_MainForm.Location = new System.Drawing.Point(95, 32);
+            this.lbl_Music_Playing_MainForm.Name = "lbl_Music_Playing_MainForm";
+            this.lbl_Music_Playing_MainForm.Size = new System.Drawing.Size(83, 25);
+            this.lbl_Music_Playing_MainForm.TabIndex = 50;
+            this.lbl_Music_Playing_MainForm.Text = "Lạ Lùng";
             // 
             // guna2Elipse1
             // 
@@ -856,9 +856,9 @@
             this.Panel_PlayMusic.Controls.Add(this.btn_img_Next);
             this.Panel_PlayMusic.Controls.Add(this.btn_img_Play);
             this.Panel_PlayMusic.Controls.Add(this.btn_img_Replay);
-            this.Panel_PlayMusic.Controls.Add(this.lbl_Artist_Playing);
-            this.Panel_PlayMusic.Controls.Add(this.lbl_Music_Playing);
-            this.Panel_PlayMusic.Controls.Add(this.pic_currently_Playing);
+            this.Panel_PlayMusic.Controls.Add(this.lbl_Artist_Playing_MainFrom);
+            this.Panel_PlayMusic.Controls.Add(this.lbl_Music_Playing_MainForm);
+            this.Panel_PlayMusic.Controls.Add(this.pic_currently_Playing_MainForm);
             this.Panel_PlayMusic.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Panel_PlayMusic.Location = new System.Drawing.Point(0, 638);
             this.Panel_PlayMusic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -975,19 +975,19 @@
             this.btn_img_Replay.Size = new System.Drawing.Size(44, 46);
             this.btn_img_Replay.TabIndex = 54;
             // 
-            // pic_currently_Playing
+            // pic_currently_Playing_MainForm
             // 
-            this.pic_currently_Playing.BackColor = System.Drawing.Color.Transparent;
-            this.pic_currently_Playing.Image = global::PQTMUSIC_APP.Properties.Resources.OIP__6_1;
-            this.pic_currently_Playing.Location = new System.Drawing.Point(9, 7);
-            this.pic_currently_Playing.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_currently_Playing.Name = "pic_currently_Playing";
-            this.pic_currently_Playing.ShadowDecoration.Parent = this.pic_currently_Playing;
-            this.pic_currently_Playing.Size = new System.Drawing.Size(80, 78);
-            this.pic_currently_Playing.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_currently_Playing.TabIndex = 49;
-            this.pic_currently_Playing.TabStop = false;
-            this.pic_currently_Playing.UseTransparentBackground = true;
+            this.pic_currently_Playing_MainForm.BackColor = System.Drawing.Color.Transparent;
+            this.pic_currently_Playing_MainForm.Image = global::PQTMUSIC_APP.Properties.Resources.OIP__6_1;
+            this.pic_currently_Playing_MainForm.Location = new System.Drawing.Point(9, 7);
+            this.pic_currently_Playing_MainForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_currently_Playing_MainForm.Name = "pic_currently_Playing_MainForm";
+            this.pic_currently_Playing_MainForm.ShadowDecoration.Parent = this.pic_currently_Playing_MainForm;
+            this.pic_currently_Playing_MainForm.Size = new System.Drawing.Size(80, 78);
+            this.pic_currently_Playing_MainForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_currently_Playing_MainForm.TabIndex = 49;
+            this.pic_currently_Playing_MainForm.TabStop = false;
+            this.pic_currently_Playing_MainForm.UseTransparentBackground = true;
             // 
             // panel_Child
             // 
@@ -1025,7 +1025,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_User)).EndInit();
             this.Panel_PlayMusic.ResumeLayout(false);
             this.Panel_PlayMusic.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_currently_Playing)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_currently_Playing_MainForm)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1038,7 +1038,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton btn_img_Next;
         private Guna.UI2.WinForms.Guna2ImageButton btn_img_Play;
         private Guna.UI2.WinForms.Guna2ImageButton btn_img_Replay;
-        private Guna.UI2.WinForms.Guna2PictureBox pic_currently_Playing;
+        private Guna.UI2.WinForms.Guna2PictureBox pic_currently_Playing_MainForm;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pic_User;
         private System.Windows.Forms.Label lbl_App_Name;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Playlist3;
@@ -1069,8 +1069,8 @@
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2TrackBar TrackBar_Volumn;
         private Guna.UI2.WinForms.Guna2TrackBar TrackBar_Play;
-        private System.Windows.Forms.Label lbl_Artist_Playing;
-        private System.Windows.Forms.Label lbl_Music_Playing;
+        private System.Windows.Forms.Label lbl_Artist_Playing_MainFrom;
+        private System.Windows.Forms.Label lbl_Music_Playing_MainForm;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel Panel_PlayMusic;
         private Guna.UI2.WinForms.Guna2Panel panel_Child;
