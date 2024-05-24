@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Explore));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel_Child = new Guna.UI2.WinForms.Guna2Panel();
-            this.listSong = new System.Windows.Forms.ListView();
+            this.datagrid_Playlist_TOPSONG = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
@@ -76,6 +79,7 @@
             this.lbl_title1 = new System.Windows.Forms.Label();
             this.lbl_Tittle = new System.Windows.Forms.Label();
             this.panel_Child.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_Playlist_TOPSONG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).BeginInit();
@@ -99,7 +103,7 @@
             // 
             this.panel_Child.AutoScroll = true;
             this.panel_Child.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
-            this.panel_Child.Controls.Add(this.listSong);
+            this.panel_Child.Controls.Add(this.datagrid_Playlist_TOPSONG);
             this.panel_Child.Controls.Add(this.pictureBox1);
             this.panel_Child.Controls.Add(this.label27);
             this.panel_Child.Controls.Add(this.guna2Panel7);
@@ -118,15 +122,73 @@
             this.panel_Child.Size = new System.Drawing.Size(1092, 900);
             this.panel_Child.TabIndex = 9;
             // 
-            // listSong
+            // datagrid_Playlist_TOPSONG
             // 
-            this.listSong.HideSelection = false;
-            this.listSong.Location = new System.Drawing.Point(12, 294);
-            this.listSong.Name = "listSong";
-            this.listSong.Size = new System.Drawing.Size(1061, 403);
-            this.listSong.TabIndex = 144;
-            this.listSong.UseCompatibleStateImageBehavior = false;
-            this.listSong.View = System.Windows.Forms.View.List;
+            this.datagrid_Playlist_TOPSONG.AllowDrop = true;
+            this.datagrid_Playlist_TOPSONG.AllowUserToAddRows = false;
+            this.datagrid_Playlist_TOPSONG.AllowUserToDeleteRows = false;
+            this.datagrid_Playlist_TOPSONG.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.datagrid_Playlist_TOPSONG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.datagrid_Playlist_TOPSONG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datagrid_Playlist_TOPSONG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagrid_Playlist_TOPSONG.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.datagrid_Playlist_TOPSONG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datagrid_Playlist_TOPSONG.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.datagrid_Playlist_TOPSONG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagrid_Playlist_TOPSONG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.datagrid_Playlist_TOPSONG.ColumnHeadersHeight = 27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagrid_Playlist_TOPSONG.DefaultCellStyle = dataGridViewCellStyle3;
+            this.datagrid_Playlist_TOPSONG.EnableHeadersVisualStyles = false;
+            this.datagrid_Playlist_TOPSONG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.datagrid_Playlist_TOPSONG.Location = new System.Drawing.Point(22, 309);
+            this.datagrid_Playlist_TOPSONG.Name = "datagrid_Playlist_TOPSONG";
+            this.datagrid_Playlist_TOPSONG.ReadOnly = true;
+            this.datagrid_Playlist_TOPSONG.RowHeadersVisible = false;
+            this.datagrid_Playlist_TOPSONG.RowHeadersWidth = 51;
+            this.datagrid_Playlist_TOPSONG.RowTemplate.Height = 24;
+            this.datagrid_Playlist_TOPSONG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagrid_Playlist_TOPSONG.Size = new System.Drawing.Size(1048, 282);
+            this.datagrid_Playlist_TOPSONG.TabIndex = 161;
+            this.datagrid_Playlist_TOPSONG.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.HeaderStyle.Height = 27;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.ReadOnly = true;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.Height = 24;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.datagrid_Playlist_TOPSONG.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_Playlist_TOPSONG_CellDoubleClick_1);
             // 
             // pictureBox1
             // 
@@ -746,6 +808,7 @@
             this.Load += new System.EventHandler(this.frm_Explore_Load);
             this.panel_Child.ResumeLayout(false);
             this.panel_Child.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagrid_Playlist_TOPSONG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel7.PerformLayout();
@@ -815,6 +878,6 @@
         private System.Windows.Forms.Label label39;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox18;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListView listSong;
+        private Guna.UI2.WinForms.Guna2DataGridView datagrid_Playlist_TOPSONG;
     }
 }

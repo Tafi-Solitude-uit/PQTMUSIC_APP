@@ -308,6 +308,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class_Artist.cs" />
+    <Compile Include="Class_Song.cs" />
+    <Compile Include="SongDisplay.cs" />
+    <Compile Include="StreamUrl.cs" />
     <Compile Include="frm_Album.cs">
       <SubType>Form</SubType>
     </Compile>
