@@ -40,11 +40,11 @@ namespace PQTMUSIC_APP
             datagrid_Playlist_TOPSONG.DataSource = songs;
         }
 
-        public async Task<Class_Song> GetSongDetailsFromApi(string apiUrl, string songId)
+        public async Task<Class_Song> GetSongDetailsFromApi(string DetailapiUrl, string songId)
         {
             using (HttpClient client = new HttpClient())
             {
-                var response = await client.GetAsync($"{apiUrl}?songId={songId}");
+                var response = await client.GetAsync($"{DetailapiUrl}?songId={songId}");
                 var json = await response.Content.ReadAsStringAsync();
                 var jObject = JObject.Parse(json);
                 var song = jObject["song"].ToObject<Class_Song>();
