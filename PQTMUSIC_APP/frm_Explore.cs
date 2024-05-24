@@ -36,7 +36,7 @@ namespace PQTMUSIC_APP
             string apiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getHome";
             string songDetailsApiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getSong";
             List<SongDisplay> songs = await GetSongsFromApi(apiUrl, songDetailsApiUrl);
-            
+
             datagrid_Playlist_TOPSONG.DataSource = songs;
         }
 
@@ -49,6 +49,18 @@ namespace PQTMUSIC_APP
                 var jObject = JObject.Parse(json);
                 var song = jObject["song"].ToObject<Class_Song>();
                 return song;
+            }
+        }
+
+        private async Task<Image> LoadImage(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var response = await client.GetAsync(url);
+                using (var stream = await response.Content.ReadAsStreamAsync())
+                {
+                    return Image.FromStream(stream);
+                }
             }
         }
 
@@ -69,7 +81,8 @@ namespace PQTMUSIC_APP
                     {
                         Title = songDetails.Title,
                         Artist = string.Join(", ", songDetails.Artists.Select(a => a.Name)),
-                        Duration = songDetails.Duration
+                        Duration = songDetails.Duration,
+                        Thumbnail = await LoadImage(songDetails.Thumbnail) // Load the image from the URL
                     };
                     songs.Add(songDisplay);
                 }
