@@ -23,21 +23,31 @@ namespace PQTMUSIC_APP
 {
     public partial class frm_Explore : Form
     {
-
         public frm_Explore()
         {
             InitializeComponent();
         }
 
-        //string songId;
-        
         private async void frm_Explore_Load(object sender, EventArgs e)
         {
             string apiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getHome";
             string songDetailsApiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getSong";
             List<SongDisplay> songs = await GetSongsFromApi(apiUrl, songDetailsApiUrl);
 
-            datagrid_Playlist_TOPSONG.DataSource = songs;
+            foreach (var song in songs)
+            {
+                var row = new object[]
+                {
+                        await LoadImage(song.ThumbnailUrl), // Load the image from the URL
+                        song.Title,
+                        string.Join(", ", song.Artist),
+                        song.Duration
+                };
+
+                // Add the row to the DataGridView
+                int rowIndex = datagrid_Playlist_TOPSONG.Rows.Add(row);
+                datagrid_Playlist_TOPSONG.Rows[rowIndex].Tag = song;
+            }
         }
 
         public async Task<Class_Song> GetSongDetailsFromApi(string apiUrl, string songId)
@@ -79,10 +89,10 @@ namespace PQTMUSIC_APP
                     var songDetails = await GetSongDetailsFromApi(songDetailsApiUrl, songKey);
                     var songDisplay = new SongDisplay
                     {
+                        ThumbnailUrl = songDetails.Thumbnail, // Assign the URL to the ThumbnailUrl property
                         Title = songDetails.Title,
                         Artist = string.Join(", ", songDetails.Artists.Select(a => a.Name)),
-                        Duration = songDetails.Duration,
-                        Thumbnail = await LoadImage(songDetails.Thumbnail) // Load the image from the URL
+                        Duration = songDetails.Duration
                     };
                     songs.Add(songDisplay);
                 }
@@ -141,8 +151,5 @@ namespace PQTMUSIC_APP
             //lbl_Music_Playing_MainForm.Text = title;
             //lbl_Artist_Playing_MainFrom.Text = artist;
         }
-        
-
-        
     }
 }
