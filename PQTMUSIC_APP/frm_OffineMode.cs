@@ -19,6 +19,7 @@ namespace PQTMUSIC_APP
         private string Current_Song;    
         private bool isPause;
         private bool isChanging_Position; //Kiểm tra xem có đang thay đổi vị trí phát nhạc không
+        private bool isplaying; //Kiểm tra xem có đang phát nhạc không  
 
         public frm_OffineMode()
         {
@@ -26,6 +27,7 @@ namespace PQTMUSIC_APP
 
             music_Files = new List<string>();
             isPause = false;
+            isplaying = false;  
             isChanging_Position = false;
 
             datagrid_Playlist.Columns[0].DefaultCellStyle.NullValue = null; // Đặt hình ảnh mặc định cho cột hình ảnh
@@ -41,23 +43,28 @@ namespace PQTMUSIC_APP
                     musicPlayer.Ctlcontrols.play();
                     isPause = false;
                 }
-                else 
+                int selectedIndex = datagrid_Playlist.CurrentCell.RowIndex;
+                if (selectedIndex >= 0 && selectedIndex < music_Files.Count)
                 {
-                    // Nếu đang phát thì chuyển đến bài hát được chọn
-                    int selectedIndex = datagrid_Playlist.CurrentCell.RowIndex;
-                    if (selectedIndex >= 0 && selectedIndex < music_Files.Count)
+                    // If a song is playing, pause it
+                    if (isplaying)
+                    {
+                        musicPlayer.Ctlcontrols.pause();
+                        isplaying = false;
+                    }
+                    // If no song is playing, play the selected song
+                    else
                     {
                         Current_Song = music_Files[selectedIndex];
                         musicPlayer.URL = Current_Song;
                         musicPlayer.Ctlcontrols.play();
+                        isplaying = true;
                     }
                 }
-
-                //Bắt đầu tính thời gian phát
+                // Start the playback timer
                 timerPlayBack.Start();
             }
         }
-
         private void frm_OffineMode_Load(object sender, EventArgs e)
         {
             
@@ -199,7 +206,14 @@ namespace PQTMUSIC_APP
                 lbl_timeEnd.Text = FormatTime(duration);
 
                 // Update the trackbar's value
-                TrackBar_Play.Value = (int)((currentPosition / duration) * 100);
+                if (duration != 0)
+                {
+                    TrackBar_Play.Value = (int)((currentPosition / duration) * 100);
+                }
+                else
+                {
+                    TrackBar_Play.Value = 0;
+                }
             }
             
     }
@@ -226,20 +240,6 @@ namespace PQTMUSIC_APP
             isPause = !isPause;
         }
 
-        private void btn_Stop_Click(object sender, EventArgs e)
-        {
-            // Nếu đang phát thì dừng
-            if (!musicPlayer.Ctlcontrols.currentPosition.Equals(0))
-            {
-                // Đặt thời gian phát về 0
-                musicPlayer.Ctlcontrols.currentPosition = 0;
-            }
-            // Dừng phát
-            musicPlayer.Ctlcontrols.stop();
-            isPause = false;
-            // Tắt timer
-            timerPlayBack.Enabled = false;
-        }
 
         private string FormatTime(double second)
         {
