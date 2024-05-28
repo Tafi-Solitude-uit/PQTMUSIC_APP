@@ -309,6 +309,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class_Artist.cs" />
+    <Compile Include="Class_InteractWithSong.cs" />
     <Compile Include="Class_Song.cs" />
     <Compile Include="Frm_Ranking.cs">
       <SubType>Form</SubType>
@@ -316,7 +317,8 @@
     <Compile Include="Frm_Ranking.Designer.cs">
       <DependentUpon>Frm_Ranking.cs</DependentUpon>
     </Compile>
-    <Compile Include="SongDisplay.cs" />
+    <Compile Include="SongService.cs" />
+    <Compile Include="Class_SongFullData.cs" />
     <Compile Include="StreamUrl.cs" />
     <Compile Include="frm_Album.cs">
       <SubType>Form</SubType>

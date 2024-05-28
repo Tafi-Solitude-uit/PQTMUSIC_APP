@@ -23,88 +23,65 @@ namespace PQTMUSIC_APP
         {
             InitializeComponent();
         }
-        
         string apiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getTop100";
         string songDetailsApiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getSong";
-        public async Task<Class_Song> GetSongDetailsFromApi(string DetailapiUrl, string songId)
+        
+        string songID;
+        private Image ResizeImage(Image image, Size size)
         {
-            using (HttpClient client = new HttpClient())
-            {
-                var response = await client.GetAsync($"{DetailapiUrl}?songId={songId}");
-                var json = await response.Content.ReadAsStringAsync();
-                var jObject = JObject.Parse(json);
-                var song = jObject["song"].ToObject<Class_Song>();
-                return song;
-            }
+            return (Image)(new Bitmap(image, size));
         }
-
-        private async Task<Image> LoadImage(string url)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                var response = await client.GetAsync(url);
-                using (var stream = await response.Content.ReadAsStreamAsync())
-                {
-                    return Image.FromStream(stream);
-                }
-            }
-        }
-
-        public async Task<List<SongDisplay>> GetSongsFromApi(string apiUrl)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                var response = await client.GetAsync(apiUrl);
-                var json = await response.Content.ReadAsStringAsync();
-                var jObject = JObject.Parse(json);
-                var jArray = (JArray)jObject["playlist"]["songs"];
-                List<SongDisplay> songs = new List<SongDisplay>();
-                foreach (var item in jArray)
-                {
-                    var songDisplay = new SongDisplay
-                    {
-                        Key = item["key"].ToString(),
-                        Title = item["title"].ToString(),
-                        Artist = string.Join(", ", item["artists"].Select(a => a["name"].ToString())),
-                        Duration = item["duration"].ToString(),
-                        Thumbnail = await LoadImage(item["thumbnail"].ToString())
-                    };
-                    songs.Add(songDisplay);
-                }
-                return songs;
-            }
-        }
-
-        private ImageList imageList = new ImageList();
-        private ImageList thumbnailList = new ImageList(); // New ImageList for thumbnails
         private async void Frm_Ranking_Load(object sender, EventArgs e)
         {
-            List<SongDisplay> songs = await GetSongsFromApi(apiUrl);
-
-            imageList.ImageSize = new Size(50, 50);
-            thumbnailList.ImageSize = new Size(30, 30); // Set the size of the thumbnail images
-
-            ListTop100.Columns.Add("", 30, HorizontalAlignment.Left);
-            ListTop100.Columns.Add("Title", -2, HorizontalAlignment.Left);
-            ListTop100.Columns.Add("Artist", -2, HorizontalAlignment.Left);
-            ListTop100.Columns.Add("Duration", 150, HorizontalAlignment.Left);
-
-            ListTop100.SmallImageList = imageList; // Use imageList for the main columns
-            ListTop100.LargeImageList = thumbnailList; // Use thumbnailList for the thumbnail column
-
+            
+            SongService songs = new SongService();
+            AddDataToDataGridView(await songs.GetSongToDisplayFromApi(apiUrl));            
+            
+        }
+        private void AddDataToDataGridView(List<Class_SongFullData> songs)
+        {
+            
             foreach (var song in songs)
             {
-                imageList.Images.Add(song.Title, song.Thumbnail);
-                thumbnailList.Images.Add(song.Thumbnail); // Add the thumbnail to the thumbnailList
+                Image thumbnail = song.Thumbnail;
+                thumbnail = ResizeImage(thumbnail, new Size(70, 70)); // Resize the thumbnail to 30x30
 
-                ListViewItem musicListViewItem = new ListViewItem(new string[] { "", song.Title, song.Artist, song.Duration.ToString() }, thumbnailList.Images.Count - 1);
-                musicListViewItem.Tag = song;
-                ListTop100.Items.Add(musicListViewItem);
+                DataGridViewImageCell imageCell = new DataGridViewImageCell
+                {
+                    Value = thumbnail
+                };
+
+                DataGridViewRow row = new DataGridViewRow();
+                row.Cells.Add(imageCell);
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = song.Title });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = song.Artists[0].Name });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = song.Duration.ToString() });
+
+                datagrid_Playlist_TOP100.Rows.Add(row);
+                datagrid_Playlist_TOP100.Rows[datagrid_Playlist_TOP100.RowCount - 1].Tag = song;
+                datagrid_Playlist_TOP100.Rows[datagrid_Playlist_TOP100.RowCount - 1].Height = thumbnail.Height;
+                datagrid_Playlist_TOP100.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
-
-            ListTop100.View = View.Details;
-            ListTop100.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
+        string streamURL;
+        private async void Datagrid_Playlist_TOP100_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Make sure user did not click the header
+            {
+                Class_SongFullData song = datagrid_Playlist_TOP100.Rows[e.RowIndex].Tag as Class_SongFullData;
+                if (song != null)
+                {
+                    songID = song.Key;
+                    SongService songService = new SongService();
+                    streamURL= await songService.GetURLsFromApi(songDetailsApiUrl, songID, song);
+                }
+                else
+                {
+                    MessageBox.Show("No song data available.");
+                }
 
+            }
+        }
+        
     }
 }
