@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PQTMUSIC_APP
 {
-    public class Class_Song
+    public class Class_SongFullData
     {
         public string Key { get; set; }
         public string Title { get; set; }
