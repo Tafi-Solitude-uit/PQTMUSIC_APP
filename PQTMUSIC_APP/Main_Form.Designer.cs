@@ -230,6 +230,7 @@
             this.btn_Ranks.Text = "Ranks";
             this.btn_Ranks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Ranks.TextOffset = new System.Drawing.Point(50, 0);
+            this.btn_Ranks.Click += new System.EventHandler(this.btn_Ranks_Click);
             // 
             // panel_Menu_Bar
             // 

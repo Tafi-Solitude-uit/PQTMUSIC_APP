@@ -309,8 +309,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class_Artist.cs" />
+    <Compile Include="Class_SongFullData.cs" />
     <Compile Include="Class_Song.cs" />
+    <Compile Include="Frm_Ranking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ranking.Designer.cs">
+      <DependentUpon>Frm_Ranking.cs</DependentUpon>
+    </Compile>
     <Compile Include="SongDisplay.cs" />
+    <Compile Include="SongService.cs" />
     <Compile Include="StreamUrl.cs" />
     <Compile Include="frm_Album.cs">
       <SubType>Form</SubType>
@@ -365,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_OffineMode.resx">
       <DependentUpon>frm_OffineMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Ranking.resx">
+      <DependentUpon>Frm_Ranking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>

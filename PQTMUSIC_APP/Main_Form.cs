@@ -71,5 +71,11 @@ namespace PQTMUSIC_APP
             //frm_FavSong showFavSong = new frm_FavSong();
 
         }
+
+        private void btn_Ranks_Click(object sender, EventArgs e)
+        {
+            Frm_Ranking showRank = new Frm_Ranking();
+            addForm_Child(showRank);
+        }
     }
 }
