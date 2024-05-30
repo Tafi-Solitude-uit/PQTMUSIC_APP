@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 
-
 namespace PQTMUSIC_APP
 {
     internal class SongService: Class_SongFullData
@@ -95,3 +94,5 @@ namespace PQTMUSIC_APP
 
     }
 }
+    
+
