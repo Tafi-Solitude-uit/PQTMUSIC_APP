@@ -45,7 +45,8 @@ namespace PQTMUSIC_APP
 
         private void btn_img_Play_Click(object sender, EventArgs e)
         {
-            
+            string url = Frm_Ranking.streamURL;
+            MessageBox.Show(url);
         }
 
         private void pic_User_Click(object sender, EventArgs e)

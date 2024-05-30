@@ -63,7 +63,7 @@ namespace PQTMUSIC_APP
                 datagrid_Playlist_TOP100.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
-        string streamURL;
+        public static string streamURL;
         private async void Datagrid_Playlist_TOP100_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Make sure user did not click the header
