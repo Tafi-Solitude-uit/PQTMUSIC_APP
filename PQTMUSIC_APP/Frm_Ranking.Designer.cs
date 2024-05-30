@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -49,10 +50,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Playlist_TOP100)).BeginInit();
             this.SuspendLayout();
             // 
+
             // panel_Child
             // 
             this.panel_Child.AutoScroll = true;
             this.panel_Child.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
+
             this.panel_Child.Controls.Add(this.datagrid_Playlist_TOP100);
             this.panel_Child.Controls.Add(this.label17);
             this.panel_Child.Controls.Add(this.label27);
@@ -83,6 +86,7 @@
             this.datagrid_Playlist_TOP100.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datagrid_Playlist_TOP100.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.datagrid_Playlist_TOP100.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -90,6 +94,7 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+
             this.datagrid_Playlist_TOP100.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datagrid_Playlist_TOP100.ColumnHeadersHeight = 27;
             this.datagrid_Playlist_TOP100.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -97,6 +102,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
+
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -104,6 +110,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+
             this.datagrid_Playlist_TOP100.DefaultCellStyle = dataGridViewCellStyle3;
             this.datagrid_Playlist_TOP100.EnableHeadersVisualStyles = false;
             this.datagrid_Playlist_TOP100.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
@@ -187,6 +194,7 @@
             this.label17.Size = new System.Drawing.Size(202, 25);
             this.label17.TabIndex = 42;
             this.label17.Text = "VIETNAMESE SINGER";
+
             // 
             // label27
             // 
@@ -195,6 +203,7 @@
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+
             this.label27.Location = new System.Drawing.Point(24, 2389);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(205, 25);
@@ -213,6 +222,7 @@
             this.label1.Size = new System.Drawing.Size(173, 25);
             this.label1.TabIndex = 135;
             this.label1.Text = "FOREIGN ARTISTS";
+
             // 
             // label13
             // 
@@ -221,6 +231,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+
             this.label13.Location = new System.Drawing.Point(27, 2133);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(202, 25);
@@ -239,6 +250,7 @@
             this.lbl_title1.Size = new System.Drawing.Size(451, 133);
             this.lbl_title1.TabIndex = 127;
             this.lbl_title1.Text = "TOP 100";
+
             // 
             // Frm_Ranking
             // 
@@ -258,6 +270,7 @@
         }
 
         #endregion
+
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel panel_Child;
         private System.Windows.Forms.Label label17;
@@ -270,5 +283,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+
     }
 }

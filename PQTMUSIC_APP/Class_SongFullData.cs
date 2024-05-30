@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Drawing;
 
 namespace PQTMUSIC_APP
@@ -15,6 +16,5 @@ namespace PQTMUSIC_APP
         public string Duration { get; set; }
         public Image Thumbnail { get; set; }
         public List<StreamUrl> StreamUrls { get; set; }
-
     }
 }

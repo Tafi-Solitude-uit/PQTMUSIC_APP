@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_OffineMode));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.datagrid_Playlist = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -44,7 +44,6 @@
             this.lbl_Playlist = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_Play = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btn_Mix = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_mute = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbl_timeEnd = new System.Windows.Forms.Label();
             this.lbl_timeStart = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@
             this.btn_Rewind = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_Next = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_Pause = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btn_Stop = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_Upload = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbl_App_Name = new System.Windows.Forms.Label();
             this.lbl_Artist = new System.Windows.Forms.Label();
@@ -80,8 +78,8 @@
             this.datagrid_Playlist.AllowUserToAddRows = false;
             this.datagrid_Playlist.AllowUserToDeleteRows = false;
             this.datagrid_Playlist.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.datagrid_Playlist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.datagrid_Playlist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datagrid_Playlist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -90,14 +88,14 @@
             this.datagrid_Playlist.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datagrid_Playlist.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.datagrid_Playlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagrid_Playlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagrid_Playlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datagrid_Playlist.ColumnHeadersHeight = 27;
             this.datagrid_Playlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -105,14 +103,14 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagrid_Playlist.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagrid_Playlist.DefaultCellStyle = dataGridViewCellStyle3;
             this.datagrid_Playlist.EnableHeadersVisualStyles = false;
             this.datagrid_Playlist.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.datagrid_Playlist.Location = new System.Drawing.Point(12, 326);
@@ -211,7 +209,6 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.guna2Panel1.Controls.Add(this.btn_Play);
-            this.guna2Panel1.Controls.Add(this.btn_Mix);
             this.guna2Panel1.Controls.Add(this.btn_mute);
             this.guna2Panel1.Controls.Add(this.lbl_timeEnd);
             this.guna2Panel1.Controls.Add(this.lbl_timeStart);
@@ -220,7 +217,6 @@
             this.guna2Panel1.Controls.Add(this.btn_Rewind);
             this.guna2Panel1.Controls.Add(this.btn_Next);
             this.guna2Panel1.Controls.Add(this.btn_Pause);
-            this.guna2Panel1.Controls.Add(this.btn_Stop);
             this.guna2Panel1.Controls.Add(this.btn_Upload);
             this.guna2Panel1.Controls.Add(this.lbl_App_Name);
             this.guna2Panel1.Controls.Add(this.lbl_Artist);
@@ -243,29 +239,13 @@
             this.btn_Play.HoverState.Parent = this.btn_Play;
             this.btn_Play.Image = global::PQTMUSIC_APP.Properties.Resources.play_button_arrowhead__1_;
             this.btn_Play.ImageSize = new System.Drawing.Size(35, 35);
-            this.btn_Play.Location = new System.Drawing.Point(758, 114);
+            this.btn_Play.Location = new System.Drawing.Point(708, 167);
             this.btn_Play.Name = "btn_Play";
             this.btn_Play.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn_Play.PressedState.Parent = this.btn_Play;
             this.btn_Play.Size = new System.Drawing.Size(44, 46);
             this.btn_Play.TabIndex = 188;
             this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
-            // 
-            // btn_Mix
-            // 
-            this.btn_Mix.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Mix.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Mix.CheckedState.Parent = this.btn_Mix;
-            this.btn_Mix.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Mix.HoverState.Parent = this.btn_Mix;
-            this.btn_Mix.Image = global::PQTMUSIC_APP.Properties.Resources.mix__1_;
-            this.btn_Mix.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_Mix.Location = new System.Drawing.Point(858, 166);
-            this.btn_Mix.Name = "btn_Mix";
-            this.btn_Mix.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Mix.PressedState.Parent = this.btn_Mix;
-            this.btn_Mix.Size = new System.Drawing.Size(44, 46);
-            this.btn_Mix.TabIndex = 187;
             // 
             // btn_mute
             // 
@@ -347,7 +327,7 @@
             this.btn_Rewind.HoverState.Parent = this.btn_Rewind;
             this.btn_Rewind.Image = global::PQTMUSIC_APP.Properties.Resources.back;
             this.btn_Rewind.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_Rewind.Location = new System.Drawing.Point(708, 166);
+            this.btn_Rewind.Location = new System.Drawing.Point(658, 167);
             this.btn_Rewind.Name = "btn_Rewind";
             this.btn_Rewind.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn_Rewind.PressedState.Parent = this.btn_Rewind;
@@ -390,23 +370,6 @@
             this.btn_Pause.Size = new System.Drawing.Size(44, 46);
             this.btn_Pause.TabIndex = 179;
             this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
-            // 
-            // btn_Stop
-            // 
-            this.btn_Stop.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Stop.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Stop.CheckedState.Parent = this.btn_Stop;
-            this.btn_Stop.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Stop.HoverState.Parent = this.btn_Stop;
-            this.btn_Stop.Image = global::PQTMUSIC_APP.Properties.Resources.rewind;
-            this.btn_Stop.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_Stop.Location = new System.Drawing.Point(658, 166);
-            this.btn_Stop.Name = "btn_Stop";
-            this.btn_Stop.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Stop.PressedState.Parent = this.btn_Stop;
-            this.btn_Stop.Size = new System.Drawing.Size(44, 46);
-            this.btn_Stop.TabIndex = 178;
-            this.btn_Stop.Click += new System.EventHandler(this.btn_Stop_Click);
             // 
             // btn_Upload
             // 
@@ -551,7 +514,6 @@
         private System.Windows.Forms.Label lbl_Playlist;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2ImageButton btn_Play;
-        private Guna.UI2.WinForms.Guna2ImageButton btn_Mix;
         private Guna.UI2.WinForms.Guna2ImageButton btn_mute;
         private System.Windows.Forms.Label lbl_timeEnd;
         private System.Windows.Forms.Label lbl_timeStart;
@@ -560,7 +522,6 @@
         private Guna.UI2.WinForms.Guna2ImageButton btn_Rewind;
         private Guna.UI2.WinForms.Guna2ImageButton btn_Next;
         private Guna.UI2.WinForms.Guna2ImageButton btn_Pause;
-        private Guna.UI2.WinForms.Guna2ImageButton btn_Stop;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Upload;
         private System.Windows.Forms.Label lbl_App_Name;
         private System.Windows.Forms.Label lbl_Artist;

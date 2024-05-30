@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +16,6 @@ using System.Media;
 using NAudio.Wave;
 using System.Security.Policy;
 
-
 namespace PQTMUSIC_APP
 {
     public partial class Frm_Ranking : Form
@@ -25,8 +24,10 @@ namespace PQTMUSIC_APP
         {
             InitializeComponent();
         }
+
         string apiUrl = "https://apimusic.bug.edu.vn/zing/getTop100";
         string songDetailsApiUrl = "https://apimusic.bug.edu.vn/zing/getSong";
+
 
         string songID;
         private Image ResizeImage(Image image, Size size)
@@ -87,4 +88,4 @@ namespace PQTMUSIC_APP
         }
 
     }
-}
+
