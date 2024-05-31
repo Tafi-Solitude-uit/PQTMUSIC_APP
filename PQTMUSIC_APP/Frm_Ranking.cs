@@ -34,13 +34,13 @@ namespace PQTMUSIC_APP
         //{
         //    return (Image)(new Bitmap(image, size));
         //}
-        //private async void Frm_Ranking_Load(object sender, EventArgs e)
-        //{
+        private void Frm_Ranking_Load(object sender, EventArgs e)
+        {
 
-        //    SongService songs = new SongService();
-        //    AddDataToDataGridView(await songs.GetSongToDisplayFromApi(apiUrl));
+            //SongService songs = new SongService();
+            //AddDataToDataGridView(await songs.GetSongToDisplayFromApi(apiUrl));
 
-        //}
+        }
         //private void AddDataToDataGridView(List<Class_SongFullData> songs)
         //{
 
@@ -66,26 +66,26 @@ namespace PQTMUSIC_APP
         //        datagrid_Playlist_TOP100.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         //    }
         //}
-        //public static string streamURL;
-        //private async void Datagrid_Playlist_TOP100_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.RowIndex >= 0) // Make sure user did not click the header
-        //    {
-        //        Class_SongFullData song = datagrid_Playlist_TOP100.Rows[e.RowIndex].Tag as Class_SongFullData;
-        //        if (song != null)
-        //        {
-        //            songID = song.Key;
-        //            SongService songService = new SongService();
-        //            streamURL = await songService.GetURLsFromApi(songDetailsApiUrl, songID, song);
+        public static string streamURL;
+        private void Datagrid_Playlist_TOP100_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex >= 0) // Make sure user did not click the header
+            //{
+            //    Class_SongFullData song = datagrid_Playlist_TOP100.Rows[e.RowIndex].Tag as Class_SongFullData;
+            //    if (song != null)
+            //    {
+            //        songID = song.Key;
+            //        SongService songService = new SongService();
+            //        streamURL = await songService.GetURLsFromApi(songDetailsApiUrl, songID, song);
 
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("No song data available.");
-        //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No song data available.");
+            //    }
 
-        //    }
-        //}
+            //}
+        }
 
     }
 }

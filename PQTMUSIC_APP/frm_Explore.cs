@@ -14,6 +14,7 @@ using System.IO;
 using System.Net;
 using System.Media;
 using NAudio.Wave;
+using Newtonsoft.Json;
 
 
 
@@ -28,19 +29,19 @@ namespace PQTMUSIC_APP
             InitializeComponent();
         }
 
+        public string apiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getHome";
+
         private async void frm_Explore_Load(object sender, EventArgs e)
         {
-            string apiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getHome";
-            string songDetailsApiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getSong";
-            List<SongDisplay> songs = await GetSongsFromApi(apiUrl, songDetailsApiUrl);
+            List<Class_SongFullData> songs = await GetSongsFromApi(apiUrl);
 
             foreach (var song in songs)
             {
                 var row = new object[]
                 {
-                        await LoadImage(song.ThumbnailUrl), // Load the image from the URL
+                        await LoadImage(song.Thumbnail), // Load the image from the URL
                         song.Title,
-                        string.Join(", ", song.Artist),
+                        string.Join(", ", song.Artists),
                         song.Duration
                 };
 
@@ -50,15 +51,63 @@ namespace PQTMUSIC_APP
             }
         }
 
-        public async Task<Class_Song> GetSongDetailsFromApi(string apiUrl, string songId)
+        public async Task<List<Class_SongFullData>> GetSongsFromApi(string apiUrl)
         {
             using (HttpClient client = new HttpClient())
             {
-                var response = await client.GetAsync($"{apiUrl}?songId={songId}");
-                var json = await response.Content.ReadAsStringAsync();
-                var jObject = JObject.Parse(json);
-                var song = jObject["song"].ToObject<Class_Song>();
-                return song;
+                var response = await client.GetAsync(apiUrl);
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    try
+                    {
+                        var jObject = JObject.Parse(json);
+
+                        // Check if "data" and "items" exist in the JSON object
+                        if (jObject["data"]?["items"] is JArray items)
+                        {
+                            var newReleaseSection = items.FirstOrDefault(x => x["sectionType"].ToString() == "new-release");
+
+                            // Check if "items" and "vPop" exist in the newReleaseSection
+                            if (newReleaseSection?["items"]?["vPop"] is JArray vPopItems)
+                            {
+                                var vpopFullData = new List<Class_SongFullData>();
+                                foreach (var track in vPopItems)
+                                {
+                                    var song = new Class_SongFullData
+                                    {
+                                        EncodeId = track["encodeId"].ToString(),
+                                        Title = track["title"].ToString(),
+                                        Artists = track["artists"].Select(a => new Class_Artist
+                                        {
+                                            ArtistId = int.Parse(a["id"].ToString()),
+                                            Name = a["name"].ToString()
+                                        }).ToList(),
+                                        Duration = track["duration"].ToString(),
+                                        Thumbnail = track["thumbnail"].ToString()
+                                    };
+                                    vpopFullData.Add(song);
+                                }
+
+                                return vpopFullData;
+                            }
+                        }
+                    }
+                    catch (JsonReaderException ex)
+                    {
+                        // Or you can show an error message to the user using a MessageBox
+                        MessageBox.Show("An error occurred while parsing the JSON response: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                else
+                {
+                    // Show an error message to the user
+                    MessageBox.Show("An error occurred while making the API request. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                // Return an empty list if any of the required properties are missing or an error occurred
+                return null;
             }
         }
 
@@ -74,31 +123,7 @@ namespace PQTMUSIC_APP
             }
         }
 
-        public async Task<List<SongDisplay>> GetSongsFromApi(string apiUrl, string songDetailsApiUrl)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                var response = await client.GetAsync(apiUrl);
-                var json = await response.Content.ReadAsStringAsync();
-                var jObject = JObject.Parse(json);
-                var jArray = (JArray)jObject["newRelease"]["song"];
-                List<SongDisplay> songs = new List<SongDisplay>();
-                foreach (var item in jArray)
-                {
-                    var songKey = item["key"].ToString();
-                    var songDetails = await GetSongDetailsFromApi(songDetailsApiUrl, songKey);
-                    var songDisplay = new SongDisplay
-                    {
-                        ThumbnailUrl = songDetails.Thumbnail, // Assign the URL to the ThumbnailUrl property
-                        Title = songDetails.Title,
-                        Artist = string.Join(", ", songDetails.Artists.Select(a => a.Name)),
-                        Duration = songDetails.Duration
-                    };
-                    songs.Add(songDisplay);
-                }
-                return songs;
-            }
-        }
+        
 
         private void datagrid_Playlist_TOPSONG_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -109,7 +134,7 @@ namespace PQTMUSIC_APP
             //PlaySong(selectedSong);
         }
 
-        private void PlaySong(Class_Song song)
+        private void PlaySong(Class_SongFullData song)
         {
             // Code to play the song goes here
             // Assuming you have a URL for the song

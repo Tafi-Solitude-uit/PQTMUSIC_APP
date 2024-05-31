@@ -8,9 +8,9 @@ using System.Drawing;
 
 namespace PQTMUSIC_APP
 {
-    internal class Class_SongFullData
+    public class Class_SongFullData
     {
-        public string Key { get; set; }
+        public string EncodeId { get; set; }
         public string Title { get; set; }
         public List<Class_Artist> Artists { get; set; }
         public string Duration { get; set; }
