@@ -316,6 +316,7 @@
     <Compile Include="Frm_Ranking.Designer.cs">
       <DependentUpon>Frm_Ranking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service.cs" />
     <Compile Include="StreamUrl.cs" />
     <Compile Include="frm_Album.cs">
       <SubType>Form</SubType>
