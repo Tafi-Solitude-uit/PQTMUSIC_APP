@@ -80,7 +80,7 @@ namespace PQTMUSIC_APP
                                         Title = track["title"].ToString(),
                                         Artists = track["artists"].Select(a => new Class_Artist
                                         {
-                                            ArtistId = int.Parse(a["id"].ToString()),
+                                            ArtistId = a["id"].ToString(),
                                             Name = a["name"].ToString()
                                         }).ToList(),
                                         Duration = track["duration"].ToString(),

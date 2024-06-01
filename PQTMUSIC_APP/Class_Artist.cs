@@ -8,7 +8,7 @@ namespace PQTMUSIC_APP
 {
     public class Class_Artist
     {
-        public int ArtistId { get; set; }
+        public string ArtistId { get; set; }
         public string Name { get; set; }
         public string ShortLink { get; set; }
         public string ImageUrl { get; set; }
