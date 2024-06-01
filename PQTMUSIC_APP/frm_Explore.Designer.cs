@@ -36,6 +36,10 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel_Child = new Guna.UI2.WinForms.Guna2Panel();
             this.datagrid_Playlist_TOPSONG = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Thumbnail = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Tittle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
@@ -78,10 +82,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lbl_title1 = new System.Windows.Forms.Label();
             this.lbl_Tittle = new System.Windows.Forms.Label();
-            this.Thumbnail = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Tittle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_Child.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Playlist_TOPSONG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -168,6 +168,7 @@
             this.datagrid_Playlist_TOPSONG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.datagrid_Playlist_TOPSONG.Location = new System.Drawing.Point(22, 309);
             this.datagrid_Playlist_TOPSONG.Name = "datagrid_Playlist_TOPSONG";
+            this.datagrid_Playlist_TOPSONG.ReadOnly = true;
             this.datagrid_Playlist_TOPSONG.RowHeadersVisible = false;
             this.datagrid_Playlist_TOPSONG.RowHeadersWidth = 51;
             this.datagrid_Playlist_TOPSONG.RowTemplate.Height = 24;
@@ -188,7 +189,7 @@
             this.datagrid_Playlist_TOPSONG.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.datagrid_Playlist_TOPSONG.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.datagrid_Playlist_TOPSONG.ThemeStyle.HeaderStyle.Height = 27;
-            this.datagrid_Playlist_TOPSONG.ThemeStyle.ReadOnly = false;
+            this.datagrid_Playlist_TOPSONG.ThemeStyle.ReadOnly = true;
             this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -197,6 +198,35 @@
             this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.datagrid_Playlist_TOPSONG.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.datagrid_Playlist_TOPSONG.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_Playlist_TOPSONG_CellDoubleClick_1);
+            // 
+            // Thumbnail
+            // 
+            this.Thumbnail.HeaderText = "Thumbnail";
+            this.Thumbnail.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Thumbnail.MinimumWidth = 6;
+            this.Thumbnail.Name = "Thumbnail";
+            this.Thumbnail.ReadOnly = true;
+            // 
+            // Tittle
+            // 
+            this.Tittle.HeaderText = "Tittle";
+            this.Tittle.MinimumWidth = 6;
+            this.Tittle.Name = "Tittle";
+            this.Tittle.ReadOnly = true;
+            // 
+            // Artist
+            // 
+            this.Artist.HeaderText = "Artist";
+            this.Artist.MinimumWidth = 6;
+            this.Artist.Name = "Artist";
+            this.Artist.ReadOnly = true;
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.MinimumWidth = 6;
+            this.Duration.Name = "Duration";
+            this.Duration.ReadOnly = true;
             // 
             // pictureBox1
             // 
@@ -802,31 +832,6 @@
             this.lbl_Tittle.Size = new System.Drawing.Size(324, 89);
             this.lbl_Tittle.TabIndex = 126;
             this.lbl_Tittle.Text = "Billboard";
-            // 
-            // Thumbnail
-            // 
-            this.Thumbnail.HeaderText = "Thumbnail";
-            this.Thumbnail.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Thumbnail.MinimumWidth = 6;
-            this.Thumbnail.Name = "Thumbnail";
-            // 
-            // Tittle
-            // 
-            this.Tittle.HeaderText = "Tittle";
-            this.Tittle.MinimumWidth = 6;
-            this.Tittle.Name = "Tittle";
-            // 
-            // Artist
-            // 
-            this.Artist.HeaderText = "Artist";
-            this.Artist.MinimumWidth = 6;
-            this.Artist.Name = "Artist";
-            // 
-            // Duration
-            // 
-            this.Duration.HeaderText = "Duration";
-            this.Duration.MinimumWidth = 6;
-            this.Duration.Name = "Duration";
             // 
             // frm_Explore
             // 
