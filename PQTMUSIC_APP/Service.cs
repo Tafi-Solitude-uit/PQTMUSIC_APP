@@ -55,7 +55,7 @@ namespace PQTMUSIC_APP
         }
 
 
-        public async Task<List<Class_SongFullData>> GetSongFromApi(string apiUrl, string typeGet)
+        public async Task<List<Class_SongFullData>> GetSongsBySectionType(string apiUrl, string sectionType)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -66,34 +66,47 @@ namespace PQTMUSIC_APP
                     string json = await response.Content.ReadAsStringAsync();
 
                     JObject jObject = JObject.Parse(json);
-                    JArray jArray = (JArray)jObject["data"]["items"];
+                    JArray itemsArray = (JArray)jObject["data"]["items"];
+
+                    // Filter the items where sectionType matches the given sectionType
+                    var section = itemsArray
+                        .FirstOrDefault(item => item["sectionType"]?.ToString() == sectionType);
+
+                    if (section == null)
+                    {
+                        MessageBox.Show($"No section found for sectionType: {sectionType}");
+                        return null;
+                    }
+
+                    // Handle the "items" field which is a JObject
+                    JObject itemsObject = section["items"] as JObject;
+                    if (itemsObject == null)
+                    {
+                        MessageBox.Show("The items field is not a JObject.");
+                        return null;
+                    }
+
+                    // We are interested in the "all" array within the "items" object
+                    JArray songsArray = itemsObject["all"] as JArray;
+                    if (songsArray == null)
+                    {
+                        MessageBox.Show("The 'all' field is not a JArray.");
+                        return null;
+                    }
 
                     List<Class_SongFullData> songs = new List<Class_SongFullData>();
 
-                    foreach (var item in jArray)
+                    foreach (var item in songsArray)
                     {
-                        for (int i = 0; i < item.Count(); i++)
+                        Class_SongFullData songIn4 = new Class_SongFullData
                         {
-                            var aa = item[i] as JObject;
-                            if (aa != null && aa["selectionType"].ToString() == typeGet)
-                            {
-                               
-                                Class_SongFullData songIn4 = new Class_SongFullData
-                                {
-                                    EncodeId = item["items"]["all"]["encodeId"].ToString(),
-                                    Title = item["items"]["all"]["title"].ToString(),
-                                    Artists = item["items"]["all"]["artistsNames"].Select(a => new Class_Artist { Name = a["name"].ToString() }).ToList(),
-                                    Duration = ConvertSecondsToMinutes(int.Parse(item["items"]["all"]["duration"].ToString())),
-                                    Thumbnail = item["thumbnail"].ToString()
-                                };
-                                songs.Add(songIn4);
-                                break;
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
+                            EncodeId = item["encodeId"]?.ToString(),
+                            Title = item["title"]?.ToString(),
+                            Artists = item["artists"]?.Select(a => new Class_Artist { Name = a["name"]?.ToString() }).ToList(),
+                            Duration = ConvertSecondsToMinutes(int.Parse(item["duration"]?.ToString() ?? "0")),
+                            Thumbnail = item["thumbnail"]?.ToString()
+                        };
+                        songs.Add(songIn4);
                     }
 
                     return songs;

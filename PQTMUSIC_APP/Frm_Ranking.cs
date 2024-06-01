@@ -49,7 +49,7 @@ namespace PQTMUSIC_APP
         {
 
             Service songs = new Service();
-            AddDataToDataGridView(await songs.GetSongFromApi(apiUrl, "new-release"));
+            AddDataToDataGridView(await songs.GetSongsBySectionType(apiUrl, "new-release"));
 
         }
         private async void AddDataToDataGridView(List<Class_SongFullData> songs)
