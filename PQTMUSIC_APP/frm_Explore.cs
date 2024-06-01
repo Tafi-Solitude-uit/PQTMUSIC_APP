@@ -29,26 +29,26 @@ namespace PQTMUSIC_APP
             InitializeComponent();
         }
 
-        public string apiUrl = "https://apimusic.bug.edu.vn/nhaccuatui/getHome";
+        public string apiUrl = "https://apimusic.bug.edu.vn/zing/getHome";
 
         private async void frm_Explore_Load(object sender, EventArgs e)
         {
-            //List<Class_SongFullData> songs = await GetSongsFromApi(apiUrl);
+            List<Class_SongFullData> songs = await GetSongsFromApi(apiUrl);
 
-            //foreach (var song in songs)
-            //{
-            //    var row = new object[]
-            //    {
-            //            await LoadImage(song.Thumbnail), // Load the image from the URL
-            //            song.Title,
-            //            string.Join(", ", song.Artists),
-            //            song.Duration
-            //    };
+            foreach (var song in songs)
+            {
+                var row = new object[]
+                {
+                        await LoadImage(song.Thumbnail), // Load the image from the URL
+                        song.Title,
+                        string.Join(", ", song.Artists.Select(a => a.Name)), // Fix the FormatException by selecting the Name property of each artist,
+                        song.Duration
+                };
 
-            //    // Add the row to the DataGridView
-            //    int rowIndex = datagrid_Playlist_TOPSONG.Rows.Add(row);
-            //    datagrid_Playlist_TOPSONG.Rows[rowIndex].Tag = song;
-            //}
+                // Add the row to the DataGridView
+                int rowIndex = datagrid_Playlist_TOPSONG.Rows.Add(row);
+                datagrid_Playlist_TOPSONG.Rows[rowIndex].Tag = song;
+            }
         }
 
         public async Task<List<Class_SongFullData>> GetSongsFromApi(string apiUrl)
@@ -83,7 +83,7 @@ namespace PQTMUSIC_APP
                                             ArtistId = a["id"].ToString(),
                                             Name = a["name"].ToString()
                                         }).ToList(),
-                                        Duration = track["duration"].ToString(),
+                                        Duration = TimeSpan.FromSeconds(int.Parse(track["duration"].ToString())).ToString(@"m\:ss"),
                                         Thumbnail = track["thumbnail"].ToString()
                                     };
                                     vpopFullData.Add(song);
