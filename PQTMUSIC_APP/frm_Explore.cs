@@ -33,22 +33,22 @@ namespace PQTMUSIC_APP
 
         private async void frm_Explore_Load(object sender, EventArgs e)
         {
-            List<Class_SongFullData> songs = await GetSongsFromApi(apiUrl);
+            //List<Class_SongFullData> songs = await GetSongsFromApi(apiUrl);
 
-            foreach (var song in songs)
-            {
-                var row = new object[]
-                {
-                        await LoadImage(song.Thumbnail), // Load the image from the URL
-                        song.Title,
-                        string.Join(", ", song.Artists),
-                        song.Duration
-                };
+            //foreach (var song in songs)
+            //{
+            //    var row = new object[]
+            //    {
+            //            await LoadImage(song.Thumbnail), // Load the image from the URL
+            //            song.Title,
+            //            string.Join(", ", song.Artists),
+            //            song.Duration
+            //    };
 
-                // Add the row to the DataGridView
-                int rowIndex = datagrid_Playlist_TOPSONG.Rows.Add(row);
-                datagrid_Playlist_TOPSONG.Rows[rowIndex].Tag = song;
-            }
+            //    // Add the row to the DataGridView
+            //    int rowIndex = datagrid_Playlist_TOPSONG.Rows.Add(row);
+            //    datagrid_Playlist_TOPSONG.Rows[rowIndex].Tag = song;
+            //}
         }
 
         public async Task<List<Class_SongFullData>> GetSongsFromApi(string apiUrl)
