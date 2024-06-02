@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_LgSU));
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
@@ -42,6 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pn_SignUp = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbSUPassError = new System.Windows.Forms.Label();
+            this.lblSIusernameError = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSUusername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSUpass = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,8 +57,6 @@
             this.btnSignUp = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pn_SignIn = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblSIusernameError = new System.Windows.Forms.Label();
-            this.lbSUPassError = new System.Windows.Forms.Label();
             this.pn_SignUp.SuspendLayout();
             this.pn_SignIn.SuspendLayout();
             this.SuspendLayout();
@@ -275,6 +276,30 @@
             this.pn_SignUp.ShadowDecoration.Parent = this.pn_SignUp;
             this.pn_SignUp.Size = new System.Drawing.Size(409, 502);
             this.pn_SignUp.TabIndex = 2;
+            // 
+            // lbSUPassError
+            // 
+            this.lbSUPassError.AutoSize = true;
+            this.lbSUPassError.Font = new System.Drawing.Font("Cooper Black", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSUPassError.ForeColor = System.Drawing.Color.Plum;
+            this.lbSUPassError.Location = new System.Drawing.Point(46, 162);
+            this.lbSUPassError.Name = "lbSUPassError";
+            this.lbSUPassError.Size = new System.Drawing.Size(216, 14);
+            this.lbSUPassError.TabIndex = 27;
+            this.lbSUPassError.Text = "Password must have 6-12 charater";
+            this.lbSUPassError.Visible = false;
+            // 
+            // lblSIusernameError
+            // 
+            this.lblSIusernameError.AutoSize = true;
+            this.lblSIusernameError.Font = new System.Drawing.Font("Cooper Black", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSIusernameError.ForeColor = System.Drawing.Color.Plum;
+            this.lblSIusernameError.Location = new System.Drawing.Point(46, 92);
+            this.lblSIusernameError.Name = "lblSIusernameError";
+            this.lblSIusernameError.Size = new System.Drawing.Size(273, 14);
+            this.lblSIusernameError.TabIndex = 26;
+            this.lblSIusernameError.Text = "Username cannot contain special characters";
+            this.lblSIusernameError.Visible = false;
             // 
             // label4
             // 
@@ -564,30 +589,6 @@
             this.pn_SignIn.Size = new System.Drawing.Size(420, 502);
             this.pn_SignIn.TabIndex = 4;
             // 
-            // lblSIusernameError
-            // 
-            this.lblSIusernameError.AutoSize = true;
-            this.lblSIusernameError.Font = new System.Drawing.Font("Cooper Black", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSIusernameError.ForeColor = System.Drawing.Color.Plum;
-            this.lblSIusernameError.Location = new System.Drawing.Point(46, 92);
-            this.lblSIusernameError.Name = "lblSIusernameError";
-            this.lblSIusernameError.Size = new System.Drawing.Size(302, 15);
-            this.lblSIusernameError.TabIndex = 26;
-            this.lblSIusernameError.Text = "Username cannot contain special characters";
-            this.lblSIusernameError.Visible = false;
-            // 
-            // lbSUPassError
-            // 
-            this.lbSUPassError.AutoSize = true;
-            this.lbSUPassError.Font = new System.Drawing.Font("Cooper Black", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSUPassError.ForeColor = System.Drawing.Color.Plum;
-            this.lbSUPassError.Location = new System.Drawing.Point(46, 162);
-            this.lbSUPassError.Name = "lbSUPassError";
-            this.lbSUPassError.Size = new System.Drawing.Size(233, 15);
-            this.lbSUPassError.TabIndex = 27;
-            this.lbSUPassError.Text = "Password must have 6-12 charater";
-            this.lbSUPassError.Visible = false;
-            // 
             // Frm_LgSU
             // 
             this.AcceptButton = this.btnSignIn;
@@ -601,6 +602,7 @@
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.pn_SignUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm_LgSU";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
