@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using AngleSharp.Text;
+using NAudio.Wave;
 
 namespace PQTMUSIC_APP
 {
@@ -23,8 +24,8 @@ namespace PQTMUSIC_APP
                     try
                     {
                         response = await client.GetAsync($"{apiUrl}?songId={songID}");
-                        response.EnsureSuccessStatusCode(); // Check if request is successful
-                        break; // If no exception is thrown, break the loop
+                        response.EnsureSuccessStatusCode(); 
+                        break;
                     }
                     catch (HttpRequestException) when (i < 2) // If it's not the last attempt
                     {
@@ -34,28 +35,36 @@ namespace PQTMUSIC_APP
 
                 if (response == null || !response.IsSuccessStatusCode)
                 {
-                    // Handle the case when all attempts fail
+                    
                     throw new Exception("Failed to get response from API after 3 attempts");
                 }
 
                 var responseContent = await response.Content.ReadAsStringAsync();
                 JObject songData = JObject.Parse(responseContent);
 
-                if (songData["data"]["128"] is JToken streamUrlToken)
+                if (songData["msg"].ToString() == "Success")
                 {
-                    string linkStream = (string)streamUrlToken;
-                    return linkStream;
+                    if (songData["data"]["128"] is JToken streamUrlToken)
+                    {
+                        string linkStream = (string)streamUrlToken;
+                        return linkStream;
+                    }
+                    else
+                    {
+                        // Handle the case when "128" key is not found
+                        throw new Exception("No stream URL found");
+                    }
                 }
                 else
                 {
-                    // Handle the case when "128" key is not found
-                    throw new Exception("No stream URL found");
-                }
+                    MessageBox.Show(songData["msg"].ToString());
+                    return null;
+                }    
             }
         }
 
 
-        public async Task<List<Class_SongFullData>> GetSongsBySectionType(string apiUrl, string sectionType)
+        public async Task<List<Class_SongFullData>> GetSongsByURL(string apiUrl)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -66,37 +75,14 @@ namespace PQTMUSIC_APP
                     string json = await response.Content.ReadAsStringAsync();
 
                     JObject jObject = JObject.Parse(json);
-                    JArray itemsArray = (JArray)jObject["data"]["items"];
+                    JArray itemsArray = (JArray)jObject["data"]["RTChart"]["items"];
 
                     // Filter the items where sectionType matches the given sectionType
-                    var section = itemsArray
-                        .FirstOrDefault(item => item["sectionType"]?.ToString() == sectionType);
-
-                    if (section == null)
-                    {
-                        MessageBox.Show($"No section found for sectionType: {sectionType}");
-                        return null;
-                    }
-
-                    // Handle the "items" field which is a JObject
-                    JObject itemsObject = section["items"] as JObject;
-                    if (itemsObject == null)
-                    {
-                        MessageBox.Show("The items field is not a JObject.");
-                        return null;
-                    }
-
-                    // We are interested in the "all" array within the "items" object
-                    JArray songsArray = itemsObject["all"] as JArray;
-                    if (songsArray == null)
-                    {
-                        MessageBox.Show("The 'all' field is not a JArray.");
-                        return null;
-                    }
+                   
 
                     List<Class_SongFullData> songs = new List<Class_SongFullData>();
 
-                    foreach (var item in songsArray)
+                    foreach (var item in itemsArray)
                     {
                         Class_SongFullData songIn4 = new Class_SongFullData
                         {
@@ -123,6 +109,8 @@ namespace PQTMUSIC_APP
             TimeSpan time = TimeSpan.FromSeconds(totalSeconds);
             return time.ToString(@"m\:ss");
         }
+        
+    
 
     }
 }

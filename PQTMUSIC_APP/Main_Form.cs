@@ -1,9 +1,12 @@
-﻿using System;
+﻿
+using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,7 +15,8 @@ namespace PQTMUSIC_APP
 {
     public partial class Main_Form : Form
     {
-        private string currentUser;
+        public string currentUser;
+        public string streamURL;
         public Main_Form(string currentUser)
         {
             InitializeComponent();
@@ -43,9 +47,11 @@ namespace PQTMUSIC_APP
         }
         
 
-        private void btn_img_Play_Click(object sender, EventArgs e)
+        private async void btn_img_Play_Click(object sender, EventArgs e)
         {
-            
+            streamURL = Frm_Ranking.streamURL;
+            await PlayAudio(streamURL); 
+                     
         }
 
         private void pic_User_Click(object sender, EventArgs e)
@@ -71,7 +77,16 @@ namespace PQTMUSIC_APP
             //frm_FavSong showFavSong = new frm_FavSong();
 
         }
-
+        public async Task PlayAudio(string audioUrl)
+        {
+            await Task.Run(() =>
+            {
+                IWavePlayer WaveOutDevice = new WaveOut();
+                WaveStream mainOutputStream = new MediaFoundationReader(audioUrl);
+                WaveOutDevice.Init(mainOutputStream);
+                WaveOutDevice.Play();
+            });
+        }
         private void btn_Ranks_Click(object sender, EventArgs e)
         {
             Frm_Ranking showRank = new Frm_Ranking();

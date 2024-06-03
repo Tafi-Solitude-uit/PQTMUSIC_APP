@@ -25,8 +25,9 @@ namespace PQTMUSIC_APP
             InitializeComponent();
         }
 
-        string apiUrl = "https://apimusic.bug.edu.vn/zing/getHome";
+        string apiUrl = "https://apimusic.bug.edu.vn/zing/getChartHome";
         string songDetailsApiUrl = "https://apimusic.bug.edu.vn/zing/getSong";
+       
 
 
         string songID;
@@ -49,7 +50,7 @@ namespace PQTMUSIC_APP
         {
 
             Service songs = new Service();
-            AddDataToDataGridView(await songs.GetSongsBySectionType(apiUrl, "new-release"));
+            AddDataToDataGridView(await songs.GetSongsByURL(apiUrl));
 
         }
         private async void AddDataToDataGridView(List<Class_SongFullData> songs)
@@ -88,7 +89,6 @@ namespace PQTMUSIC_APP
                     songID = song.EncodeId;
                     Service songService = new Service();
                     streamURL = await songService.GetURLsToStream(songDetailsApiUrl, songID);
-
                 }
                 else
                 {
