@@ -84,7 +84,8 @@ namespace PQTMUSIC_APP
                                             Name = a["name"].ToString()
                                         }).ToList(),
                                         Duration = TimeSpan.FromSeconds(int.Parse(track["duration"].ToString())).ToString(@"m\:ss"),
-                                        Thumbnail = track["thumbnail"].ToString()
+                                        Thumbnail = track["thumbnail"].ToString(),
+                                        StreamUrls = await GetStreamUrlAsync(track["encodeId"].ToString())
                                     };
                                     vpopFullData.Add(song);
                                 }
@@ -111,6 +112,8 @@ namespace PQTMUSIC_APP
             }
         }
 
+
+
         private async Task<Image> LoadImage(string url)
         {
             using (HttpClient client = new HttpClient())
@@ -123,7 +126,29 @@ namespace PQTMUSIC_APP
             }
         }
 
-        
+        public async Task<string> GetStreamUrlAsync(string songId)
+        {
+            string url = $"https://apimusic.bug.edu.vn/zing/getSong?songId={songId}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    dynamic jsonData = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+
+                    if (jsonData != null && jsonData.err == 0)
+                    {
+                        string streamUrl = jsonData.data["128"];
+                        return streamUrl;
+                    }
+                }
+            }
+
+            return null;
+        }
 
         private void datagrid_Playlist_TOPSONG_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -133,48 +158,6 @@ namespace PQTMUSIC_APP
             // Assuming you have a method named PlaySong to play the song
             //PlaySong(selectedSong);
         }
-
-        private void PlaySong(Class_SongFullData song)
-        {
-            // Code to play the song goes here
-            // Assuming you have a URL for the song
-            string songUrl = song.StreamUrls;
-
-            // Assuming you have a title for the song
-            string songTitle = song.Title;
-
-            // Assuming you have an artist name for the song
-            string artistName = song.Artists[0].Name;
-
-            // Assuming you have a method to play the audio
-            PlayAudio(songUrl);
-
-            // Assuming you have a method to display the song title and artist name
-            DisplaySongInfo(songTitle, artistName);
-        }
-
-        private void PlayAudio(string url)
-        {
-            // Code to play the audio goes here
-            using (var waveOut = new WaveOutEvent())
-            {
-                using (var audioStream = new MediaFoundationReader(url))
-                {
-                    waveOut.Init(audioStream);
-                    waveOut.Play();
-                    while (waveOut.PlaybackState == PlaybackState.Playing)
-                    {
-
-                    }
-                }
-            }
-        }
-
-        public void DisplaySongInfo(string title, string artist)
-        {
-            // Assuming you have a reference to lbl_Music_Playing_MainForm and lbl_Artist_Playing_MainFrom
-            //lbl_Music_Playing_MainForm.Text = title;
-            //lbl_Artist_Playing_MainFrom.Text = artist;
-        }
+        
     }
 }
