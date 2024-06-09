@@ -15,6 +15,6 @@ namespace PQTMUSIC_APP
         public List<Class_Artist> Artists { get; set; }
         public string Duration { get; set; }
         public string Thumbnail { get; set; }
-        public List<StreamUrl> StreamUrls { get; set; }
+        public string StreamUrls { get; set; }
     }
 }

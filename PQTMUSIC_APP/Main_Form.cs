@@ -1,28 +1,45 @@
-﻿
-using NAudio.Wave;
+﻿using NAudio.Wave;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace PQTMUSIC_APP
 {
     public partial class Main_Form : Form
     {
         public string currentUser;
-        public string streamURL;
+        public bool isPlaying;
+        public bool isPaused;
+        private IWavePlayer WaveOutDevice;
+        private WaveStream audioStream;
+        public Class_SongFullData songCurrentPlay;
+        private List<Class_SongFullData> songList;
+        private int currentSongIndex;
+        private bool isShuffle = false;
+        private bool isLoop = false;
+
+        private Frm_Ranking rankingForm;
+        private frm_Explore explore;
+
         public Main_Form(string currentUser)
         {
             InitializeComponent();
-            frm_Explore explore = new frm_Explore();
+            explore = new frm_Explore();
             addForm_Child(explore);
             this.currentUser = currentUser;
+
+            rankingForm = new Frm_Ranking();
+            rankingForm.SongSelected += HandleSongSelected;
+            rankingForm.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
+            trackBar_Volume.Minimum = 0;
+            trackBar_Volume.Maximum = 100;
+            trackBar_Volume.Value = 50;
+
+            songList = new List<Class_SongFullData>();
+            currentSongIndex = -1;
         }
 
         private void addForm_Child(Form frm_child)
@@ -34,24 +51,187 @@ namespace PQTMUSIC_APP
             frm_child.Show();
         }
 
-        private void btn_Offline_Click(object sender, EventArgs e)
+        public void ReceivePlaylist(List<Class_SongFullData> playlist)
         {
-            frm_OffineMode Offline = new frm_OffineMode();
-            addForm_Child(Offline);
+            songList = playlist;
         }
 
-        private void btn_Explore_Click(object sender, EventArgs e)
+        public async void HandleSongSelected(object sender, Class_SongFullData e)
         {
-            frm_Explore explore = new frm_Explore();
-            addForm_Child(explore);
-        }
-        
+            songCurrentPlay = e;
+            currentSongIndex = songList.IndexOf(songCurrentPlay);
+            PlayNewSong(songCurrentPlay.StreamUrls);
+            pic_currently_Playing_MainForm.Image = await LoadImage(songCurrentPlay.Thumbnail);
+            lbl_Artist_Playing_MainFrom.Text = songCurrentPlay.Artists[0].Name;
+            lb_TittleCurrentSong.Text = songCurrentPlay.Title;
+            lb_endTime.Text = songCurrentPlay.Duration;
 
-        private async void btn_img_Play_Click(object sender, EventArgs e)
+            trackBar_Play.Maximum = (int)audioStream.TotalTime.TotalSeconds;
+            trackBar_Play.Value = 0;
+        }
+
+        private void btn_PlayPause_Click(object sender, EventArgs e)
         {
-            streamURL = Frm_Ranking.streamURL;
-            await PlayAudio(streamURL); 
-                     
+            if (WaveOutDevice == null)
+            {
+                MessageBox.Show("No song is currently loaded.");
+                return;
+            }
+
+            if (isPlaying)
+            {
+                if (isPaused)
+                {
+                    btn_PlayPause.Image = Properties.Resources.pause;
+                    WaveOutDevice.Play();
+                    isPaused = false;
+                }
+                else
+                {
+                    btn_PlayPause.Image = Properties.Resources.play_button_arrowhead__1_;
+                    WaveOutDevice.Pause();
+                    isPaused = true;
+                }
+            }
+        }
+
+        private void PlayAudio(string audioUrl)
+        {
+            audioStream?.Dispose();
+            audioStream = new MediaFoundationReader(audioUrl);
+
+            if (WaveOutDevice == null)
+            {
+                WaveOutDevice = new WaveOut();
+                WaveOutDevice.PlaybackStopped += OnPlaybackStopped;
+            }
+            else
+            {
+                WaveOutDevice.Stop();
+                WaveOutDevice.Dispose();
+                WaveOutDevice = new WaveOut();
+                WaveOutDevice.PlaybackStopped += OnPlaybackStopped;
+            }
+
+            WaveOutDevice.Init(audioStream);
+            WaveOutDevice.Play();
+            isPlaying = true;
+            isPaused = false;
+
+            trackBar_Play.Maximum = (int)audioStream.TotalTime.TotalSeconds;
+            trackBar_Play.Value = 0;
+
+            var timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += (s, args) =>
+            {
+                if (audioStream != null && !isPaused)
+                {
+                    trackBar_Play.Value = (int)audioStream.CurrentTime.TotalSeconds;
+                }
+            };
+            timer.Start();
+        }
+
+        private void PlayNewSong(string audioUrl)
+        {
+            if (WaveOutDevice != null)
+            {
+                WaveOutDevice.Stop();
+            }
+
+            PlayAudio(audioUrl);
+        }
+
+        private void OnPlaybackStopped(object sender, StoppedEventArgs e)
+        {
+            if (e.Exception != null)
+            {
+                MessageBox.Show($"Playback Error: {e.Exception.Message}");
+            }
+            else
+            {
+                isPlaying = false;
+                isPaused = false;
+                if (!isPaused)
+                {
+                    PlayNextSong();
+                }
+            }
+        }
+
+        private void PlayNextSong()
+        {
+            if (isShuffle)
+            {
+                Random rnd = new Random();
+                currentSongIndex = rnd.Next(songList.Count);
+            }
+            else
+            {
+                currentSongIndex++;
+                if (currentSongIndex >= songList.Count)
+                {
+                    currentSongIndex = 0;
+                }
+            }
+
+            if (songList.Count > 0)
+            {
+                HandleSongSelected(this, songList[currentSongIndex]);
+            }
+        }
+
+        private void PlayPreviousSong()
+        {
+            currentSongIndex--;
+            if (currentSongIndex < 0)
+            {
+                currentSongIndex = songList.Count - 1;
+            }
+
+            if (songList.Count > 0)
+            {
+                HandleSongSelected(this, songList[currentSongIndex]);
+            }
+        }
+
+        private void btn_PreSong_Click(object sender, EventArgs e)
+        {
+            PlayPreviousSong();
+        }
+
+        private void btn_NextSong_Click(object sender, EventArgs e)
+        {
+            PlayNextSong();
+        }
+
+        private void btn_playShuffle_Click(object sender, EventArgs e)
+        {
+            isShuffle = !isShuffle;
+            btn_playShuffle.Image = isShuffle ? Properties.Resources.icons8_shuffle_24 : Properties.Resources.mix__1_;
+        }
+
+        private void btn_loopCurrentSong_Click(object sender, EventArgs e)
+        {
+            isLoop = !isLoop;
+            if (isLoop)
+            {
+                btn_loopCurrentSong.Image = Properties.Resources.icons8_loop_on;
+                WaveOutDevice.PlaybackStopped -= OnPlaybackStopped;
+                WaveOutDevice.PlaybackStopped += (s, args) =>
+                {
+                    if (!isPaused)
+                    {
+                        PlayAudio(songCurrentPlay.StreamUrls);
+                    }
+                };
+            }
+            else
+            {
+                btn_loopCurrentSong.Image = Properties.Resources.icons8_repeat_30;
+                WaveOutDevice.PlaybackStopped -= OnPlaybackStopped;
+            }
         }
 
         private void pic_User_Click(object sender, EventArgs e)
@@ -75,22 +255,59 @@ namespace PQTMUSIC_APP
         private void btn_Favorite_Click(object sender, EventArgs e)
         {
             //frm_FavSong showFavSong = new frm_FavSong();
+        }
 
-        }
-        public async Task PlayAudio(string audioUrl)
+        private void btn_Offline_Click(object sender, EventArgs e)
         {
-            await Task.Run(() =>
-            {
-                IWavePlayer WaveOutDevice = new WaveOut();
-                WaveStream mainOutputStream = new MediaFoundationReader(audioUrl);
-                WaveOutDevice.Init(mainOutputStream);
-                WaveOutDevice.Play();
-            });
+            frm_OffineMode Offline = new frm_OffineMode();
+            addForm_Child(Offline);
         }
+
+        private void btn_Explore_Click(object sender, EventArgs e)
+        {
+            addForm_Child(explore);
+        }
+
         private void btn_Ranks_Click(object sender, EventArgs e)
         {
-            Frm_Ranking showRank = new Frm_Ranking();
-            addForm_Child(showRank);
+            addForm_Child(rankingForm);
+        }
+
+        private async Task<Image> LoadImage(string url)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    var response = await client.GetAsync(url);
+                    response.EnsureSuccessStatusCode(); // Throw if not a success code.
+                    using (var stream = await response.Content.ReadAsStreamAsync())
+                    {
+                        return Image.FromStream(stream);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading image: {ex.Message}");
+                return null;
+            }
+        }
+
+        private void TrackBar_Play_Scroll(object sender, EventArgs e)
+        {
+            if (audioStream != null)
+            {
+                audioStream.CurrentTime = TimeSpan.FromSeconds(trackBar_Play.Value);
+            }
+        }
+
+        private void trackBar_Volume_Scroll(object sender, EventArgs e)
+        {
+            if (WaveOutDevice != null)
+            {
+                WaveOutDevice.Volume = trackBar_Volume.Value / 100f;
+            }
         }
     }
 }

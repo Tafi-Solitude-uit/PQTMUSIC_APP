@@ -12,9 +12,10 @@ using NAudio.Wave;
 
 namespace PQTMUSIC_APP
 {
-    internal class Service: Class_SongFullData
+    internal class Service : Class_SongFullData
     {
-        public async Task<string> GetURLsToStream(string apiUrl, string songID)
+        public string detailAPI = "https://apimusic.bug.edu.vn/zing/getSong";
+        public async Task<string> GetURLsToStream(string songID)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -23,8 +24,8 @@ namespace PQTMUSIC_APP
                 {
                     try
                     {
-                        response = await client.GetAsync($"{apiUrl}?songId={songID}");
-                        response.EnsureSuccessStatusCode(); 
+                        response = await client.GetAsync($"{detailAPI}?songId={songID}");
+                        response.EnsureSuccessStatusCode();
                         break;
                     }
                     catch (HttpRequestException) when (i < 2) // If it's not the last attempt
@@ -35,7 +36,7 @@ namespace PQTMUSIC_APP
 
                 if (response == null || !response.IsSuccessStatusCode)
                 {
-                    
+
                     throw new Exception("Failed to get response from API after 3 attempts");
                 }
 
@@ -59,7 +60,7 @@ namespace PQTMUSIC_APP
                 {
                     MessageBox.Show(songData["msg"].ToString());
                     return null;
-                }    
+                }
             }
         }
 
@@ -77,21 +78,23 @@ namespace PQTMUSIC_APP
                     JObject jObject = JObject.Parse(json);
                     JArray itemsArray = (JArray)jObject["data"]["RTChart"]["items"];
 
-                    // Filter the items where sectionType matches the given sectionType
-                   
-
                     List<Class_SongFullData> songs = new List<Class_SongFullData>();
 
-                    foreach (var item in itemsArray)
+                    foreach (var item in  itemsArray)
                     {
+                        
+                        string encodeId = item["encodeId"]?.ToString();                    
+
                         Class_SongFullData songIn4 = new Class_SongFullData
                         {
-                            EncodeId = item["encodeId"]?.ToString(),
+                            EncodeId = encodeId,
                             Title = item["title"]?.ToString(),
                             Artists = item["artists"]?.Select(a => new Class_Artist { Name = a["name"]?.ToString() }).ToList(),
                             Duration = ConvertSecondsToMinutes(int.Parse(item["duration"]?.ToString() ?? "0")),
-                            Thumbnail = item["thumbnail"]?.ToString()
+                            Thumbnail = item["thumbnail"]?.ToString(),
+                            StreamUrls = await GetURLsToStream(encodeId)
                         };
+
                         songs.Add(songIn4);
                     }
 
@@ -104,13 +107,14 @@ namespace PQTMUSIC_APP
                 }
             }
         }
+
         public string ConvertSecondsToMinutes(int totalSeconds)
         {
             TimeSpan time = TimeSpan.FromSeconds(totalSeconds);
             return time.ToString(@"m\:ss");
         }
-        
-    
+
+
 
     }
 }
