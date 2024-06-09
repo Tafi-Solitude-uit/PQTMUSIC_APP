@@ -600,6 +600,9 @@
     <None Include="Resources\icons8-user-501.png" />
     <None Include="Resources\icons8-birthday-50.png" />
     <None Include="Resources\Hieuthuhai1.jpg" />
+    <None Include="Resources\icons8-repeat-30.png" />
+    <None Include="Resources\icons8-loop-on.png" />
+    <None Include="Resources\icons8-shuffle-24.png" />
     <Content Include="Resources\Image1.png" />
   </ItemGroup>
   <ItemGroup>
