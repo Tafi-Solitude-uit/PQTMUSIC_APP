@@ -138,7 +138,7 @@ namespace PQTMUSIC_APP
         {
             // Code to play the song goes here
             // Assuming you have a URL for the song
-            string songUrl = song.StreamUrls[0].Url;
+            string songUrl = song.StreamUrls;
 
             // Assuming you have a title for the song
             string songTitle = song.Title;
