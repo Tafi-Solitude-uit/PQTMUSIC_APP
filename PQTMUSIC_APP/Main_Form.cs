@@ -31,6 +31,8 @@ namespace PQTMUSIC_APP
             addForm_Child(explore);
             this.currentUser = currentUser;
 
+            explore.SongSelected += HandleSongSelected;
+
             rankingForm = new Frm_Ranking();
             rankingForm.SongSelected += HandleSongSelected;
             rankingForm.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
@@ -100,18 +102,11 @@ namespace PQTMUSIC_APP
             audioStream?.Dispose();
             audioStream = new MediaFoundationReader(audioUrl);
 
-            if (WaveOutDevice == null)
-            {
-                WaveOutDevice = new WaveOut();
-                WaveOutDevice.PlaybackStopped += OnPlaybackStopped;
-            }
-            else
-            {
-                WaveOutDevice.Stop();
-                WaveOutDevice.Dispose();
-                WaveOutDevice = new WaveOut();
-                WaveOutDevice.PlaybackStopped += OnPlaybackStopped;
-            }
+            WaveOutDevice?.Stop();
+            WaveOutDevice?.Dispose();
+
+            WaveOutDevice = new WaveOut();
+            WaveOutDevice.PlaybackStopped += OnPlaybackStopped;
 
             WaveOutDevice.Init(audioStream);
             WaveOutDevice.Play();
@@ -121,8 +116,7 @@ namespace PQTMUSIC_APP
             trackBar_Play.Maximum = (int)audioStream.TotalTime.TotalSeconds;
             trackBar_Play.Value = 0;
 
-            var timer = new Timer();
-            timer.Interval = 1000;
+            var timer = new Timer { Interval = 1000 };
             timer.Tick += (s, args) =>
             {
                 if (audioStream != null && !isPaused)
@@ -131,6 +125,7 @@ namespace PQTMUSIC_APP
                 }
             };
             timer.Start();
+            timer.Disposed += (s, args) => timer.Stop();
         }
 
         private void PlayNewSong(string audioUrl)
