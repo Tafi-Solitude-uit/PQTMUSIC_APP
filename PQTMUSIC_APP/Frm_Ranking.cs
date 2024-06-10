@@ -112,6 +112,11 @@ namespace PQTMUSIC_APP
         {
 
         }
+
+        private void lbl_App_Name_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

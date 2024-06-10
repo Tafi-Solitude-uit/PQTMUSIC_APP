@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Explore));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel_Child = new Guna.UI2.WinForms.Guna2Panel();
@@ -83,6 +83,8 @@
             this.lbl_Tittle = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.lbl_Playlist = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_App_Name = new System.Windows.Forms.Label();
             this.panel_Child.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Playlist_TOPSONG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,6 +110,8 @@
             // 
             this.panel_Child.AutoScroll = true;
             this.panel_Child.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
+            this.panel_Child.Controls.Add(this.lbl_App_Name);
+            this.panel_Child.Controls.Add(this.label1);
             this.panel_Child.Controls.Add(this.guna2Separator1);
             this.panel_Child.Controls.Add(this.lbl_Playlist);
             this.panel_Child.Controls.Add(this.datagrid_Playlist_TOPSONG);
@@ -134,8 +138,8 @@
             this.datagrid_Playlist_TOPSONG.AllowUserToAddRows = false;
             this.datagrid_Playlist_TOPSONG.AllowUserToDeleteRows = false;
             this.datagrid_Playlist_TOPSONG.AllowUserToResizeRows = false;
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.White;
-            this.datagrid_Playlist_TOPSONG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle97.BackColor = System.Drawing.Color.White;
+            this.datagrid_Playlist_TOPSONG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle97;
             this.datagrid_Playlist_TOPSONG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -144,28 +148,28 @@
             this.datagrid_Playlist_TOPSONG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datagrid_Playlist_TOPSONG.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.datagrid_Playlist_TOPSONG.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle56.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagrid_Playlist_TOPSONG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle98.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle98.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle98.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle98.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle98.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagrid_Playlist_TOPSONG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle98;
             this.datagrid_Playlist_TOPSONG.ColumnHeadersHeight = 27;
             this.datagrid_Playlist_TOPSONG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Thumbnail,
             this.Tittle,
             this.Artist,
             this.Duration});
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagrid_Playlist_TOPSONG.DefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle99.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle99.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle99.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle99.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle99.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle99.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagrid_Playlist_TOPSONG.DefaultCellStyle = dataGridViewCellStyle99;
             this.datagrid_Playlist_TOPSONG.EnableHeadersVisualStyles = false;
             this.datagrid_Playlist_TOPSONG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.datagrid_Playlist_TOPSONG.Location = new System.Drawing.Point(25, 338);
@@ -798,31 +802,28 @@
             // 
             // lbl_title1
             // 
-            this.lbl_title1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_title1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_title1.BackColor = System.Drawing.Color.Transparent;
             this.lbl_title1.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.lbl_title1.Location = new System.Drawing.Point(335, 171);
+            this.lbl_title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
+            this.lbl_title1.Location = new System.Drawing.Point(342, 192);
             this.lbl_title1.Name = "lbl_title1";
-            this.lbl_title1.Size = new System.Drawing.Size(754, 92);
+            this.lbl_title1.Size = new System.Drawing.Size(731, 92);
             this.lbl_title1.TabIndex = 127;
             this.lbl_title1.Text = "Hottest New Songs!";
-            this.lbl_title1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbl_Tittle
             // 
-            this.lbl_Tittle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Tittle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_Tittle.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Tittle.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Tittle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.lbl_Tittle.Location = new System.Drawing.Point(336, 89);
+            this.lbl_Tittle.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Tittle.ForeColor = System.Drawing.Color.LightSalmon;
+            this.lbl_Tittle.Location = new System.Drawing.Point(342, 113);
             this.lbl_Tittle.Name = "lbl_Tittle";
-            this.lbl_Tittle.Size = new System.Drawing.Size(737, 82);
+            this.lbl_Tittle.Size = new System.Drawing.Size(715, 88);
             this.lbl_Tittle.TabIndex = 126;
-            this.lbl_Tittle.Text = "Discover Vietnamese Music";
-            this.lbl_Tittle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_Tittle.Text = "Vietnamese Music";
+            this.lbl_Tittle.Click += new System.EventHandler(this.lbl_Tittle_Click);
             // 
             // guna2Separator1
             // 
@@ -845,6 +846,33 @@
             this.lbl_Playlist.Size = new System.Drawing.Size(191, 35);
             this.lbl_Playlist.TabIndex = 179;
             this.lbl_Playlist.Text = "Mới Phát Hành";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
+            this.label1.Location = new System.Drawing.Point(338, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(384, 112);
+            this.label1.TabIndex = 181;
+            this.label1.Text = "Discover";
+            // 
+            // lbl_App_Name
+            // 
+            this.lbl_App_Name.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_App_Name.AutoSize = true;
+            this.lbl_App_Name.Font = new System.Drawing.Font("Stencil", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_App_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
+            this.lbl_App_Name.Location = new System.Drawing.Point(811, 12);
+            this.lbl_App_Name.Name = "lbl_App_Name";
+            this.lbl_App_Name.Size = new System.Drawing.Size(269, 59);
+            this.lbl_App_Name.TabIndex = 184;
+            this.lbl_App_Name.Text = "PQTMUSIC";
+            this.lbl_App_Name.Click += new System.EventHandler(this.lbl_App_Name_Click);
             // 
             // frm_Explore
             // 
@@ -935,5 +963,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label lbl_Playlist;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_App_Name;
     }
 }
