@@ -583,6 +583,8 @@
     <None Include="Resources\cd.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\repeat.png" />
+    <None Include="Resources\repeat%281%29.png" />
     <None Include="Resources\white heart.png" />
     <None Include="Resources\767wBRIM.png" />
     <None Include="Resources\785.png" />

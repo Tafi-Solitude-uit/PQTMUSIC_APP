@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_OffineMode));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.datagrid_Playlist = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -43,29 +43,30 @@
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.lbl_Playlist = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_Play = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btn_mute = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbl_timeEnd = new System.Windows.Forms.Label();
             this.lbl_timeStart = new System.Windows.Forms.Label();
             this.TrackBar_Volumn = new Guna.UI2.WinForms.Guna2TrackBar();
             this.TrackBar_Play = new Guna.UI2.WinForms.Guna2TrackBar();
-            this.btn_Rewind = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btn_Next = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btn_Pause = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_Upload = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbl_App_Name = new System.Windows.Forms.Label();
             this.lbl_Artist = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.pic_Player = new System.Windows.Forms.PictureBox();
             this.lbl_Song = new System.Windows.Forms.Label();
-            this.musicPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timerPlayBack = new System.Windows.Forms.Timer(this.components);
+            this.musicPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            this.btn_repeat = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btn_Shuffle = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btn_Play = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btn_mute = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btn_Rewind = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btn_Next = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pic_Player = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Playlist)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.musicPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Player)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -78,8 +79,8 @@
             this.datagrid_Playlist.AllowUserToAddRows = false;
             this.datagrid_Playlist.AllowUserToDeleteRows = false;
             this.datagrid_Playlist.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.datagrid_Playlist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.datagrid_Playlist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datagrid_Playlist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -88,14 +89,14 @@
             this.datagrid_Playlist.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datagrid_Playlist.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.datagrid_Playlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagrid_Playlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagrid_Playlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.datagrid_Playlist.ColumnHeadersHeight = 27;
             this.datagrid_Playlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -103,14 +104,14 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagrid_Playlist.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagrid_Playlist.DefaultCellStyle = dataGridViewCellStyle6;
             this.datagrid_Playlist.EnableHeadersVisualStyles = false;
             this.datagrid_Playlist.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.datagrid_Playlist.Location = new System.Drawing.Point(12, 326);
@@ -208,6 +209,8 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.guna2Panel1.Controls.Add(this.btn_repeat);
+            this.guna2Panel1.Controls.Add(this.btn_Shuffle);
             this.guna2Panel1.Controls.Add(this.btn_Play);
             this.guna2Panel1.Controls.Add(this.btn_mute);
             this.guna2Panel1.Controls.Add(this.lbl_timeEnd);
@@ -216,7 +219,6 @@
             this.guna2Panel1.Controls.Add(this.TrackBar_Play);
             this.guna2Panel1.Controls.Add(this.btn_Rewind);
             this.guna2Panel1.Controls.Add(this.btn_Next);
-            this.guna2Panel1.Controls.Add(this.btn_Pause);
             this.guna2Panel1.Controls.Add(this.btn_Upload);
             this.guna2Panel1.Controls.Add(this.lbl_App_Name);
             this.guna2Panel1.Controls.Add(this.lbl_Artist);
@@ -228,42 +230,6 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(1092, 260);
             this.guna2Panel1.TabIndex = 173;
-            // 
-            // btn_Play
-            // 
-            this.btn_Play.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Play.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Play.CheckedState.Parent = this.btn_Play;
-            this.btn_Play.HoverState.Image = global::PQTMUSIC_APP.Properties.Resources.pause__1_;
-            this.btn_Play.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.btn_Play.HoverState.Parent = this.btn_Play;
-            this.btn_Play.Image = global::PQTMUSIC_APP.Properties.Resources.play_button_arrowhead__1_;
-            this.btn_Play.ImageSize = new System.Drawing.Size(35, 35);
-            this.btn_Play.Location = new System.Drawing.Point(708, 167);
-            this.btn_Play.Name = "btn_Play";
-            this.btn_Play.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Play.PressedState.Parent = this.btn_Play;
-            this.btn_Play.Size = new System.Drawing.Size(44, 46);
-            this.btn_Play.TabIndex = 188;
-            this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
-            // 
-            // btn_mute
-            // 
-            this.btn_mute.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_mute.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_mute.CheckedState.Parent = this.btn_mute;
-            this.btn_mute.HoverState.Image = global::PQTMUSIC_APP.Properties.Resources.volume__1_;
-            this.btn_mute.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_mute.HoverState.Parent = this.btn_mute;
-            this.btn_mute.Image = global::PQTMUSIC_APP.Properties.Resources.volume;
-            this.btn_mute.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_mute.Location = new System.Drawing.Point(913, 167);
-            this.btn_mute.Name = "btn_mute";
-            this.btn_mute.PressedState.Image = global::PQTMUSIC_APP.Properties.Resources.mute__2_;
-            this.btn_mute.PressedState.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_mute.PressedState.Parent = this.btn_mute;
-            this.btn_mute.Size = new System.Drawing.Size(44, 46);
-            this.btn_mute.TabIndex = 186;
             // 
             // lbl_timeEnd
             // 
@@ -316,60 +282,6 @@
             this.TrackBar_Play.TabIndex = 182;
             this.TrackBar_Play.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.TrackBar_Play.Scroll += new System.Windows.Forms.ScrollEventHandler(this.TrackBar_Play_Scroll);
-            // 
-            // btn_Rewind
-            // 
-            this.btn_Rewind.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Rewind.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Rewind.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Rewind.CheckedState.Parent = this.btn_Rewind;
-            this.btn_Rewind.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Rewind.HoverState.Parent = this.btn_Rewind;
-            this.btn_Rewind.Image = global::PQTMUSIC_APP.Properties.Resources.back;
-            this.btn_Rewind.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_Rewind.Location = new System.Drawing.Point(658, 167);
-            this.btn_Rewind.Name = "btn_Rewind";
-            this.btn_Rewind.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Rewind.PressedState.Parent = this.btn_Rewind;
-            this.btn_Rewind.Size = new System.Drawing.Size(44, 46);
-            this.btn_Rewind.TabIndex = 181;
-            this.btn_Rewind.UseTransparentBackground = true;
-            this.btn_Rewind.Click += new System.EventHandler(this.btn_Rewind_Click);
-            // 
-            // btn_Next
-            // 
-            this.btn_Next.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Next.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Next.CheckedState.Parent = this.btn_Next;
-            this.btn_Next.HoverState.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Next.HoverState.Parent = this.btn_Next;
-            this.btn_Next.Image = global::PQTMUSIC_APP.Properties.Resources.play_and_pause_button__1_;
-            this.btn_Next.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_Next.Location = new System.Drawing.Point(808, 166);
-            this.btn_Next.Name = "btn_Next";
-            this.btn_Next.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Next.PressedState.Parent = this.btn_Next;
-            this.btn_Next.Size = new System.Drawing.Size(44, 46);
-            this.btn_Next.TabIndex = 180;
-            this.btn_Next.Click += new System.EventHandler(this.btn_Next_Click);
-            // 
-            // btn_Pause
-            // 
-            this.btn_Pause.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Pause.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Pause.CheckedState.Parent = this.btn_Pause;
-            this.btn_Pause.HoverState.Image = global::PQTMUSIC_APP.Properties.Resources.pause__1_;
-            this.btn_Pause.HoverState.ImageSize = new System.Drawing.Size(40, 40);
-            this.btn_Pause.HoverState.Parent = this.btn_Pause;
-            this.btn_Pause.Image = global::PQTMUSIC_APP.Properties.Resources.pause;
-            this.btn_Pause.ImageSize = new System.Drawing.Size(35, 35);
-            this.btn_Pause.Location = new System.Drawing.Point(758, 166);
-            this.btn_Pause.Name = "btn_Pause";
-            this.btn_Pause.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btn_Pause.PressedState.Parent = this.btn_Pause;
-            this.btn_Pause.Size = new System.Drawing.Size(44, 46);
-            this.btn_Pause.TabIndex = 179;
-            this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
             // 
             // btn_Upload
             // 
@@ -428,17 +340,6 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(250, 250);
             this.guna2ShadowPanel1.TabIndex = 174;
             // 
-            // pic_Player
-            // 
-            this.pic_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.pic_Player.Image = global::PQTMUSIC_APP.Properties.Resources.cd;
-            this.pic_Player.Location = new System.Drawing.Point(17, 16);
-            this.pic_Player.Name = "pic_Player";
-            this.pic_Player.Size = new System.Drawing.Size(220, 220);
-            this.pic_Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Player.TabIndex = 130;
-            this.pic_Player.TabStop = false;
-            // 
             // lbl_Song
             // 
             this.lbl_Song.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -452,17 +353,6 @@
             this.lbl_Song.TabIndex = 173;
             this.lbl_Song.Text = "Name Song";
             // 
-            // musicPlayer
-            // 
-            this.musicPlayer.Enabled = true;
-            this.musicPlayer.Location = new System.Drawing.Point(562, 274);
-            this.musicPlayer.Name = "musicPlayer";
-            this.musicPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("musicPlayer.OcxState")));
-            this.musicPlayer.Size = new System.Drawing.Size(451, 35);
-            this.musicPlayer.TabIndex = 174;
-            this.musicPlayer.Visible = false;
-            this.musicPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.musicPlayer_PlayStateChange);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -474,6 +364,136 @@
             // 
             this.timerPlayBack.Interval = 850;
             this.timerPlayBack.Tick += new System.EventHandler(this.timerPlayBack_Tick);
+            // 
+            // musicPlayer
+            // 
+            this.musicPlayer.Enabled = true;
+            this.musicPlayer.Location = new System.Drawing.Point(562, 274);
+            this.musicPlayer.Name = "musicPlayer";
+            this.musicPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("musicPlayer.OcxState")));
+            this.musicPlayer.Size = new System.Drawing.Size(451, 35);
+            this.musicPlayer.TabIndex = 174;
+            this.musicPlayer.Visible = false;
+            this.musicPlayer.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.musicPlayer_PlayStateChange);
+            // 
+            // btn_repeat
+            // 
+            this.btn_repeat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_repeat.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_repeat.CheckedState.Parent = this.btn_repeat;
+            this.btn_repeat.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_repeat.HoverState.Parent = this.btn_repeat;
+            this.btn_repeat.Image = global::PQTMUSIC_APP.Properties.Resources.repeat;
+            this.btn_repeat.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_repeat.Location = new System.Drawing.Point(613, 167);
+            this.btn_repeat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_repeat.Name = "btn_repeat";
+            this.btn_repeat.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_repeat.PressedState.Parent = this.btn_repeat;
+            this.btn_repeat.Size = new System.Drawing.Size(44, 46);
+            this.btn_repeat.TabIndex = 190;
+            this.btn_repeat.Click += new System.EventHandler(this.btn_repeat_Click);
+            // 
+            // btn_Shuffle
+            // 
+            this.btn_Shuffle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Shuffle.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Shuffle.CheckedState.Parent = this.btn_Shuffle;
+            this.btn_Shuffle.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Shuffle.HoverState.Parent = this.btn_Shuffle;
+            this.btn_Shuffle.Image = global::PQTMUSIC_APP.Properties.Resources.mix__1_;
+            this.btn_Shuffle.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_Shuffle.Location = new System.Drawing.Point(663, 167);
+            this.btn_Shuffle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Shuffle.Name = "btn_Shuffle";
+            this.btn_Shuffle.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Shuffle.PressedState.Parent = this.btn_Shuffle;
+            this.btn_Shuffle.Size = new System.Drawing.Size(44, 46);
+            this.btn_Shuffle.TabIndex = 189;
+            this.btn_Shuffle.Click += new System.EventHandler(this.btn_Shuffle_Click);
+            // 
+            // btn_Play
+            // 
+            this.btn_Play.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Play.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Play.CheckedState.Parent = this.btn_Play;
+            this.btn_Play.HoverState.Image = global::PQTMUSIC_APP.Properties.Resources.play_button_arrowhead;
+            this.btn_Play.HoverState.ImageSize = new System.Drawing.Size(40, 40);
+            this.btn_Play.HoverState.Parent = this.btn_Play;
+            this.btn_Play.Image = global::PQTMUSIC_APP.Properties.Resources.play_button_arrowhead__1_;
+            this.btn_Play.ImageSize = new System.Drawing.Size(35, 35);
+            this.btn_Play.Location = new System.Drawing.Point(763, 167);
+            this.btn_Play.Name = "btn_Play";
+            this.btn_Play.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Play.PressedState.Parent = this.btn_Play;
+            this.btn_Play.Size = new System.Drawing.Size(44, 46);
+            this.btn_Play.TabIndex = 188;
+            this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
+            // 
+            // btn_mute
+            // 
+            this.btn_mute.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_mute.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_mute.CheckedState.Parent = this.btn_mute;
+            this.btn_mute.HoverState.Image = global::PQTMUSIC_APP.Properties.Resources.volume__1_;
+            this.btn_mute.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_mute.HoverState.Parent = this.btn_mute;
+            this.btn_mute.Image = global::PQTMUSIC_APP.Properties.Resources.volume;
+            this.btn_mute.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_mute.Location = new System.Drawing.Point(913, 167);
+            this.btn_mute.Name = "btn_mute";
+            this.btn_mute.PressedState.Image = global::PQTMUSIC_APP.Properties.Resources.mute__2_;
+            this.btn_mute.PressedState.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_mute.PressedState.Parent = this.btn_mute;
+            this.btn_mute.Size = new System.Drawing.Size(44, 46);
+            this.btn_mute.TabIndex = 186;
+            // 
+            // btn_Rewind
+            // 
+            this.btn_Rewind.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Rewind.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Rewind.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Rewind.CheckedState.Parent = this.btn_Rewind;
+            this.btn_Rewind.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Rewind.HoverState.Parent = this.btn_Rewind;
+            this.btn_Rewind.Image = global::PQTMUSIC_APP.Properties.Resources.back;
+            this.btn_Rewind.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_Rewind.Location = new System.Drawing.Point(713, 167);
+            this.btn_Rewind.Name = "btn_Rewind";
+            this.btn_Rewind.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Rewind.PressedState.Parent = this.btn_Rewind;
+            this.btn_Rewind.Size = new System.Drawing.Size(44, 46);
+            this.btn_Rewind.TabIndex = 181;
+            this.btn_Rewind.UseTransparentBackground = true;
+            this.btn_Rewind.Click += new System.EventHandler(this.btn_Rewind_Click);
+            // 
+            // btn_Next
+            // 
+            this.btn_Next.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Next.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Next.CheckedState.Parent = this.btn_Next;
+            this.btn_Next.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Next.HoverState.Parent = this.btn_Next;
+            this.btn_Next.Image = global::PQTMUSIC_APP.Properties.Resources.play_and_pause_button__1_;
+            this.btn_Next.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_Next.Location = new System.Drawing.Point(813, 167);
+            this.btn_Next.Name = "btn_Next";
+            this.btn_Next.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btn_Next.PressedState.Parent = this.btn_Next;
+            this.btn_Next.Size = new System.Drawing.Size(44, 46);
+            this.btn_Next.TabIndex = 180;
+            this.btn_Next.Click += new System.EventHandler(this.btn_Next_Click);
+            // 
+            // pic_Player
+            // 
+            this.pic_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
+            this.pic_Player.Image = global::PQTMUSIC_APP.Properties.Resources.cd;
+            this.pic_Player.Location = new System.Drawing.Point(17, 16);
+            this.pic_Player.Name = "pic_Player";
+            this.pic_Player.Size = new System.Drawing.Size(220, 220);
+            this.pic_Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Player.TabIndex = 130;
+            this.pic_Player.TabStop = false;
             // 
             // frm_OffineMode
             // 
@@ -489,13 +509,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_OffineMode";
             this.Text = "frm_OffineMode";
-            this.Load += new System.EventHandler(this.frm_OffineMode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Playlist)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2ShadowPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.musicPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Player)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,7 +540,6 @@
         private Guna.UI2.WinForms.Guna2TrackBar TrackBar_Play;
         private Guna.UI2.WinForms.Guna2ImageButton btn_Rewind;
         private Guna.UI2.WinForms.Guna2ImageButton btn_Next;
-        private Guna.UI2.WinForms.Guna2ImageButton btn_Pause;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Upload;
         private System.Windows.Forms.Label lbl_App_Name;
         private System.Windows.Forms.Label lbl_Artist;
@@ -531,5 +549,7 @@
         private AxWMPLib.AxWindowsMediaPlayer musicPlayer;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Timer timerPlayBack;
+        private Guna.UI2.WinForms.Guna2ImageButton btn_Shuffle;
+        private Guna.UI2.WinForms.Guna2ImageButton btn_repeat;
     }
 }
