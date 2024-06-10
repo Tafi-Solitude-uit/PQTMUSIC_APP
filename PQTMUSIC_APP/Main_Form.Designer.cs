@@ -570,6 +570,8 @@
             // 
             // txt_Search
             // 
+            this.txt_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Search.Animated = true;
             this.txt_Search.AutoRoundedCorners = true;
             this.txt_Search.BorderColor = System.Drawing.Color.Black;
