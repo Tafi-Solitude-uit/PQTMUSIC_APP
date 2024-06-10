@@ -308,6 +308,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtistService.cs" />
     <Compile Include="Class_Artist.cs" />
     <Compile Include="Class_SongFullData.cs" />
     <Compile Include="Frm_Ranking.cs">
@@ -350,11 +351,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowGenres.cs">
+    <Compile Include="SearchResult.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowGenres.Designer.cs">
-      <DependentUpon>ShowGenres.cs</DependentUpon>
+    <Compile Include="SearchResult.Designer.cs">
+      <DependentUpon>SearchResult.cs</DependentUpon>
     </Compile>
     <Compile Include="ShowIn4.cs">
       <SubType>Form</SubType>
@@ -391,8 +392,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ShowGenres.resx">
-      <DependentUpon>ShowGenres.cs</DependentUpon>
+    <EmbeddedResource Include="SearchResult.resx">
+      <DependentUpon>SearchResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowIn4.resx">
       <DependentUpon>ShowIn4.cs</DependentUpon>

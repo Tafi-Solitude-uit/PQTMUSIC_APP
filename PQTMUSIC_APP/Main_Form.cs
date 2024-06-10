@@ -5,6 +5,10 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using AngleSharp.Io;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using System.Text;
 
 namespace PQTMUSIC_APP
 {
@@ -18,20 +22,24 @@ namespace PQTMUSIC_APP
         public Class_SongFullData songCurrentPlay;
         private List<Class_SongFullData> songList;
         private int currentSongIndex;
+        public static int lastSongIndex;
         private bool isShuffle = false;
         private bool isLoop = false;
+        
 
         private Frm_Ranking rankingForm;
-        private frm_Explore explore;
-
+        private frm_Explore explore=new frm_Explore();
+        private SearchResult result = new SearchResult();
         public Main_Form(string currentUser)
         {
             InitializeComponent();
             explore = new frm_Explore();
             addForm_Child(explore);
             this.currentUser = currentUser;
-
+           
             explore.SongSelected += HandleSongSelected;
+           
+            result.SongSelected += HandleSongSelected;
 
             rankingForm = new Frm_Ranking();
             rankingForm.SongSelected += HandleSongSelected;
@@ -42,6 +50,7 @@ namespace PQTMUSIC_APP
 
             songList = new List<Class_SongFullData>();
             currentSongIndex = -1;
+            lastSongIndex= -1;
         }
 
         private void addForm_Child(Form frm_child)
@@ -55,6 +64,7 @@ namespace PQTMUSIC_APP
 
         public void ReceivePlaylist(List<Class_SongFullData> playlist)
         {
+            songList.Clear();
             songList = playlist;
         }
 
@@ -157,6 +167,7 @@ namespace PQTMUSIC_APP
 
         private void PlayNextSong()
         {
+            lastSongIndex = currentSongIndex;
             if (isShuffle)
             {
                 Random rnd = new Random();
@@ -179,7 +190,7 @@ namespace PQTMUSIC_APP
 
         private void PlayPreviousSong()
         {
-            currentSongIndex--;
+            
             if (currentSongIndex < 0)
             {
                 currentSongIndex = songList.Count - 1;
@@ -187,7 +198,7 @@ namespace PQTMUSIC_APP
 
             if (songList.Count > 0)
             {
-                HandleSongSelected(this, songList[currentSongIndex]);
+                HandleSongSelected(this, songList[lastSongIndex]);
             }
         }
 
@@ -237,7 +248,7 @@ namespace PQTMUSIC_APP
 
         private void btn_Genres_Click(object sender, EventArgs e)
         {
-            ShowGenres showGenres = new ShowGenres();
+            SearchResult showGenres = new SearchResult();
             addForm_Child(showGenres);
         }
 
@@ -302,6 +313,23 @@ namespace PQTMUSIC_APP
             if (WaveOutDevice != null)
             {
                 WaveOutDevice.Volume = trackBar_Volume.Value / 100f;
+            }
+        }
+
+
+
+        public static string query; 
+        private  void txt_Search_TextChanged(object sender, EventArgs e)
+        {
+             query = txt_Search.Text;
+        }
+
+        private void txt_Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(txt_Search.Text))
+            {
+                
+                addForm_Child(result);
             }
         }
     }
