@@ -30,6 +30,7 @@ namespace PQTMUSIC_APP
         }
 
         public string apiUrl = "https://apimusic.bug.edu.vn/zing/getHome";
+        public event EventHandler<Class_SongFullData> SongSelected;
 
         private async void frm_Explore_Load(object sender, EventArgs e)
         {
@@ -152,11 +153,18 @@ namespace PQTMUSIC_APP
 
         private void datagrid_Playlist_TOPSONG_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            // Assuming you have a DataGridView named datagrid_playlist_TOPSONG in your form
-            //var selectedSong = (Class_Song)datagrid_playlist_TOPSONG.Rows[e.RowIndex].DataBoundItem;
-
-            // Assuming you have a method named PlaySong to play the song
-            //PlaySong(selectedSong);
+            if (e.RowIndex >= 0)
+            {
+                Class_SongFullData song = datagrid_Playlist_TOPSONG.Rows[e.RowIndex].Tag as Class_SongFullData;
+                if (song != null)
+                {
+                    SongSelected?.Invoke(this, song);
+                }
+                else
+                {
+                    MessageBox.Show("No song data available.");
+                }
+            }
         }
         
     }
