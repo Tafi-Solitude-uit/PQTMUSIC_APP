@@ -31,19 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.lbl_App_Name = new System.Windows.Forms.Label();
-            this.btn_Playlist3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Playlist2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Playlist1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Ranks = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel_Menu_Bar = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_Offline = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Download = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Albums = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Favorite = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Recent_Played = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Artists = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Genres = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Songs = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Explore = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbl_Library = new System.Windows.Forms.Label();
             this.lbl_playlist = new System.Windows.Forms.Label();
@@ -91,41 +86,6 @@
             this.lbl_App_Name.TabIndex = 39;
             this.lbl_App_Name.Text = "PQTMUSIC";
             // 
-            // btn_Playlist3
-            // 
-            this.btn_Playlist3.Animated = true;
-            this.btn_Playlist3.BorderRadius = 10;
-            this.btn_Playlist3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_Playlist3.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(197)))), ((int)(((byte)(86)))));
-            this.btn_Playlist3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Playlist3.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Playlist3.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Playlist3.CheckedState.Parent = this.btn_Playlist3;
-            this.btn_Playlist3.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btn_Playlist3.CustomImages.HoveredImage = ((System.Drawing.Image)(resources.GetObject("btn_Playlist3.CustomImages.HoveredImage")));
-            this.btn_Playlist3.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Playlist3.CustomImages.Image")));
-            this.btn_Playlist3.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Playlist3.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btn_Playlist3.CustomImages.Parent = this.btn_Playlist3;
-            this.btn_Playlist3.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Playlist3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Playlist3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Playlist3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btn_Playlist3.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
-            this.btn_Playlist3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Playlist3.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Playlist3.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Playlist3.HoverState.Parent = this.btn_Playlist3;
-            this.btn_Playlist3.Location = new System.Drawing.Point(9, 639);
-            this.btn_Playlist3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Playlist3.Name = "btn_Playlist3";
-            this.btn_Playlist3.ShadowDecoration.Parent = this.btn_Playlist3;
-            this.btn_Playlist3.Size = new System.Drawing.Size(211, 46);
-            this.btn_Playlist3.TabIndex = 38;
-            this.btn_Playlist3.Text = "History";
-            this.btn_Playlist3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Playlist3.TextOffset = new System.Drawing.Point(50, 0);
-            // 
             // btn_Playlist2
             // 
             this.btn_Playlist2.Animated = true;
@@ -151,50 +111,15 @@
             this.btn_Playlist2.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Playlist2.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Playlist2.HoverState.Parent = this.btn_Playlist2;
-            this.btn_Playlist2.Location = new System.Drawing.Point(9, 597);
+            this.btn_Playlist2.Location = new System.Drawing.Point(12, 468);
             this.btn_Playlist2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Playlist2.Name = "btn_Playlist2";
             this.btn_Playlist2.ShadowDecoration.Parent = this.btn_Playlist2;
-            this.btn_Playlist2.Size = new System.Drawing.Size(211, 46);
+            this.btn_Playlist2.Size = new System.Drawing.Size(211, 53);
             this.btn_Playlist2.TabIndex = 37;
             this.btn_Playlist2.Text = "Favorite";
             this.btn_Playlist2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Playlist2.TextOffset = new System.Drawing.Point(50, 0);
-            // 
-            // btn_Playlist1
-            // 
-            this.btn_Playlist1.Animated = true;
-            this.btn_Playlist1.BorderRadius = 10;
-            this.btn_Playlist1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_Playlist1.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(197)))), ((int)(((byte)(86)))));
-            this.btn_Playlist1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Playlist1.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Playlist1.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Playlist1.CheckedState.Parent = this.btn_Playlist1;
-            this.btn_Playlist1.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btn_Playlist1.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.playlist_color;
-            this.btn_Playlist1.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Playlist1.CustomImages.Image")));
-            this.btn_Playlist1.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Playlist1.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btn_Playlist1.CustomImages.Parent = this.btn_Playlist1;
-            this.btn_Playlist1.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Playlist1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Playlist1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Playlist1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btn_Playlist1.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
-            this.btn_Playlist1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Playlist1.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Playlist1.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Playlist1.HoverState.Parent = this.btn_Playlist1;
-            this.btn_Playlist1.Location = new System.Drawing.Point(9, 556);
-            this.btn_Playlist1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Playlist1.Name = "btn_Playlist1";
-            this.btn_Playlist1.ShadowDecoration.Parent = this.btn_Playlist1;
-            this.btn_Playlist1.Size = new System.Drawing.Size(211, 46);
-            this.btn_Playlist1.TabIndex = 36;
-            this.btn_Playlist1.Text = "Recent Played";
-            this.btn_Playlist1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Playlist1.TextOffset = new System.Drawing.Point(50, 0);
             // 
             // btn_Ranks
             // 
@@ -221,7 +146,7 @@
             this.btn_Ranks.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Ranks.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Ranks.HoverState.Parent = this.btn_Ranks;
-            this.btn_Ranks.Location = new System.Drawing.Point(9, 249);
+            this.btn_Ranks.Location = new System.Drawing.Point(12, 181);
             this.btn_Ranks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Ranks.Name = "btn_Ranks";
             this.btn_Ranks.ShadowDecoration.Parent = this.btn_Ranks;
@@ -240,18 +165,13 @@
             this.panel_Menu_Bar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.panel_Menu_Bar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.panel_Menu_Bar.Controls.Add(this.lbl_App_Name);
-            this.panel_Menu_Bar.Controls.Add(this.btn_Playlist3);
             this.panel_Menu_Bar.Controls.Add(this.btn_Playlist2);
-            this.panel_Menu_Bar.Controls.Add(this.btn_Playlist1);
             this.panel_Menu_Bar.Controls.Add(this.btn_Ranks);
             this.panel_Menu_Bar.Controls.Add(this.btn_Offline);
             this.panel_Menu_Bar.Controls.Add(this.btn_Download);
             this.panel_Menu_Bar.Controls.Add(this.btn_Albums);
             this.panel_Menu_Bar.Controls.Add(this.btn_Favorite);
-            this.panel_Menu_Bar.Controls.Add(this.btn_Recent_Played);
             this.panel_Menu_Bar.Controls.Add(this.btn_Artists);
-            this.panel_Menu_Bar.Controls.Add(this.btn_Genres);
-            this.panel_Menu_Bar.Controls.Add(this.btn_Songs);
             this.panel_Menu_Bar.Controls.Add(this.btn_Explore);
             this.panel_Menu_Bar.Controls.Add(this.lbl_Library);
             this.panel_Menu_Bar.Controls.Add(this.lbl_playlist);
@@ -289,11 +209,11 @@
             this.btn_Offline.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Offline.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Offline.HoverState.Parent = this.btn_Offline;
-            this.btn_Offline.Location = new System.Drawing.Point(9, 490);
+            this.btn_Offline.Location = new System.Drawing.Point(12, 402);
             this.btn_Offline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Offline.Name = "btn_Offline";
             this.btn_Offline.ShadowDecoration.Parent = this.btn_Offline;
-            this.btn_Offline.Size = new System.Drawing.Size(211, 46);
+            this.btn_Offline.Size = new System.Drawing.Size(211, 42);
             this.btn_Offline.TabIndex = 34;
             this.btn_Offline.Text = "Offline";
             this.btn_Offline.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -325,11 +245,11 @@
             this.btn_Download.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Download.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Download.HoverState.Parent = this.btn_Download;
-            this.btn_Download.Location = new System.Drawing.Point(9, 447);
+            this.btn_Download.Location = new System.Drawing.Point(7, 353);
             this.btn_Download.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Download.Name = "btn_Download";
             this.btn_Download.ShadowDecoration.Parent = this.btn_Download;
-            this.btn_Download.Size = new System.Drawing.Size(211, 46);
+            this.btn_Download.Size = new System.Drawing.Size(211, 45);
             this.btn_Download.TabIndex = 33;
             this.btn_Download.Text = "Download";
             this.btn_Download.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -360,11 +280,11 @@
             this.btn_Albums.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Albums.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Albums.HoverState.Parent = this.btn_Albums;
-            this.btn_Albums.Location = new System.Drawing.Point(9, 406);
+            this.btn_Albums.Location = new System.Drawing.Point(9, 305);
             this.btn_Albums.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Albums.Name = "btn_Albums";
             this.btn_Albums.ShadowDecoration.Parent = this.btn_Albums;
-            this.btn_Albums.Size = new System.Drawing.Size(211, 46);
+            this.btn_Albums.Size = new System.Drawing.Size(211, 44);
             this.btn_Albums.TabIndex = 32;
             this.btn_Albums.Text = "Albums";
             this.btn_Albums.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -396,51 +316,16 @@
             this.btn_Favorite.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Favorite.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Favorite.HoverState.Parent = this.btn_Favorite;
-            this.btn_Favorite.Location = new System.Drawing.Point(9, 364);
+            this.btn_Favorite.Location = new System.Drawing.Point(12, 251);
             this.btn_Favorite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Favorite.Name = "btn_Favorite";
             this.btn_Favorite.ShadowDecoration.Parent = this.btn_Favorite;
-            this.btn_Favorite.Size = new System.Drawing.Size(211, 46);
+            this.btn_Favorite.Size = new System.Drawing.Size(211, 50);
             this.btn_Favorite.TabIndex = 31;
             this.btn_Favorite.Text = "Favorite";
             this.btn_Favorite.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Favorite.TextOffset = new System.Drawing.Point(50, 0);
             this.btn_Favorite.Click += new System.EventHandler(this.btn_Favorite_Click);
-            // 
-            // btn_Recent_Played
-            // 
-            this.btn_Recent_Played.Animated = true;
-            this.btn_Recent_Played.BorderRadius = 10;
-            this.btn_Recent_Played.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_Recent_Played.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(197)))), ((int)(((byte)(86)))));
-            this.btn_Recent_Played.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Recent_Played.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Recent_Played.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Recent_Played.CheckedState.Parent = this.btn_Recent_Played;
-            this.btn_Recent_Played.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btn_Recent_Played.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.recent_color;
-            this.btn_Recent_Played.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Recent_Played.CustomImages.Image")));
-            this.btn_Recent_Played.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Recent_Played.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btn_Recent_Played.CustomImages.Parent = this.btn_Recent_Played;
-            this.btn_Recent_Played.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Recent_Played.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Recent_Played.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Recent_Played.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btn_Recent_Played.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
-            this.btn_Recent_Played.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Recent_Played.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Recent_Played.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Recent_Played.HoverState.Parent = this.btn_Recent_Played;
-            this.btn_Recent_Played.Location = new System.Drawing.Point(9, 322);
-            this.btn_Recent_Played.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Recent_Played.Name = "btn_Recent_Played";
-            this.btn_Recent_Played.ShadowDecoration.Parent = this.btn_Recent_Played;
-            this.btn_Recent_Played.Size = new System.Drawing.Size(211, 46);
-            this.btn_Recent_Played.TabIndex = 30;
-            this.btn_Recent_Played.Text = "Recent Played";
-            this.btn_Recent_Played.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Recent_Played.TextOffset = new System.Drawing.Point(50, 0);
             // 
             // btn_Artists
             // 
@@ -467,7 +352,7 @@
             this.btn_Artists.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Artists.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Artists.HoverState.Parent = this.btn_Artists;
-            this.btn_Artists.Location = new System.Drawing.Point(9, 206);
+            this.btn_Artists.Location = new System.Drawing.Point(12, 131);
             this.btn_Artists.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Artists.Name = "btn_Artists";
             this.btn_Artists.ShadowDecoration.Parent = this.btn_Artists;
@@ -476,79 +361,6 @@
             this.btn_Artists.Text = "Artists";
             this.btn_Artists.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Artists.TextOffset = new System.Drawing.Point(50, 0);
-            // 
-            // btn_Genres
-            // 
-            this.btn_Genres.Animated = true;
-            this.btn_Genres.BorderRadius = 10;
-            this.btn_Genres.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_Genres.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(197)))), ((int)(((byte)(86)))));
-            this.btn_Genres.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Genres.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Genres.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Genres.CheckedState.Parent = this.btn_Genres;
-            this.btn_Genres.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btn_Genres.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.genres_color;
-            this.btn_Genres.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Genres.CustomImages.Image")));
-            this.btn_Genres.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Genres.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btn_Genres.CustomImages.Parent = this.btn_Genres;
-            this.btn_Genres.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Genres.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Genres.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Genres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btn_Genres.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
-            this.btn_Genres.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Genres.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Genres.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Genres.HoverState.Parent = this.btn_Genres;
-            this.btn_Genres.Location = new System.Drawing.Point(9, 164);
-            this.btn_Genres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Genres.Name = "btn_Genres";
-            this.btn_Genres.ShadowDecoration.Parent = this.btn_Genres;
-            this.btn_Genres.Size = new System.Drawing.Size(211, 46);
-            this.btn_Genres.TabIndex = 28;
-            this.btn_Genres.Text = "Genres";
-            this.btn_Genres.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Genres.TextOffset = new System.Drawing.Point(50, 0);
-            this.btn_Genres.Click += new System.EventHandler(this.btn_Genres_Click);
-            // 
-            // btn_Songs
-            // 
-            this.btn_Songs.Animated = true;
-            this.btn_Songs.BorderRadius = 10;
-            this.btn_Songs.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_Songs.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(197)))), ((int)(((byte)(86)))));
-            this.btn_Songs.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Songs.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Songs.CheckedState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Songs.CheckedState.Parent = this.btn_Songs;
-            this.btn_Songs.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btn_Songs.CustomImages.HoveredImage = global::PQTMUSIC_APP.Properties.Resources.songs_color;
-            this.btn_Songs.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("btn_Songs.CustomImages.Image")));
-            this.btn_Songs.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Songs.CustomImages.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btn_Songs.CustomImages.Parent = this.btn_Songs;
-            this.btn_Songs.FillColor = System.Drawing.Color.Transparent;
-            this.btn_Songs.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Songs.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btn_Songs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btn_Songs.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(58)))), ((int)(((byte)(93)))));
-            this.btn_Songs.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.btn_Songs.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
-            this.btn_Songs.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Songs.HoverState.Parent = this.btn_Songs;
-            this.btn_Songs.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Songs.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btn_Songs.Location = new System.Drawing.Point(9, 122);
-            this.btn_Songs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Songs.Name = "btn_Songs";
-            this.btn_Songs.ShadowDecoration.Parent = this.btn_Songs;
-            this.btn_Songs.Size = new System.Drawing.Size(211, 46);
-            this.btn_Songs.TabIndex = 27;
-            this.btn_Songs.Text = "Songs";
-            this.btn_Songs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_Songs.TextOffset = new System.Drawing.Point(50, 0);
             // 
             // btn_Explore
             // 
@@ -593,7 +405,7 @@
             this.lbl_Library.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Library.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Library.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_Library.Location = new System.Drawing.Point(3, 300);
+            this.lbl_Library.Location = new System.Drawing.Point(3, 229);
             this.lbl_Library.Name = "lbl_Library";
             this.lbl_Library.Size = new System.Drawing.Size(72, 20);
             this.lbl_Library.TabIndex = 18;
@@ -605,7 +417,7 @@
             this.lbl_playlist.BackColor = System.Drawing.Color.Transparent;
             this.lbl_playlist.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_playlist.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_playlist.Location = new System.Drawing.Point(3, 538);
+            this.lbl_playlist.Location = new System.Drawing.Point(3, 446);
             this.lbl_playlist.Name = "lbl_playlist";
             this.lbl_playlist.Size = new System.Drawing.Size(75, 20);
             this.lbl_playlist.TabIndex = 22;
@@ -789,6 +601,8 @@
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
             this.txt_Search.Size = new System.Drawing.Size(521, 46);
             this.txt_Search.TabIndex = 28;
+            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
+            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
             // 
             // trackBar_Volume
             // 
@@ -1045,19 +859,14 @@
         private Guna.UI2.WinForms.Guna2PictureBox pic_currently_Playing_MainForm;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pic_User;
         private System.Windows.Forms.Label lbl_App_Name;
-        private Guna.UI2.WinForms.Guna2GradientButton btn_Playlist3;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Playlist2;
-        private Guna.UI2.WinForms.Guna2GradientButton btn_Playlist1;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Ranks;
         private Guna.UI2.WinForms.Guna2Panel panel_Menu_Bar;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Offline;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Download;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Albums;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Favorite;
-        private Guna.UI2.WinForms.Guna2GradientButton btn_Recent_Played;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Artists;
-        private Guna.UI2.WinForms.Guna2GradientButton btn_Genres;
-        private Guna.UI2.WinForms.Guna2GradientButton btn_Songs;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Explore;
         private System.Windows.Forms.Label lbl_Library;
         private System.Windows.Forms.Label lbl_playlist;

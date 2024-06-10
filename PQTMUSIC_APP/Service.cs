@@ -9,6 +9,10 @@ using System.Windows.Forms;
 using System.Drawing;
 using AngleSharp.Text;
 using NAudio.Wave;
+using AngleSharp.Io;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using Swan.Formatters;
 
 namespace PQTMUSIC_APP
 {
@@ -63,8 +67,72 @@ namespace PQTMUSIC_APP
                 }
             }
         }
+        public async Task<List<Class_SongFullData>> GetSongBySearch(string query)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                if (!string.IsNullOrEmpty(query))
+                {
+                    string apiUrl = "https://apimusic.bug.edu.vn/zing/search";
 
+                    var postData = new
+                    {
+                        name = query
+                    };
 
+                    try
+                    {
+                        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                        StringContent content = new StringContent(JsonConvert.SerializeObject(postData), Encoding.UTF8, "application/json");
+                        HttpResponseMessage response = await client.PostAsync(apiUrl, content);
+                        response.EnsureSuccessStatusCode();
+                        string responseBody = await response.Content.ReadAsStringAsync();
+                        JObject jObject = JObject.Parse(responseBody);
+
+                        // Kiểm tra lỗi và thông báo
+                        int errorCode = jObject["err"]?.Value<int>() ?? -1;
+                        if (errorCode != 0)
+                        {
+                            // Có lỗi xảy ra
+                            MessageBox.Show("Error occurred while searching for songs.");
+                            return null;
+                        }
+
+                        JArray itemsArray = (JArray)jObject["data"]["songs"];
+
+                        List<Class_SongFullData> songs = new List<Class_SongFullData>();
+
+                        foreach (var item in itemsArray)
+                        {
+                            string encodeId = item["encodeId"]?.ToString();
+
+                            Class_SongFullData songIn4 = new Class_SongFullData
+                            {
+                                EncodeId = encodeId,
+                                Title = item["title"]?.ToString(),
+                                Artists = item["artists"]?.Select(a => new Class_Artist { Name = a["name"]?.ToString() }).ToList(),
+                                Duration = ConvertSecondsToMinutes(int.Parse(item["duration"]?.ToString() ?? "0")),
+                                Thumbnail = item["thumbnail"]?.ToString(),
+                                StreamUrls = await GetURLsToStream(encodeId)
+                            };
+
+                            songs.Add(songIn4);
+                        }
+
+                        return songs;
+                    }
+                    catch
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a search query");
+                    return null;
+                }
+            }
+        }
         public async Task<List<Class_SongFullData>> GetSongsByURL(string apiUrl)
         {
             using (HttpClient client = new HttpClient())
@@ -107,14 +175,11 @@ namespace PQTMUSIC_APP
                 }
             }
         }
-
         public string ConvertSecondsToMinutes(int totalSeconds)
         {
             TimeSpan time = TimeSpan.FromSeconds(totalSeconds);
             return time.ToString(@"m\:ss");
         }
-
-
 
     }
 }
