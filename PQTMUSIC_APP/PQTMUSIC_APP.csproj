@@ -311,6 +311,12 @@
     <Compile Include="ArtistService.cs" />
     <Compile Include="Class_Artist.cs" />
     <Compile Include="Class_SongFullData.cs" />
+    <Compile Include="Frm_Artist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frm_Artist.Designer.cs">
+      <DependentUpon>Frm_Artist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Ranking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     <Compile Include="UserData.cs" />
     <EmbeddedResource Include="frm_Album.resx">
       <DependentUpon>frm_Album.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Artist.resx">
+      <DependentUpon>Frm_Artist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Explore.resx">
       <DependentUpon>frm_Explore.cs</DependentUpon>
