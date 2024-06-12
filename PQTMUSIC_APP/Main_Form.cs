@@ -46,7 +46,9 @@ namespace PQTMUSIC_APP
             Frm_LgSU.client = new FireSharp.FirebaseClient(Frm_LgSU.config);
 
             explore.SongSelected += HandleSongSelected;
-           
+
+            artist.SongSelected += HandleSongSelected;
+
             result.SongSelected += HandleSongSelected;
             result.ArtistSelected += HandleArtistSelected;
             result.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
@@ -57,6 +59,7 @@ namespace PQTMUSIC_APP
             rankingForm = new Frm_Ranking();
             rankingForm.SongSelected += HandleSongSelected;
             rankingForm.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
+
             trackBar_Volume.Minimum = 0;
             trackBar_Volume.Maximum = 100;
             trackBar_Volume.Value = 50;
@@ -109,6 +112,7 @@ namespace PQTMUSIC_APP
         public void HandleArtistSelected(object sender, Class_Artist artist)
         {
             Form_Artist artistForm = new Form_Artist();
+            artistForm.ShowArtistDetails(artist);
             addForm_Child(artistForm);
         }
 
@@ -434,6 +438,9 @@ namespace PQTMUSIC_APP
             }
         }
 
-        
+        private void Panel_PlayMusic_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

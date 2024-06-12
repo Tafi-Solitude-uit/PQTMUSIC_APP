@@ -13,16 +13,17 @@ namespace PQTMUSIC_APP
         public string Name { get; set; }
 
         public string Alias { get; set; }
+
         public string ShortLink { get; set; }
 
         public string ImageUrl { get; set; }
 
-        public string biography { get; set; }
+        public string Biography { get; set; }
 
-        public string national { get; set; }
+        public string National { get; set; }
         
-        public string birthday { get; set; }    
+        public string Birthday { get; set; }    
 
-        public string followers { get; set; }
+        public int Followers { get; set; }
     }
 }
