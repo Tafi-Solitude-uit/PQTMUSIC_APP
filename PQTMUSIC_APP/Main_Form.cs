@@ -48,6 +48,7 @@ namespace PQTMUSIC_APP
             explore.SongSelected += HandleSongSelected;
            
             result.SongSelected += HandleSongSelected;
+            result.ArtistSelected += HandleArtistSelected;
             result.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
 
             fave.SongSelected += HandleSongSelected;
@@ -105,7 +106,11 @@ namespace PQTMUSIC_APP
             trackBar_Play.Value = 0;
         }
 
-
+        public void HandleArtistSelected(object sender, Class_Artist artist)
+        {
+            Form_Artist artistForm = new Form_Artist();
+            addForm_Child(artistForm);
+        }
 
 
         private void btn_PlayPause_Click(object sender, EventArgs e)
