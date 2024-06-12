@@ -9,6 +9,10 @@ using AngleSharp.Io;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Text;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using System.Linq;
 
 namespace PQTMUSIC_APP
 {
@@ -25,21 +29,28 @@ namespace PQTMUSIC_APP
         public static int lastSongIndex;
         private bool isShuffle = false;
         private bool isLoop = false;
-        
+        private bool isMute = false;
 
+        
         private Frm_Ranking rankingForm;
         private frm_Explore explore=new frm_Explore();
         private SearchResult result = new SearchResult();
+        private frm_Fav fave = new frm_Fav();
         public Main_Form(string currentUser)
         {
             InitializeComponent();
             explore = new frm_Explore();
             addForm_Child(explore);
             this.currentUser = currentUser;
-           
+            Frm_LgSU.client = new FireSharp.FirebaseClient(Frm_LgSU.config);
+
             explore.SongSelected += HandleSongSelected;
            
             result.SongSelected += HandleSongSelected;
+            result.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
+
+            fave.SongSelected += HandleSongSelected;
+            fave.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
 
             rankingForm = new Frm_Ranking();
             rankingForm.SongSelected += HandleSongSelected;
@@ -78,9 +89,23 @@ namespace PQTMUSIC_APP
             lb_TittleCurrentSong.Text = songCurrentPlay.Title;
             lb_endTime.Text = songCurrentPlay.Duration;
 
+            // Load the current favorite songs list from Firebase
+            FirebaseResponse response = await Frm_LgSU.client.GetAsync("Users/" + currentUserdata.username + "/favSongID");
+            List<string> favSongIDs = response.ResultAs<List<string>>() ?? new List<string>();
+
+            // Check if the current song ID is in the favorite list
+            bool isSongLiked = favSongIDs.Contains(songCurrentPlay.EncodeId);
+
+            // Update the liked status of the current song and the button image
+            songCurrentPlay.IsLiked = isSongLiked;
+            btn_AddToFav.Image = isSongLiked ? Properties.Resources.heart_color : Properties.Resources.heart;
+
             trackBar_Play.Maximum = (int)audioStream.TotalTime.TotalSeconds;
             trackBar_Play.Value = 0;
         }
+
+
+
 
         private void btn_PlayPause_Click(object sender, EventArgs e)
         {
@@ -260,7 +285,7 @@ namespace PQTMUSIC_APP
 
         private void btn_Favorite_Click(object sender, EventArgs e)
         {
-            //frm_FavSong showFavSong = new frm_FavSong();
+            addForm_Child(fave);
         }
 
         private void btn_Offline_Click(object sender, EventArgs e)
@@ -310,7 +335,7 @@ namespace PQTMUSIC_APP
 
         private void trackBar_Volume_Scroll(object sender, EventArgs e)
         {
-            if (WaveOutDevice != null)
+            if (!isMute && WaveOutDevice != null)
             {
                 WaveOutDevice.Volume = trackBar_Volume.Value / 100f;
             }
@@ -330,6 +355,71 @@ namespace PQTMUSIC_APP
             {
                 
                 addForm_Child(result);
+            }
+        }
+        public static UserData currentUserdata = new UserData { username = Frm_LgSU.currentUser };
+            
+        private async void btn_AddToFav_Click(object sender, EventArgs e)
+        {
+            
+            // Check if songCurrentPlay is null
+            if (songCurrentPlay == null) return;
+
+            // Load the current favorite songs list from Firebase
+            FirebaseResponse response = await Frm_LgSU.client.GetAsync("Users/" + currentUserdata.username + "/favSongID");
+            List<string> favSongIDs = response.ResultAs<List<string>>() ?? new List<string>();
+
+            // Check if the current song ID is in the favorite list
+            bool isSongLiked = favSongIDs.Contains(songCurrentPlay.EncodeId);
+
+            if (isSongLiked)
+            {
+                // Remove the current song ID from the favorite list
+                favSongIDs.Remove(songCurrentPlay.EncodeId);
+                btn_AddToFav.Image = Properties.Resources.heart;
+                
+            }
+            else
+            {
+                // Add the current song ID to the favorite list
+                favSongIDs.Add(songCurrentPlay.EncodeId);
+                btn_AddToFav.Image = Properties.Resources.heart_color;
+                
+            }
+
+            // Update the favorite songs list in the user data and save it back to Firebase
+            currentUserdata.favSongID = favSongIDs;
+            FirebaseResponse updateResponse = await Frm_LgSU.client.SetAsync("Users/" + currentUserdata.username + "/favSongID", favSongIDs);
+
+            // Check the response from Firebase to determine if the update was successful
+            if (updateResponse.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                // Optionally reload the favorite songs list in the UI
+                fave.frm_Fav_Load(this, EventArgs.Empty);
+            }
+            else
+            {
+                // Update failed, you can show an error message or log the error
+                MessageBox.Show("Failed to update favorite songs list in Firebase.");
+            }
+        }
+
+
+
+        private void btn_volumn_mute_Click(object sender, EventArgs e)
+        {
+            isMute = !isMute;
+            if (isMute)
+            {
+                WaveOutDevice.Volume = 0;
+                trackBar_Volume.Value = 0;
+                btn_volumn_mute.Image = Properties.Resources.mute__1_;
+            }
+            else
+            {
+                trackBar_Volume.Value = 50;
+                WaveOutDevice.Volume = trackBar_Volume.Value / 100f;
+                btn_volumn_mute.Image = Properties.Resources.volume;
             }
         }
     }

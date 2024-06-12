@@ -16,7 +16,7 @@ using Swan.Formatters;
 
 namespace PQTMUSIC_APP
 {
-    internal class Service : Class_SongFullData
+    public class Service : Class_SongFullData
     {
         public string detailAPI = "https://apimusic.bug.edu.vn/zing/getSong";
         public async Task<string> GetURLsToStream(string songID)
@@ -180,6 +180,37 @@ namespace PQTMUSIC_APP
             TimeSpan time = TimeSpan.FromSeconds(totalSeconds);
             return time.ToString(@"m\:ss");
         }
+        public async Task<Class_SongFullData> GetFavSong(string songID)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync($"https://apimusic.bug.edu.vn/zing/getInfoSong?songId={songID}");
+                    response.EnsureSuccessStatusCode();
+                    string json = await response.Content.ReadAsStringAsync();
 
+                    JObject jObject = JObject.Parse(json);
+                    JObject dataObject = (JObject)jObject["data"];
+                    
+                    Class_SongFullData songIn4 = new Class_SongFullData
+                    {
+                        EncodeId = dataObject["encodeId"]?.ToString(),
+                        Title = dataObject["title"]?.ToString(),
+                        Artists = dataObject["artists"]?.Select(a => new Class_Artist { Name = a["name"]?.ToString(), ArtistId = a["id"]?.ToString() }).ToList(),
+                        Duration = ConvertSecondsToMinutes(int.Parse(dataObject["duration"]?.ToString() ?? "0")),
+                        Thumbnail = dataObject["thumbnail"]?.ToString(),
+                        StreamUrls = await GetURLsToStream(songID)
+                    };
+                    
+                    return songIn4;
+                }
+                catch (HttpRequestException)
+                {
+                    MessageBox.Show("Failed to get response from API");
+                    return null;
+                }
+            }
+        }
     }
 }

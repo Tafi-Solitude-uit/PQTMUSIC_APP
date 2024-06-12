@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Drawing;
 using System.Linq;
-
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,8 +14,8 @@ namespace PQTMUSIC_APP
 {
     public partial class Frm_LgSU : Form
     {
-        IFirebaseClient client;
-        IFirebaseConfig config = new FirebaseConfig()
+        public static IFirebaseClient client;
+        public static IFirebaseConfig config = new FirebaseConfig()
         {
             AuthSecret = "CkIjEA3D7s7dxH1BWr0WF4VcU0ab7M068ojHUlDG",
             BasePath = "https://loginandregister-f73c6-default-rtdb.asia-southeast1.firebasedatabase.app/",
@@ -28,7 +26,7 @@ namespace PQTMUSIC_APP
             client = new FireSharp.FirebaseClient(config);
 
         }
-        public string currentUser;
+        public static string currentUser;
         public async Task<string> WhoInShiftNow()
         {
             string username = txtSIusername.Text.Trim();
@@ -112,7 +110,7 @@ namespace PQTMUSIC_APP
                 return 1;
             }
         }
-       
+        
         private async void btnSignUp_Click(object sender, EventArgs e)
         {
 

@@ -60,6 +60,8 @@
             this.lb_TittleCurrentSong = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Panel_PlayMusic = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_AddToPlaylist = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btn_AddToFav = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_playShuffle = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_volumn_mute = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_PreSong = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -612,7 +614,7 @@
             this.trackBar_Volume.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(219)))), ((int)(((byte)(242)))));
             this.trackBar_Volume.HoverState.Parent = this.trackBar_Volume;
             this.trackBar_Volume.HoverState.ThumbColor = System.Drawing.Color.Green;
-            this.trackBar_Volume.Location = new System.Drawing.Point(1195, 34);
+            this.trackBar_Volume.Location = new System.Drawing.Point(1184, 32);
             this.trackBar_Volume.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trackBar_Volume.Name = "trackBar_Volume";
             this.trackBar_Volume.Size = new System.Drawing.Size(109, 23);
@@ -663,6 +665,8 @@
             // Panel_PlayMusic
             // 
             this.Panel_PlayMusic.BackColor = System.Drawing.Color.Black;
+            this.Panel_PlayMusic.Controls.Add(this.btn_AddToPlaylist);
+            this.Panel_PlayMusic.Controls.Add(this.btn_AddToFav);
             this.Panel_PlayMusic.Controls.Add(this.btn_playShuffle);
             this.Panel_PlayMusic.Controls.Add(this.btn_volumn_mute);
             this.Panel_PlayMusic.Controls.Add(this.lb_endTime);
@@ -683,6 +687,43 @@
             this.Panel_PlayMusic.ShadowDecoration.Parent = this.Panel_PlayMusic;
             this.Panel_PlayMusic.Size = new System.Drawing.Size(1341, 96);
             this.Panel_PlayMusic.TabIndex = 7;
+            // 
+            // btn_AddToPlaylist
+            // 
+            this.btn_AddToPlaylist.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_AddToPlaylist.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_AddToPlaylist.CheckedState.Parent = this.btn_AddToPlaylist;
+            this.btn_AddToPlaylist.HoverState.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_AddToPlaylist.HoverState.Parent = this.btn_AddToPlaylist;
+            this.btn_AddToPlaylist.Image = global::PQTMUSIC_APP.Properties.Resources.playlist;
+            this.btn_AddToPlaylist.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_AddToPlaylist.Location = new System.Drawing.Point(1031, 28);
+            this.btn_AddToPlaylist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_AddToPlaylist.Name = "btn_AddToPlaylist";
+            this.btn_AddToPlaylist.PressedState.Image = global::PQTMUSIC_APP.Properties.Resources.mute__2_;
+            this.btn_AddToPlaylist.PressedState.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_AddToPlaylist.PressedState.Parent = this.btn_AddToPlaylist;
+            this.btn_AddToPlaylist.Size = new System.Drawing.Size(34, 29);
+            this.btn_AddToPlaylist.TabIndex = 68;
+            // 
+            // btn_AddToFav
+            // 
+            this.btn_AddToFav.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_AddToFav.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_AddToFav.CheckedState.Parent = this.btn_AddToFav;
+            this.btn_AddToFav.HoverState.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_AddToFav.HoverState.Parent = this.btn_AddToFav;
+            this.btn_AddToFav.Image = global::PQTMUSIC_APP.Properties.Resources.heart;
+            this.btn_AddToFav.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_AddToFav.Location = new System.Drawing.Point(1081, 28);
+            this.btn_AddToFav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_AddToFav.Name = "btn_AddToFav";
+            this.btn_AddToFav.PressedState.Image = global::PQTMUSIC_APP.Properties.Resources.mute__2_;
+            this.btn_AddToFav.PressedState.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_AddToFav.PressedState.Parent = this.btn_AddToFav;
+            this.btn_AddToFav.Size = new System.Drawing.Size(57, 29);
+            this.btn_AddToFav.TabIndex = 67;
+            this.btn_AddToFav.Click += new System.EventHandler(this.btn_AddToFav_Click);
             // 
             // btn_playShuffle
             // 
@@ -712,14 +753,15 @@
             this.btn_volumn_mute.HoverState.Parent = this.btn_volumn_mute;
             this.btn_volumn_mute.Image = global::PQTMUSIC_APP.Properties.Resources.volume;
             this.btn_volumn_mute.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_volumn_mute.Location = new System.Drawing.Point(1144, 25);
+            this.btn_volumn_mute.Location = new System.Drawing.Point(1144, 28);
             this.btn_volumn_mute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_volumn_mute.Name = "btn_volumn_mute";
             this.btn_volumn_mute.PressedState.Image = global::PQTMUSIC_APP.Properties.Resources.mute__2_;
             this.btn_volumn_mute.PressedState.ImageSize = new System.Drawing.Size(27, 27);
             this.btn_volumn_mute.PressedState.Parent = this.btn_volumn_mute;
-            this.btn_volumn_mute.Size = new System.Drawing.Size(44, 46);
+            this.btn_volumn_mute.Size = new System.Drawing.Size(34, 29);
             this.btn_volumn_mute.TabIndex = 63;
+            this.btn_volumn_mute.Click += new System.EventHandler(this.btn_volumn_mute_Click);
             // 
             // btn_PreSong
             // 
@@ -764,7 +806,6 @@
             this.btn_PlayPause.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_PlayPause.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn_PlayPause.CheckedState.Parent = this.btn_PlayPause;
-            this.btn_PlayPause.HoverState.Image = global::PQTMUSIC_APP.Properties.Resources.pause__1_;
             this.btn_PlayPause.HoverState.ImageSize = new System.Drawing.Size(40, 40);
             this.btn_PlayPause.HoverState.Parent = this.btn_PlayPause;
             this.btn_PlayPause.Image = global::PQTMUSIC_APP.Properties.Resources.pause;
@@ -889,6 +930,8 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel Panel_PlayMusic;
         private Guna.UI2.WinForms.Guna2Panel panel_Child;
+        private Guna.UI2.WinForms.Guna2ImageButton btn_AddToPlaylist;
+        private Guna.UI2.WinForms.Guna2ImageButton btn_AddToFav;
     }
 }
 
