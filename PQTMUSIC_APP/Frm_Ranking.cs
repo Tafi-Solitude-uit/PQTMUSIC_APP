@@ -61,7 +61,8 @@ namespace PQTMUSIC_APP
         }
         private async void AddDataToDataGridView(List<Class_SongFullData> songs)
         {
-            foreach (var song in songs)
+            List<Class_SongFullData> songsCopy = new List<Class_SongFullData>(songs);
+            foreach (var song in songsCopy)
             {
                 Image thumbnail = await LoadImage(song.Thumbnail);
                 if (thumbnail != null)
@@ -103,20 +104,7 @@ namespace PQTMUSIC_APP
             }
         }
 
-        private void panel_Child_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Separator1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_App_Name_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
 

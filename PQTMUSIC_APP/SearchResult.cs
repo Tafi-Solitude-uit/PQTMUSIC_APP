@@ -19,6 +19,7 @@ namespace PQTMUSIC_APP
         }
         public List<Class_SongFullData> songList { get; private set; }
         public event EventHandler<Class_SongFullData> SongSelected;
+        public event EventHandler<List<Class_SongFullData>> PlaylistSelected;
         public List<Class_Artist> artistList { get; private set; }
         public string query;
         private async void ShowGenres_Load(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace PQTMUSIC_APP
             songList= await songs.GetSongBySearch(query);
             artistList = await artists.GetArtistBySearch(query);
             AddDataToDataGridView(songList);
+            PlaylistSelected?.Invoke(this, songList);
             AddArtistsToPanel(artistList);
 
         }

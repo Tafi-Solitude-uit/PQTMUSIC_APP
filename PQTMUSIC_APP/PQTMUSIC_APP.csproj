@@ -317,6 +317,12 @@
     <Compile Include="Frm_Artist.Designer.cs">
       <DependentUpon>Frm_Artist.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Fav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Fav.Designer.cs">
+      <DependentUpon>frm_Fav.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Ranking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Explore.resx">
       <DependentUpon>frm_Explore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Fav.resx">
+      <DependentUpon>frm_Fav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_OffineMode.resx">
       <DependentUpon>frm_OffineMode.cs</DependentUpon>

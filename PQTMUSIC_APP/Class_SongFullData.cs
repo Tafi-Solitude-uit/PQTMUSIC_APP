@@ -16,5 +16,6 @@ namespace PQTMUSIC_APP
         public string Duration { get; set; }
         public string Thumbnail { get; set; }
         public string StreamUrls { get; set; }
+        public bool IsLiked { get; set; }
     }
 }
