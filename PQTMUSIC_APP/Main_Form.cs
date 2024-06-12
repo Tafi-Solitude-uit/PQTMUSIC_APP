@@ -36,6 +36,7 @@ namespace PQTMUSIC_APP
         private frm_Explore explore=new frm_Explore();
         private SearchResult result = new SearchResult();
         private frm_Fav fave = new frm_Fav();
+        private Form_Artist artist = new Form_Artist();
         public Main_Form(string currentUser)
         {
             InitializeComponent();
@@ -45,8 +46,11 @@ namespace PQTMUSIC_APP
             Frm_LgSU.client = new FireSharp.FirebaseClient(Frm_LgSU.config);
 
             explore.SongSelected += HandleSongSelected;
-           
+
+            artist.SongSelected += HandleSongSelected;
+
             result.SongSelected += HandleSongSelected;
+            result.ArtistSelected += HandleArtistSelected;
             result.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
 
             fave.SongSelected += HandleSongSelected;
@@ -55,6 +59,7 @@ namespace PQTMUSIC_APP
             rankingForm = new Frm_Ranking();
             rankingForm.SongSelected += HandleSongSelected;
             rankingForm.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
+
             trackBar_Volume.Minimum = 0;
             trackBar_Volume.Maximum = 100;
             trackBar_Volume.Value = 50;
@@ -104,7 +109,12 @@ namespace PQTMUSIC_APP
             trackBar_Play.Value = 0;
         }
 
-
+        public void HandleArtistSelected(object sender, Class_Artist artist)
+        {
+            Form_Artist artistForm = new Form_Artist();
+            artistForm.ShowArtistDetails(artist);
+            addForm_Child(artistForm);
+        }
 
 
         private void btn_PlayPause_Click(object sender, EventArgs e)
@@ -304,6 +314,11 @@ namespace PQTMUSIC_APP
             addForm_Child(rankingForm);
         }
 
+        private void btn_Artists_Click(object sender, EventArgs e)
+        {
+           addForm_Child(artist);
+        }
+
         private async Task<Image> LoadImage(string url)
         {
             try
@@ -421,6 +436,11 @@ namespace PQTMUSIC_APP
                 WaveOutDevice.Volume = trackBar_Volume.Value / 100f;
                 btn_volumn_mute.Image = Properties.Resources.volume;
             }
+        }
+
+        private void Panel_PlayMusic_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

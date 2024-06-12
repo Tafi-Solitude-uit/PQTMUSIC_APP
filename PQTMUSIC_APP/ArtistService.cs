@@ -48,6 +48,7 @@ namespace PQTMUSIC_APP
                             {
                                 ArtistId = artistItem["id"]?.ToString(),
                                 Name = artistItem["name"]?.ToString(),
+                                Alias = artistItem["alias"]?.ToString(),
                                 ShortLink = artistItem["link"]?.ToString(),
                                 ImageUrl = artistItem["thumbnail"]?.ToString()
                             };

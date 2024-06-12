@@ -363,6 +363,7 @@
             this.btn_Artists.Text = "Artists";
             this.btn_Artists.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Artists.TextOffset = new System.Drawing.Point(50, 0);
+            this.btn_Artists.Click += new System.EventHandler(this.btn_Artists_Click);
             // 
             // btn_Explore
             // 
@@ -687,6 +688,7 @@
             this.Panel_PlayMusic.ShadowDecoration.Parent = this.Panel_PlayMusic;
             this.Panel_PlayMusic.Size = new System.Drawing.Size(1341, 96);
             this.Panel_PlayMusic.TabIndex = 7;
+            this.Panel_PlayMusic.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_PlayMusic_Paint);
             // 
             // btn_AddToPlaylist
             // 
@@ -711,14 +713,13 @@
             this.btn_AddToFav.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_AddToFav.CheckedState.ImageSize = new System.Drawing.Size(27, 27);
             this.btn_AddToFav.CheckedState.Parent = this.btn_AddToFav;
-            this.btn_AddToFav.HoverState.ImageSize = new System.Drawing.Size(27, 27);
+            this.btn_AddToFav.HoverState.ImageSize = new System.Drawing.Size(30, 30);
             this.btn_AddToFav.HoverState.Parent = this.btn_AddToFav;
             this.btn_AddToFav.Image = global::PQTMUSIC_APP.Properties.Resources.heart;
-            this.btn_AddToFav.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_AddToFav.ImageSize = new System.Drawing.Size(27, 27);
             this.btn_AddToFav.Location = new System.Drawing.Point(1081, 28);
             this.btn_AddToFav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddToFav.Name = "btn_AddToFav";
-            this.btn_AddToFav.PressedState.Image = global::PQTMUSIC_APP.Properties.Resources.mute__2_;
             this.btn_AddToFav.PressedState.ImageSize = new System.Drawing.Size(27, 27);
             this.btn_AddToFav.PressedState.Parent = this.btn_AddToFav;
             this.btn_AddToFav.Size = new System.Drawing.Size(57, 29);

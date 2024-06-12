@@ -20,7 +20,10 @@ namespace PQTMUSIC_APP
         public List<Class_SongFullData> songList { get; private set; }
         public event EventHandler<Class_SongFullData> SongSelected;
         public event EventHandler<List<Class_SongFullData>> PlaylistSelected;
+        public event EventHandler<Class_Artist> ArtistSelected;
+
         public List<Class_Artist> artistList { get; private set; }
+
         public string query;
         private async void ShowGenres_Load(object sender, EventArgs e)
         {
@@ -123,13 +126,20 @@ namespace PQTMUSIC_APP
 
                 artistPanel.Controls.Add(artistImage);
                 artistPanel.Controls.Add(artistName);
+                artistPanel.Click += (sender, e) => ShowArtistDetails(artist);
 
                 flowLayoutPanel_Artists.Controls.Add(artistPanel);
 
                 displayedArtists++;
             }
         }
-        
+
+        private void ShowArtistDetails(Class_Artist artist)
+        {
+            ArtistSelected?.Invoke(this, artist);
+            
+        }
+
         private void datagrid_SearchResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
