@@ -30,6 +30,8 @@ namespace PQTMUSIC_APP
         }
 
         public string apiUrl = "https://apimusic.bug.edu.vn/zing/getHome";
+
+        public event EventHandler<List<Class_SongFullData>> PlaylistSelected;
         public event EventHandler<Class_SongFullData> SongSelected;
 
         private async void frm_Explore_Load(object sender, EventArgs e)
@@ -50,6 +52,8 @@ namespace PQTMUSIC_APP
                 int rowIndex = datagrid_Playlist_TOPSONG.Rows.Add(row);
                 datagrid_Playlist_TOPSONG.Rows[rowIndex].Tag = song;
             }
+
+            PlaylistSelected?.Invoke(this, songs);
         }
 
         public async Task<List<Class_SongFullData>> GetSongsFromApi(string apiUrl)
@@ -155,8 +159,7 @@ namespace PQTMUSIC_APP
         {
             if (e.RowIndex >= 0)
             {
-                Class_SongFullData song = datagrid_Playlist_TOPSONG.Rows[e.RowIndex].Tag as Class_SongFullData;
-                if (song != null)
+                if (datagrid_Playlist_TOPSONG.Rows[e.RowIndex].Tag is Class_SongFullData song)
                 {
                     SongSelected?.Invoke(this, song);
                 }
