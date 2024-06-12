@@ -50,9 +50,7 @@
             this.ControlBox_minimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlBox_maximize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlBox_Close = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.pic_User = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btn_notification = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.trackBar_Volume = new Guna.UI2.WinForms.Guna2TrackBar();
             this.trackBar_Play = new Guna.UI2.WinForms.Guna2TrackBar();
@@ -60,6 +58,9 @@
             this.lb_TittleCurrentSong = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Panel_PlayMusic = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel_Child = new Guna.UI2.WinForms.Guna2Panel();
+            this.pic_User = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.txt_Search = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_AddToPlaylist = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_AddToFav = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_playShuffle = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -69,11 +70,10 @@
             this.btn_PlayPause = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btn_loopCurrentSong = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pic_currently_Playing_MainForm = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.panel_Child = new Guna.UI2.WinForms.Guna2Panel();
             this.panel_Menu_Bar.SuspendLayout();
             this.guna_drag.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_User)).BeginInit();
             this.Panel_PlayMusic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_User)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_currently_Playing_MainForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -363,6 +363,7 @@
             this.btn_Artists.Text = "Artists";
             this.btn_Artists.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Artists.TextOffset = new System.Drawing.Point(50, 0);
+            this.btn_Artists.Click += new System.EventHandler(this.btn_Artists_Click);
             // 
             // btn_Explore
             // 
@@ -529,21 +530,6 @@
             this.ControlBox_Close.Size = new System.Drawing.Size(53, 53);
             this.ControlBox_Close.TabIndex = 53;
             // 
-            // pic_User
-            // 
-            this.pic_User.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_User.Image = global::PQTMUSIC_APP.Properties.Resources.OIP__1_;
-            this.pic_User.Location = new System.Drawing.Point(1101, 0);
-            this.pic_User.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_User.Name = "pic_User";
-            this.pic_User.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pic_User.ShadowDecoration.Parent = this.pic_User;
-            this.pic_User.Size = new System.Drawing.Size(60, 57);
-            this.pic_User.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_User.TabIndex = 52;
-            this.pic_User.TabStop = false;
-            this.pic_User.Click += new System.EventHandler(this.pic_User_Click);
-            // 
             // btn_notification
             // 
             this.btn_notification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -569,44 +555,6 @@
             this.btn_notification.ShadowDecoration.Parent = this.btn_notification;
             this.btn_notification.Size = new System.Drawing.Size(59, 50);
             this.btn_notification.TabIndex = 30;
-            // 
-            // txt_Search
-            // 
-            this.txt_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Search.Animated = true;
-            this.txt_Search.AutoRoundedCorners = true;
-            this.txt_Search.BorderColor = System.Drawing.Color.Black;
-            this.txt_Search.BorderRadius = 22;
-            this.txt_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_Search.DefaultText = "";
-            this.txt_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Search.DisabledState.Parent = this.txt_Search;
-            this.txt_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_Search.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_Search.FocusedState.Parent = this.txt_Search;
-            this.txt_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.txt_Search.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.txt_Search.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.txt_Search.HoverState.Parent = this.txt_Search;
-            this.txt_Search.IconLeft = global::PQTMUSIC_APP.Properties.Resources.search;
-            this.txt_Search.Location = new System.Drawing.Point(341, 5);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_Search.Name = "txt_Search";
-            this.txt_Search.PasswordChar = '\0';
-            this.txt_Search.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txt_Search.PlaceholderText = "Search";
-            this.txt_Search.SelectedText = "";
-            this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(521, 46);
-            this.txt_Search.TabIndex = 28;
-            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
-            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
             // 
             // trackBar_Volume
             // 
@@ -687,6 +635,73 @@
             this.Panel_PlayMusic.ShadowDecoration.Parent = this.Panel_PlayMusic;
             this.Panel_PlayMusic.Size = new System.Drawing.Size(1341, 96);
             this.Panel_PlayMusic.TabIndex = 7;
+            // 
+            // panel_Child
+            // 
+            this.panel_Child.AutoScroll = true;
+            this.panel_Child.AutoScrollMargin = new System.Drawing.Size(5, 0);
+            this.panel_Child.AutoScrollMinSize = new System.Drawing.Size(5, 0);
+            this.panel_Child.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
+            this.panel_Child.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Child.Location = new System.Drawing.Point(251, 57);
+            this.panel_Child.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_Child.Name = "panel_Child";
+            this.panel_Child.ShadowDecoration.Parent = this.panel_Child;
+            this.panel_Child.Size = new System.Drawing.Size(1090, 581);
+            this.panel_Child.TabIndex = 8;
+            // 
+            // pic_User
+            // 
+            this.pic_User.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic_User.Image = global::PQTMUSIC_APP.Properties.Resources.OIP__1_;
+            this.pic_User.Location = new System.Drawing.Point(1101, 0);
+            this.pic_User.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_User.Name = "pic_User";
+            this.pic_User.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pic_User.ShadowDecoration.Parent = this.pic_User;
+            this.pic_User.Size = new System.Drawing.Size(60, 57);
+            this.pic_User.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_User.TabIndex = 52;
+            this.pic_User.TabStop = false;
+            this.pic_User.Click += new System.EventHandler(this.pic_User_Click);
+            // 
+            // txt_Search
+            // 
+            this.txt_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Search.Animated = true;
+            this.txt_Search.AutoRoundedCorners = true;
+            this.txt_Search.BorderColor = System.Drawing.Color.Black;
+            this.txt_Search.BorderRadius = 22;
+            this.txt_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_Search.DefaultText = "";
+            this.txt_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_Search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Search.DisabledState.Parent = this.txt_Search;
+            this.txt_Search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_Search.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.txt_Search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_Search.FocusedState.Parent = this.txt_Search;
+            this.txt_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txt_Search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
+            this.txt_Search.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.txt_Search.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
+            this.txt_Search.HoverState.Parent = this.txt_Search;
+            this.txt_Search.IconLeft = global::PQTMUSIC_APP.Properties.Resources.search;
+            this.txt_Search.Location = new System.Drawing.Point(341, 5);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Search.Name = "txt_Search";
+            this.txt_Search.PasswordChar = '\0';
+            this.txt_Search.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txt_Search.PlaceholderText = "Search";
+            this.txt_Search.SelectedText = "";
+            this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
+            this.txt_Search.Size = new System.Drawing.Size(521, 46);
+            this.txt_Search.TabIndex = 28;
+            this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
+            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
             // 
             // btn_AddToPlaylist
             // 
@@ -850,20 +865,6 @@
             this.pic_currently_Playing_MainForm.TabStop = false;
             this.pic_currently_Playing_MainForm.UseTransparentBackground = true;
             // 
-            // panel_Child
-            // 
-            this.panel_Child.AutoScroll = true;
-            this.panel_Child.AutoScrollMargin = new System.Drawing.Size(5, 0);
-            this.panel_Child.AutoScrollMinSize = new System.Drawing.Size(5, 0);
-            this.panel_Child.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
-            this.panel_Child.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Child.Location = new System.Drawing.Point(251, 57);
-            this.panel_Child.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel_Child.Name = "panel_Child";
-            this.panel_Child.ShadowDecoration.Parent = this.panel_Child;
-            this.panel_Child.Size = new System.Drawing.Size(1090, 581);
-            this.panel_Child.TabIndex = 8;
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -883,9 +884,9 @@
             this.panel_Menu_Bar.ResumeLayout(false);
             this.panel_Menu_Bar.PerformLayout();
             this.guna_drag.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_User)).EndInit();
             this.Panel_PlayMusic.ResumeLayout(false);
             this.Panel_PlayMusic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_User)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_currently_Playing_MainForm)).EndInit();
             this.ResumeLayout(false);
 

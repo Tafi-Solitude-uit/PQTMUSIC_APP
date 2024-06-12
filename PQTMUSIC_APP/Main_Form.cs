@@ -36,6 +36,7 @@ namespace PQTMUSIC_APP
         private frm_Explore explore=new frm_Explore();
         private SearchResult result = new SearchResult();
         private frm_Fav fave = new frm_Fav();
+        private Form_Artist artist = new Form_Artist();
         public Main_Form(string currentUser)
         {
             InitializeComponent();
@@ -304,6 +305,11 @@ namespace PQTMUSIC_APP
             addForm_Child(rankingForm);
         }
 
+        private void btn_Artists_Click(object sender, EventArgs e)
+        {
+           addForm_Child(artist);
+        }
+
         private async Task<Image> LoadImage(string url)
         {
             try
@@ -422,5 +428,7 @@ namespace PQTMUSIC_APP
                 btn_volumn_mute.Image = Properties.Resources.volume;
             }
         }
+
+        
     }
 }

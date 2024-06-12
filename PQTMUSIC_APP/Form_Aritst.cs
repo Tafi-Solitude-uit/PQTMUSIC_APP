@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PQTMUSIC_APP
 {
-    public partial class Frm_Artist : UserControl
+    public partial class Form_Aritst : Form
     {
-        public Frm_Artist()
+        public Form_Aritst()
         {
             InitializeComponent();
         }
