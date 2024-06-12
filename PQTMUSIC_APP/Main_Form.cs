@@ -46,6 +46,7 @@ namespace PQTMUSIC_APP
             Frm_LgSU.client = new FireSharp.FirebaseClient(Frm_LgSU.config);
 
             explore.SongSelected += HandleSongSelected;
+            explore.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
 
             artist.SongSelected += HandleSongSelected;
 
