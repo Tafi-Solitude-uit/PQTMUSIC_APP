@@ -696,7 +696,7 @@
             this.Panel_PlayMusic.ShadowDecoration.Parent = this.Panel_PlayMusic;
             this.Panel_PlayMusic.Size = new System.Drawing.Size(1006, 78);
             this.Panel_PlayMusic.TabIndex = 7;
-            this.Panel_PlayMusic.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_PlayMusic_Paint);
+            
             // 
             // btn_AddToPlaylist
             // 
