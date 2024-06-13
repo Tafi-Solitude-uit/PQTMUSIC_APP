@@ -41,13 +41,13 @@ namespace PQTMUSIC_APP
             explore.SongSelected += HandleSongSelected;
             
 
-            //artist.SongSelected += HandleSongSelected;
+            artist.SongSelected += HandleSongSelected;
 
-            //result.SongSelected += HandleSongSelected;
+            result.SongSelected += HandleSongSelected;
             result.ArtistSelected += HandleArtistSelected;
            
 
-            //fave.SongSelected += HandleSongSelected;
+            fave.SongSelected += HandleSongSelected;
            
 
             rankingForm = new Frm_Ranking();

@@ -2,12 +2,10 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,8 +17,9 @@ namespace PQTMUSIC_APP
         {
             InitializeComponent();
         }
+
+        public event EventHandler<Tuple<Class_SongFullData, List<Class_SongFullData>>> SongSelected;
         public List<Class_SongFullData> songList { get; private set; }
-        public event EventHandler<Class_SongFullData> SongSelected;
 
         private async Task<Class_Artist> GetArtistData(string Alias)
         {
@@ -42,6 +41,7 @@ namespace PQTMUSIC_APP
                 return artist;
             }
         }
+
         private async Task<List<Class_SongFullData>> GetArtistSongs(string Alias)
         {
             string url = $"https://apimusic.bug.edu.vn/zing/getArtist?artistId={Alias}";
@@ -55,12 +55,10 @@ namespace PQTMUSIC_APP
                     {
                         var jObject = JObject.Parse(json);
 
-                        // Check if "data" and "sections" exist in the JSON object
                         if (jObject["data"]?["sections"] is JArray sections)
                         {
                             var songSection = sections.FirstOrDefault(x => x["sectionType"].ToString() == "song");
 
-                            // Check if "items" exist in the songSection
                             if (songSection?["items"] is JArray songItems)
                             {
                                 var songFullData = new List<Class_SongFullData>();
@@ -81,8 +79,8 @@ namespace PQTMUSIC_APP
                                     };
                                     songFullData.Add(song);
                                 }
-
-                                return songFullData;
+                                songList = songFullData;
+                                return songList;
                             }
                         }
                     }
@@ -96,7 +94,6 @@ namespace PQTMUSIC_APP
                     MessageBox.Show("An error occurred while making the API request. Please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                // Return an empty list if any of the required properties are missing or an error occurred
                 return new List<Class_SongFullData>();
             }
         }
@@ -128,30 +125,51 @@ namespace PQTMUSIC_APP
         public async void ShowArtistDetails(Class_Artist artist)
         {
             Class_Artist artistData = await GetArtistData(artist.Alias);
-            // Populate the fields on your form
-            pic_Singer.Image = await LoadImage(artistData.ImageUrl);
 
+            pic_Singer.Image = await LoadImage(artistData.ImageUrl);
             lbl_ArtistName.Text = artistData.Name;
             lbl_totalFollowers.Text = artistData.Followers.ToString();
             txt_Bio.Text = artistData.Biography;
             lbl_National.Text = artistData.National;
             lbl_Birthday.Text = artistData.Birthday;
-            // Populate the datagrid_SongOfSinger
-            songList = await GetArtistSongs(artist.Alias);
-            foreach (var song in songList)
-            {
-                var row = new object[]
-                {
-                    await LoadImage(song.Thumbnail), // Load the image from the URL
-                    song.Title,
-                    string.Join(", ", song.Artists.Select(a => a.Name)), // Fix the FormatException by selecting the Name property of each artist,
-                    song.Duration
-                };
 
-                // Add the row to the DataGridView
-                int rowIndex = datagrid_SongOfSinger.Rows.Add(row);
-                datagrid_SongOfSinger.Rows[rowIndex].Tag = song;
+            songList = await GetArtistSongs(artist.Alias);
+            AddDataToDataGridView(songList);
+        }
+
+        private async void AddDataToDataGridView(List<Class_SongFullData> songs)
+        {
+            datagrid_SongOfSinger.Rows.Clear();
+
+            foreach (var song in songs)
+            {
+                Image thumbnail = await LoadImage(song.Thumbnail);
+                if (thumbnail != null)
+                {
+                    thumbnail = ResizeImage(thumbnail, new Size(70, 70));
+
+                    DataGridViewImageCell imageCell = new DataGridViewImageCell
+                    {
+                        Value = thumbnail
+                    };
+
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.Cells.Add(imageCell);
+                    row.Cells.Add(new DataGridViewTextBoxCell { Value = song.Title });
+                    row.Cells.Add(new DataGridViewTextBoxCell { Value = string.Join(", ", song.Artists.Select(a => a.Name)) });
+                    row.Cells.Add(new DataGridViewTextBoxCell { Value = song.Duration });
+
+                    datagrid_SongOfSinger.Rows.Add(row);
+                    datagrid_SongOfSinger.Rows[datagrid_SongOfSinger.RowCount - 1].Tag = song;
+                    datagrid_SongOfSinger.Rows[datagrid_SongOfSinger.RowCount - 1].Height = thumbnail.Height;
+                }
             }
+            datagrid_SongOfSinger.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private Image ResizeImage(Image image, Size size)
+        {
+            return (Image)(new Bitmap(image, size));
         }
 
         private async Task<Image> LoadImage(string url)
@@ -161,7 +179,7 @@ namespace PQTMUSIC_APP
                 using (HttpClient client = new HttpClient())
                 {
                     var response = await client.GetAsync(url);
-                    response.EnsureSuccessStatusCode(); // Throw if not a success code.
+                    response.EnsureSuccessStatusCode();
                     using (var stream = await response.Content.ReadAsStreamAsync())
                     {
                         return Image.FromStream(stream);
@@ -182,7 +200,7 @@ namespace PQTMUSIC_APP
                 Class_SongFullData song = datagrid_SongOfSinger.Rows[e.RowIndex].Tag as Class_SongFullData;
                 if (song != null)
                 {
-                    SongSelected?.Invoke(this, song);
+                    SongSelected?.Invoke(this, new Tuple<Class_SongFullData, List<Class_SongFullData>>(song, songList));
                 }
                 else
                 {

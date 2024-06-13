@@ -176,7 +176,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchResult";
             this.Text = " ";
-            this.Load += new System.EventHandler(this.ShowGenres_Load);
+            this.Load += new System.EventHandler(this.SearchResult_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_SearchResult)).EndInit();
             this.ResumeLayout(false);
 

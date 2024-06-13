@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FireSharp.Response;
@@ -19,15 +15,13 @@ namespace PQTMUSIC_APP
             InitializeComponent();
         }
 
-        public event EventHandler<Class_SongFullData> SongSelected;
-        public event EventHandler<List<Class_SongFullData>> PlaylistSelected;
+        public event EventHandler<Tuple<Class_SongFullData, List<Class_SongFullData>>> SongSelected;
         public List<Class_SongFullData> songList { get; private set; }
 
         public async void frm_Fav_Load(object sender, EventArgs e)
         {
             datagrid_Playlist_fav.Rows.Clear();
             await LoadFavoriteSongs();
-                            
         }
 
         private async Task LoadFavoriteSongs()
@@ -48,7 +42,6 @@ namespace PQTMUSIC_APP
                 }
 
                 AddDataToDataGridView(songList);
-                PlaylistSelected?.Invoke(this, songList);
             }
             catch (Exception ex)
             {
@@ -132,7 +125,7 @@ namespace PQTMUSIC_APP
                 Class_SongFullData song = datagrid_Playlist_fav.Rows[e.RowIndex].Tag as Class_SongFullData;
                 if (song != null)
                 {
-                    SongSelected?.Invoke(this, song);
+                    SongSelected?.Invoke(this, new Tuple<Class_SongFullData, List<Class_SongFullData>>(song, songList));
                 }
                 else
                 {
