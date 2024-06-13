@@ -23,8 +23,9 @@ namespace PQTMUSIC_APP
 
         public string query;
 
-        private async void SearchResult_Load(object sender, EventArgs e)
+        public async void SearchResult_Load(object sender, EventArgs e)
         {
+            
             query = Main_Form.query;
             Service songs = new Service();
             ArtistService artists = new ArtistService();

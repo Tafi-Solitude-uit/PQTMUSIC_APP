@@ -26,9 +26,7 @@ namespace PQTMUSIC_APP
 
         private Frm_Ranking rankingForm;
         private frm_Explore explore = new frm_Explore();
-        private SearchResult result = new SearchResult();
         private frm_Fav fave = new frm_Fav();
-        private Form_Artist artist = new Form_Artist();
 
         public Main_Form(string currentUser)
         {
@@ -40,16 +38,8 @@ namespace PQTMUSIC_APP
 
             explore.SongSelected += HandleSongSelected;
             
-
-            artist.SongSelected += HandleSongSelected;
-
-            result.SongSelected += HandleSongSelected;
-            result.ArtistSelected += HandleArtistSelected;
-           
-
             fave.SongSelected += HandleSongSelected;
-           
-
+            
             rankingForm = new Frm_Ranking();
             rankingForm.SongSelected += HandleSongSelected;
 
@@ -105,9 +95,10 @@ namespace PQTMUSIC_APP
 
         public void HandleArtistSelected(object sender, Class_Artist artist)
         {
-            Form_Artist artistForm = new Form_Artist();
-            artistForm.ShowArtistDetails(artist);
-            addForm_Child(artistForm);
+            Form_Artist artistDT = new Form_Artist();
+            artistDT.ShowArtistDetails(artist);
+            artistDT.SongSelected += HandleSongSelected;
+            addForm_Child(artistDT);
         }
 
         private void btn_PlayPause_Click(object sender, EventArgs e)
@@ -340,6 +331,7 @@ namespace PQTMUSIC_APP
 
         private void btn_Artists_Click(object sender, EventArgs e)
         {
+            Form_Artist artist = new Form_Artist();
             addForm_Child(artist);
         }
 
@@ -390,7 +382,10 @@ namespace PQTMUSIC_APP
         {
             if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(txt_Search.Text))
             {
-                addForm_Child(result);
+                SearchResult searchResult = new SearchResult();
+                searchResult.ArtistSelected += HandleArtistSelected;
+                searchResult.SongSelected += HandleSongSelected;
+                addForm_Child(searchResult);
             }
         }
 
