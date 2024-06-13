@@ -72,7 +72,7 @@
             this.panel_Child.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_Child.Name = "panel_Child";
             this.panel_Child.ShadowDecoration.Parent = this.panel_Child;
-            this.panel_Child.Size = new System.Drawing.Size(1071, 740);
+            this.panel_Child.Size = new System.Drawing.Size(1090, 740);
             this.panel_Child.TabIndex = 12;
             // 
             // lbl_App_Name
@@ -81,7 +81,7 @@
             this.lbl_App_Name.AutoSize = true;
             this.lbl_App_Name.Font = new System.Drawing.Font("Stencil", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_App_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.lbl_App_Name.Location = new System.Drawing.Point(799, 229);
+            this.lbl_App_Name.Location = new System.Drawing.Point(809, 229);
             this.lbl_App_Name.Name = "lbl_App_Name";
             this.lbl_App_Name.Size = new System.Drawing.Size(269, 59);
             this.lbl_App_Name.TabIndex = 184;
@@ -118,7 +118,7 @@
             this.lbl_Tittle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.lbl_Tittle.Location = new System.Drawing.Point(12, 129);
             this.lbl_Tittle.Name = "lbl_Tittle";
-            this.lbl_Tittle.Size = new System.Drawing.Size(875, 106);
+            this.lbl_Tittle.Size = new System.Drawing.Size(894, 106);
             this.lbl_Tittle.TabIndex = 164;
             this.lbl_Tittle.Text = "All Time";
             // 
@@ -131,7 +131,7 @@
             this.label2.ForeColor = System.Drawing.Color.LightSalmon;
             this.label2.Location = new System.Drawing.Point(12, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(468, 110);
+            this.label2.Size = new System.Drawing.Size(512, 110);
             this.label2.TabIndex = 163;
             this.label2.Text = "Top Charts";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -191,7 +191,7 @@
             this.datagrid_Playlist_TOP100.RowHeadersWidth = 51;
             this.datagrid_Playlist_TOP100.RowTemplate.Height = 24;
             this.datagrid_Playlist_TOP100.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagrid_Playlist_TOP100.Size = new System.Drawing.Size(1048, 437);
+            this.datagrid_Playlist_TOP100.Size = new System.Drawing.Size(1067, 437);
             this.datagrid_Playlist_TOP100.TabIndex = 162;
             this.datagrid_Playlist_TOP100.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.datagrid_Playlist_TOP100.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -291,7 +291,7 @@
             this.lbl_title1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.lbl_title1.Font = new System.Drawing.Font("Segoe UI", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.lbl_title1.Location = new System.Drawing.Point(475, 19);
+            this.lbl_title1.Location = new System.Drawing.Point(530, 19);
             this.lbl_title1.Name = "lbl_title1";
             this.lbl_title1.Size = new System.Drawing.Size(376, 112);
             this.lbl_title1.TabIndex = 127;
@@ -301,7 +301,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 740);
+            this.ClientSize = new System.Drawing.Size(1090, 740);
             this.Controls.Add(this.panel_Child);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Ranking";
