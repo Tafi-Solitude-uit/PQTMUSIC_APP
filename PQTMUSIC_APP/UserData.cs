@@ -12,7 +12,7 @@ namespace PQTMUSIC_APP
         {
             favSongID = new List<string>();
         }
-        public int userid { get; set; }
+      
         public string realname { get; set; }
         public string password { get; set; }
         public string username { get; set; }

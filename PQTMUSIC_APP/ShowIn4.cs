@@ -38,7 +38,6 @@ namespace PQTMUSIC_APP
             {
                 var userData = response.ResultAs<Dictionary<string, object>>();
                 txtShowName.Text = userData["realname"].ToString();
-                txtShowID.Text = userData["userid"].ToString();
                 txtShowYear.Text = userData["birthday"].ToString();
                 txtShowGender.Text = userData["gender"].ToString();
             }

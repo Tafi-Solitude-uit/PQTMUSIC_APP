@@ -458,5 +458,10 @@ namespace PQTMUSIC_APP
         private void Panel_PlayMusic_Paint(object sender, PaintEventArgs e)
         {
         }
+
+        private void panel_Child_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
