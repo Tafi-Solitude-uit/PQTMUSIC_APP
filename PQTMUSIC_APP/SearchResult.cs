@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace PQTMUSIC_APP
 {
@@ -51,7 +52,7 @@ namespace PQTMUSIC_APP
                     DataGridViewRow row = new DataGridViewRow();
                     row.Cells.Add(imageCell);
                     row.Cells.Add(new DataGridViewTextBoxCell { Value = song.Title });
-                    row.Cells.Add(new DataGridViewTextBoxCell { Value = song.Artists[0].Name });
+                    row.Cells.Add(new DataGridViewTextBoxCell { Value = song.Artists?.FirstOrDefault()?.Name ??"unknown artist"});
                     row.Cells.Add(new DataGridViewTextBoxCell { Value = song.Duration.ToString() });
 
                     datagrid_SearchResult.Rows.Add(row);
