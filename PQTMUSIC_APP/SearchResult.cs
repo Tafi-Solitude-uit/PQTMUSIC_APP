@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,26 +13,27 @@ namespace PQTMUSIC_APP
         {
             InitializeComponent();
         }
+
         public List<Class_SongFullData> songList { get; private set; }
-        public event EventHandler<Class_SongFullData> SongSelected;
-        public event EventHandler<List<Class_SongFullData>> PlaylistSelected;
+        public event EventHandler<Tuple<Class_SongFullData, List<Class_SongFullData>>> SongSelected;
+      
         public event EventHandler<Class_Artist> ArtistSelected;
 
         public List<Class_Artist> artistList { get; private set; }
 
         public string query;
-        private async void ShowGenres_Load(object sender, EventArgs e)
+
+        private async void SearchResult_Load(object sender, EventArgs e)
         {
-            query=Main_Form.query;
+            query = Main_Form.query;
             Service songs = new Service();
             ArtistService artists = new ArtistService();
-            songList= await songs.GetSongBySearch(query);
+            songList = await songs.GetSongBySearch(query);
             artistList = await artists.GetArtistBySearch(query);
             AddDataToDataGridView(songList);
-            PlaylistSelected?.Invoke(this, songList);
             AddArtistsToPanel(artistList);
-
         }
+
         private async void AddDataToDataGridView(List<Class_SongFullData> songs)
         {
             foreach (var song in songs)
@@ -64,10 +61,12 @@ namespace PQTMUSIC_APP
             }
             datagrid_SearchResult.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
         private Image ResizeImage(Image image, Size size)
         {
             return (Image)(new Bitmap(image, size));
         }
+
         private async Task<Image> LoadImage(string url)
         {
             try
@@ -88,6 +87,7 @@ namespace PQTMUSIC_APP
                 return null;
             }
         }
+
         private async void AddArtistsToPanel(List<Class_Artist> artists)
         {
             int displayedArtists = 0;
@@ -137,7 +137,6 @@ namespace PQTMUSIC_APP
         private void ShowArtistDetails(Class_Artist artist)
         {
             ArtistSelected?.Invoke(this, artist);
-            
         }
 
         private void datagrid_SearchResult_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -147,7 +146,7 @@ namespace PQTMUSIC_APP
                 Class_SongFullData song = datagrid_SearchResult.Rows[e.RowIndex].Tag as Class_SongFullData;
                 if (song != null)
                 {
-                    SongSelected?.Invoke(this, song);
+                    SongSelected?.Invoke(this, new Tuple<Class_SongFullData, List<Class_SongFullData>>(song, songList));
                 }
                 else
                 {
