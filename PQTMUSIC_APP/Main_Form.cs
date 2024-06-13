@@ -145,12 +145,13 @@ namespace PQTMUSIC_APP
             trackBar_Play.Maximum = (int)audioStream.TotalTime.TotalSeconds;
             trackBar_Play.Value = 0;
 
-            var timer = new Timer { Interval = 1000 };
+            var timer = new Timer { Interval = 1000 };           
             timer.Tick += (s, args) =>
             {
                 if (audioStream != null && !isPaused)
                 {
                     trackBar_Play.Value = (int)audioStream.CurrentTime.TotalSeconds;
+                    lb_startTime.Text = audioStream.CurrentTime.ToString(@"m\:ss");
                 }
             };
             timer.Start();
