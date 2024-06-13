@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CSCore.XAudio2;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -14,6 +15,7 @@ namespace PQTMUSIC_APP
 {
     public partial class Frm_LgSU : Form
     {
+        
         public static IFirebaseClient client;
         public static IFirebaseConfig config = new FirebaseConfig()
         {
@@ -24,6 +26,7 @@ namespace PQTMUSIC_APP
         {
             InitializeComponent();
             client = new FireSharp.FirebaseClient(config);
+            this.Click += new EventHandler(Frm_LgSU_Click);
 
         }
         public static string currentUser;
@@ -40,10 +43,15 @@ namespace PQTMUSIC_APP
 
             return null;
         }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.Visible = false;
+        }
         private async void btnSignIn_Click(object sender, EventArgs e)
         {
             string username = txtSIusername.Text;
             string password = txtSIpass.Text;
+         
 
             // Xác thực thông tin đăng nhập
             if (await IsValidLogin(username, password))
@@ -52,7 +60,7 @@ namespace PQTMUSIC_APP
                
                 
                 Hide();
-
+                
                 string currentUser = await WhoInShiftNow();
                 if (currentUser != null)
                 {
@@ -64,9 +72,12 @@ namespace PQTMUSIC_APP
             }
             else
             {
-             
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!");
+                textBox1.Visible = true;
             }
+        }
+        private void Frm_LgSU_Click(object sender, EventArgs e)
+        {
+            textBox1 .Visible = false;
         }
         private async Task<bool> IsValidLogin(string username, string password)
         {
@@ -226,5 +237,7 @@ namespace PQTMUSIC_APP
             Regex regex = new Regex("[^a-zA-Z0-9]");
             return regex.IsMatch(input);
         }
+
+      
     }
 }
