@@ -138,7 +138,7 @@ namespace PQTMUSIC_APP
         private void PlayAudio(string audioUrl)
         {
             audioStream?.Dispose();
-            audioStream = new MediaFoundationReader(audioUrl);
+                audioStream = new MediaFoundationReader(audioUrl);
 
             WaveOutDevice?.Stop();
             WaveOutDevice?.Dispose();

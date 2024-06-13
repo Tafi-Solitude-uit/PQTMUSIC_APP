@@ -185,7 +185,7 @@ namespace PQTMUSIC_APP
                         return Image.FromStream(stream);
                     }
                 }
-            }
+                }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading image: {ex.Message}");
