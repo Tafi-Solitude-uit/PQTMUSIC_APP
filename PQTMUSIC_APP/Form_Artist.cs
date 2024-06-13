@@ -195,6 +195,11 @@ namespace PQTMUSIC_APP
 
         private void datagrid_SongOfSinger_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void datagrid_SongOfSinger_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (e.RowIndex >= 0)
             {
                 Class_SongFullData song = datagrid_SongOfSinger.Rows[e.RowIndex].Tag as Class_SongFullData;
@@ -207,11 +212,6 @@ namespace PQTMUSIC_APP
                     MessageBox.Show("No song data available.");
                 }
             }
-        }
-
-        private void guna2Separator2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
