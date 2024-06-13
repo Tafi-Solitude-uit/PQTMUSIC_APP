@@ -143,7 +143,7 @@
             this.lbl_App_Name.Size = new System.Drawing.Size(269, 59);
             this.lbl_App_Name.TabIndex = 184;
             this.lbl_App_Name.Text = "PQTMUSIC";
-            this.lbl_App_Name.Click += new System.EventHandler(this.lbl_App_Name_Click);
+            
             // 
             // label1
             // 
@@ -872,7 +872,7 @@
             this.lbl_Tittle.Size = new System.Drawing.Size(715, 88);
             this.lbl_Tittle.TabIndex = 126;
             this.lbl_Tittle.Text = "Vietnamese Music";
-            this.lbl_Tittle.Click += new System.EventHandler(this.lbl_Tittle_Click);
+            
             // 
             // frm_Explore
             // 

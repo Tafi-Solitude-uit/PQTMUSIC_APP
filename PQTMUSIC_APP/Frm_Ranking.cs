@@ -1,20 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using Newtonsoft.Json.Linq;
-using System.IO;
-using System.Net;
-using System.Media;
-using NAudio.Wave;
-using System.Security.Policy;
 
 namespace PQTMUSIC_APP
 {
@@ -24,14 +13,16 @@ namespace PQTMUSIC_APP
         {
             InitializeComponent();
         }
+
         string apiUrl = "https://apimusic.bug.edu.vn/zing/getChartHome";
-        public event EventHandler<Class_SongFullData> SongSelected;
-        public event EventHandler<List<Class_SongFullData>> PlaylistSelected;
-        public List<Class_SongFullData> songList { get;private set;} 
+        public event EventHandler<Tuple<Class_SongFullData, List<Class_SongFullData>>> SongSelected;
+        public List<Class_SongFullData> songList { get; private set; }
+
         private Image ResizeImage(Image image, Size size)
         {
             return (Image)(new Bitmap(image, size));
         }
+
         private async Task<Image> LoadImage(string url)
         {
             try
@@ -52,13 +43,14 @@ namespace PQTMUSIC_APP
                 return null;
             }
         }
+
         private async void Frm_Ranking_Load(object sender, EventArgs e)
         {
             Service songs = new Service();
             songList = await songs.GetSongsByURL(apiUrl);
             AddDataToDataGridView(songList);
-            PlaylistSelected?.Invoke(this, songList);
         }
+
         private async void AddDataToDataGridView(List<Class_SongFullData> songs)
         {
             List<Class_SongFullData> songsCopy = new List<Class_SongFullData>(songs);
@@ -90,12 +82,12 @@ namespace PQTMUSIC_APP
 
         private void Datagrid_Playlist_TOP100_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
                 Class_SongFullData song = datagrid_Playlist_TOP100.Rows[e.RowIndex].Tag as Class_SongFullData;
                 if (song != null)
                 {
-                    SongSelected?.Invoke(this, song);
+                    SongSelected?.Invoke(this, new Tuple<Class_SongFullData, List<Class_SongFullData>>(song, songList));
                 }
                 else
                 {
@@ -103,8 +95,5 @@ namespace PQTMUSIC_APP
                 }
             }
         }
-
-       
     }
 }
-

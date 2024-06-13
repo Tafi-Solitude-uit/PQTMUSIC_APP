@@ -5,14 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
-using AngleSharp.Io;
-using Newtonsoft.Json;
-using System.Net.Http.Headers;
-using System.Text;
-using FireSharp.Config;
-using FireSharp.Interfaces;
 using FireSharp.Response;
-using System.Linq;
 
 namespace PQTMUSIC_APP
 {
@@ -26,17 +19,17 @@ namespace PQTMUSIC_APP
         public Class_SongFullData songCurrentPlay;
         private List<Class_SongFullData> songList;
         private int currentSongIndex;
-        public static int lastSongIndex;
+        public  int lastSongIndex;
         private bool isShuffle = false;
         private bool isLoop = false;
         private bool isMute = false;
 
-        
         private Frm_Ranking rankingForm;
-        private frm_Explore explore=new frm_Explore();
+        private frm_Explore explore = new frm_Explore();
         private SearchResult result = new SearchResult();
         private frm_Fav fave = new frm_Fav();
         private Form_Artist artist = new Form_Artist();
+
         public Main_Form(string currentUser)
         {
             InitializeComponent();
@@ -46,20 +39,19 @@ namespace PQTMUSIC_APP
             Frm_LgSU.client = new FireSharp.FirebaseClient(Frm_LgSU.config);
 
             explore.SongSelected += HandleSongSelected;
-            explore.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
+            
 
-            artist.SongSelected += HandleSongSelected;
+            //artist.SongSelected += HandleSongSelected;
 
-            result.SongSelected += HandleSongSelected;
+            //result.SongSelected += HandleSongSelected;
             result.ArtistSelected += HandleArtistSelected;
-            result.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
+           
 
-            fave.SongSelected += HandleSongSelected;
-            fave.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
+            //fave.SongSelected += HandleSongSelected;
+           
 
             rankingForm = new Frm_Ranking();
             rankingForm.SongSelected += HandleSongSelected;
-            rankingForm.PlaylistSelected += (sender, playlist) => { ReceivePlaylist(playlist); };
 
             trackBar_Volume.Minimum = 0;
             trackBar_Volume.Maximum = 100;
@@ -67,7 +59,7 @@ namespace PQTMUSIC_APP
 
             songList = new List<Class_SongFullData>();
             currentSongIndex = -1;
-            lastSongIndex= -1;
+            lastSongIndex = -1;
         }
 
         private void addForm_Child(Form frm_child)
@@ -85,9 +77,10 @@ namespace PQTMUSIC_APP
             songList = playlist;
         }
 
-        public async void HandleSongSelected(object sender, Class_SongFullData e)
+        public async void HandleSongSelected(object sender, Tuple<Class_SongFullData, List<Class_SongFullData>> e)
         {
-            songCurrentPlay = e;
+            songCurrentPlay = e.Item1;
+            songList = e.Item2;
             currentSongIndex = songList.IndexOf(songCurrentPlay);
             PlayNewSong(songCurrentPlay.StreamUrls);
             pic_currently_Playing_MainForm.Image = await LoadImage(songCurrentPlay.Thumbnail);
@@ -116,7 +109,6 @@ namespace PQTMUSIC_APP
             artistForm.ShowArtistDetails(artist);
             addForm_Child(artistForm);
         }
-
 
         private void btn_PlayPause_Click(object sender, EventArgs e)
         {
@@ -203,14 +195,31 @@ namespace PQTMUSIC_APP
 
         private void PlayNextSong()
         {
+            if (songList.Count == 0)
+            {
+                // Nếu danh sách bài hát rỗng, không thực hiện thêm thao tác nào
+                return;
+            }
+
             lastSongIndex = currentSongIndex;
+
             if (isShuffle)
             {
-                Random rnd = new Random();
-                currentSongIndex = rnd.Next(songList.Count);
+                if (songList.Count > 1)
+                {
+                    Random rnd = new Random();
+                    int newIndex = currentSongIndex;
+                    while (newIndex == currentSongIndex)
+                    {
+                        newIndex = rnd.Next(songList.Count);
+                    }
+                    currentSongIndex = newIndex;
+                }
+                // Nếu chỉ có một bài hát trong danh sách, không thay đổi currentSongIndex
             }
             else
             {
+                lastSongIndex = currentSongIndex; // Lưu lại bài hát hiện tại vào lastSongIndex trước khi thay đổi currentIndex
                 currentSongIndex++;
                 if (currentSongIndex >= songList.Count)
                 {
@@ -218,25 +227,39 @@ namespace PQTMUSIC_APP
                 }
             }
 
-            if (songList.Count > 0)
-            {
-                HandleSongSelected(this, songList[currentSongIndex]);
-            }
+            HandleSongSelected(this, new Tuple<Class_SongFullData, List<Class_SongFullData>>(songList[currentSongIndex], songList));
         }
 
         private void PlayPreviousSong()
         {
-            
-            if (currentSongIndex < 0)
+            if (songList.Count == 0)
             {
-                currentSongIndex = songList.Count - 1;
+                // Nếu danh sách bài hát rỗng, không thực hiện thêm thao tác nào
+                return;
             }
 
-            if (songList.Count > 0)
+            if (isShuffle)
             {
-                HandleSongSelected(this, songList[lastSongIndex]);
+                // Nếu đang phát ngẫu nhiên, lấy bài hát đã phát trước đó từ lastSongIndex
+                currentSongIndex = lastSongIndex;
             }
+            else
+            {
+                lastSongIndex = currentSongIndex;
+                if (currentSongIndex <= 0)
+                {
+                    currentSongIndex = songList.Count - 1;
+                }
+                else
+                {
+                    currentSongIndex--;
+                }
+            }
+
+            HandleSongSelected(this, new Tuple<Class_SongFullData, List<Class_SongFullData>>(songList[currentSongIndex], songList));
         }
+
+
 
         private void btn_PreSong_Click(object sender, EventArgs e)
         {
@@ -317,7 +340,7 @@ namespace PQTMUSIC_APP
 
         private void btn_Artists_Click(object sender, EventArgs e)
         {
-           addForm_Child(artist);
+            addForm_Child(artist);
         }
 
         private async Task<Image> LoadImage(string url)
@@ -357,27 +380,24 @@ namespace PQTMUSIC_APP
             }
         }
 
-
-
-        public static string query; 
-        private  void txt_Search_TextChanged(object sender, EventArgs e)
+        public static string query;
+        private void txt_Search_TextChanged(object sender, EventArgs e)
         {
-             query = txt_Search.Text;
+            query = txt_Search.Text;
         }
 
         private void txt_Search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(txt_Search.Text))
             {
-                
                 addForm_Child(result);
             }
         }
+
         public static UserData currentUserdata = new UserData { username = Frm_LgSU.currentUser };
-            
+
         private async void btn_AddToFav_Click(object sender, EventArgs e)
         {
-            
             // Check if songCurrentPlay is null
             if (songCurrentPlay == null) return;
 
@@ -393,14 +413,12 @@ namespace PQTMUSIC_APP
                 // Remove the current song ID from the favorite list
                 favSongIDs.Remove(songCurrentPlay.EncodeId);
                 btn_AddToFav.Image = Properties.Resources.heart;
-                
             }
             else
             {
                 // Add the current song ID to the favorite list
                 favSongIDs.Add(songCurrentPlay.EncodeId);
                 btn_AddToFav.Image = Properties.Resources.heart_color;
-                
             }
 
             // Update the favorite songs list in the user data and save it back to Firebase
@@ -419,8 +437,6 @@ namespace PQTMUSIC_APP
                 MessageBox.Show("Failed to update favorite songs list in Firebase.");
             }
         }
-
-
 
         private void btn_volumn_mute_Click(object sender, EventArgs e)
         {
@@ -441,7 +457,6 @@ namespace PQTMUSIC_APP
 
         private void Panel_PlayMusic_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }
