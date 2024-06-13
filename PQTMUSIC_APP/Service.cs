@@ -61,8 +61,7 @@ namespace PQTMUSIC_APP
                     }
                 }
                 else
-                {
-                    MessageBox.Show(songData["msg"].ToString());
+                { 
                     return null;
                 }
             }
@@ -212,5 +211,63 @@ namespace PQTMUSIC_APP
                 }
             }
         }
+        public async Task<List<Class_SongFullData>> GetSongsExplore()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    var response = await client.GetAsync("https://apimusic.bug.edu.vn/zing/getHome");
+                    response.EnsureSuccessStatusCode();
+                    var json = await response.Content.ReadAsStringAsync();
+
+                    var jObject = JObject.Parse(json);
+
+                    // Check if "data" and "items" exist in the JSON object
+                    if (jObject["data"]?["items"] is JArray items)
+                    {
+                        var newReleaseSection = items.FirstOrDefault(x => x["sectionType"].ToString() == "new-release");
+
+                        // Check if "items" and "vPop" exist in the newReleaseSection
+                        if (newReleaseSection?["items"]?["vPop"] is JArray vPopItems)
+                        {
+                            List<Class_SongFullData> songs = new List<Class_SongFullData>();
+
+                            foreach (var track in vPopItems)
+                            {
+                                var song = new Class_SongFullData
+                                {
+                                    EncodeId = track["encodeId"].ToString(),
+                                    Title = track["title"].ToString(),
+                                    Artists = track["artists"].Select(a => new Class_Artist
+                                    {
+                                        ArtistId = a["id"].ToString(),
+                                        Name = a["name"].ToString()
+                                    }).ToList(),
+                                    Duration = TimeSpan.FromSeconds(int.Parse(track["duration"].ToString())).ToString(@"m\:ss"),
+                                    Thumbnail = track["thumbnail"].ToString(),
+                                    StreamUrls = await GetURLsToStream(track["encodeId"].ToString())
+                                };
+                                songs.Add(song);
+                            }
+
+                            return songs;
+                        }
+                    }
+                }
+                catch (HttpRequestException)
+                {
+                    MessageBox.Show("Failed to get response from API");
+                }
+                catch (JsonReaderException ex)
+                {
+                    // Or you can show an error message to the user using a MessageBox
+                    MessageBox.Show("An error occurred while parsing the JSON response: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return new List<Class_SongFullData>();
+            }
+        }
+
     }
 }

@@ -19,10 +19,7 @@ namespace PQTMUSIC_APP
         {
             InitializeComponent();
         }
-
         public List<Class_SongFullData> songList { get; private set; }
-
-        public event EventHandler<List<Class_SongFullData>> PlaylistSelected;
         public event EventHandler<Class_SongFullData> SongSelected;
 
         private async Task<Class_Artist> GetArtistData(string Alias)
