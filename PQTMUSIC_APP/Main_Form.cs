@@ -71,11 +71,7 @@ namespace PQTMUSIC_APP
             frm_child.Show();
         }
 
-        public void ReceivePlaylist(List<Class_SongFullData> playlist)
-        {
-            songList.Clear();
-            songList = playlist;
-        }
+       
 
         public async void HandleSongSelected(object sender, Tuple<Class_SongFullData, List<Class_SongFullData>> e)
         {
@@ -390,6 +386,15 @@ namespace PQTMUSIC_APP
         {
             if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(txt_Search.Text))
             {
+                // Dispose the previous SearchResult form if it exists
+                if (result != null)
+                {
+                    result.Dispose();
+                }
+
+                // Create a new SearchResult form
+                result = new SearchResult();
+                Main_Form.query = txt_Search.Text; // Assign the search query to the Main_Form query property
                 addForm_Child(result);
             }
         }
@@ -455,8 +460,6 @@ namespace PQTMUSIC_APP
             }
         }
 
-        private void Panel_PlayMusic_Paint(object sender, PaintEventArgs e)
-        {
-        }
+        
     }
 }
