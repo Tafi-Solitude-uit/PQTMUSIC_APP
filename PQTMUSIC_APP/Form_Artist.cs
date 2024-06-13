@@ -208,5 +208,10 @@ namespace PQTMUSIC_APP
                 }
             }
         }
+
+        private void guna2Separator2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
