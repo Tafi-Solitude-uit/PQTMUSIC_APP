@@ -872,7 +872,7 @@
             this.panel_Child.ShadowDecoration.Parent = this.panel_Child;
             this.panel_Child.Size = new System.Drawing.Size(818, 472);
             this.panel_Child.TabIndex = 8;
-            this.panel_Child.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Child_Paint);
+            
             // 
             // Main_Form
             // 
