@@ -202,7 +202,8 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,7 +216,8 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,7 +230,8 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,7 +244,8 @@
             // 
             // lbl_Birthday
             // 
-            this.lbl_Birthday.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_Birthday.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Birthday.AutoSize = true;
             this.lbl_Birthday.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Birthday.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,7 +258,8 @@
             // 
             // lbl_National
             // 
-            this.lbl_National.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_National.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_National.AutoSize = true;
             this.lbl_National.BackColor = System.Drawing.Color.Transparent;
             this.lbl_National.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -334,7 +339,8 @@
             // 
             // lbl_totalFollowers
             // 
-            this.lbl_totalFollowers.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_totalFollowers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_totalFollowers.AutoSize = true;
             this.lbl_totalFollowers.BackColor = System.Drawing.Color.Transparent;
             this.lbl_totalFollowers.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -347,7 +353,8 @@
             // 
             // lbl_ArtistName
             // 
-            this.lbl_ArtistName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_ArtistName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_ArtistName.AutoSize = true;
             this.lbl_ArtistName.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ArtistName.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
