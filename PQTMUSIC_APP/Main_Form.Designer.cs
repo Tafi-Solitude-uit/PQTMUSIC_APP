@@ -82,9 +82,10 @@
             this.lbl_App_Name.AutoSize = true;
             this.lbl_App_Name.Font = new System.Drawing.Font("Stencil", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_App_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.lbl_App_Name.Location = new System.Drawing.Point(24, 12);
+            this.lbl_App_Name.Location = new System.Drawing.Point(18, 10);
+            this.lbl_App_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_App_Name.Name = "lbl_App_Name";
-            this.lbl_App_Name.Size = new System.Drawing.Size(183, 40);
+            this.lbl_App_Name.Size = new System.Drawing.Size(145, 32);
             this.lbl_App_Name.TabIndex = 39;
             this.lbl_App_Name.Text = "PQTMUSIC";
             // 
@@ -113,11 +114,11 @@
             this.btn_Playlist2.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Playlist2.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Playlist2.HoverState.Parent = this.btn_Playlist2;
-            this.btn_Playlist2.Location = new System.Drawing.Point(12, 468);
-            this.btn_Playlist2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Playlist2.Location = new System.Drawing.Point(9, 380);
+            this.btn_Playlist2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Playlist2.Name = "btn_Playlist2";
             this.btn_Playlist2.ShadowDecoration.Parent = this.btn_Playlist2;
-            this.btn_Playlist2.Size = new System.Drawing.Size(211, 53);
+            this.btn_Playlist2.Size = new System.Drawing.Size(158, 43);
             this.btn_Playlist2.TabIndex = 37;
             this.btn_Playlist2.Text = "Favorite";
             this.btn_Playlist2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -148,11 +149,11 @@
             this.btn_Ranks.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Ranks.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Ranks.HoverState.Parent = this.btn_Ranks;
-            this.btn_Ranks.Location = new System.Drawing.Point(12, 181);
-            this.btn_Ranks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Ranks.Location = new System.Drawing.Point(9, 147);
+            this.btn_Ranks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Ranks.Name = "btn_Ranks";
             this.btn_Ranks.ShadowDecoration.Parent = this.btn_Ranks;
-            this.btn_Ranks.Size = new System.Drawing.Size(211, 46);
+            this.btn_Ranks.Size = new System.Drawing.Size(158, 37);
             this.btn_Ranks.TabIndex = 35;
             this.btn_Ranks.Text = "Ranks";
             this.btn_Ranks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -179,11 +180,11 @@
             this.panel_Menu_Bar.Controls.Add(this.lbl_playlist);
             this.panel_Menu_Bar.Controls.Add(this.lbl_Menu);
             this.panel_Menu_Bar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_Menu_Bar.Location = new System.Drawing.Point(0, 57);
-            this.panel_Menu_Bar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_Menu_Bar.Location = new System.Drawing.Point(0, 46);
+            this.panel_Menu_Bar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_Menu_Bar.Name = "panel_Menu_Bar";
             this.panel_Menu_Bar.ShadowDecoration.Parent = this.panel_Menu_Bar;
-            this.panel_Menu_Bar.Size = new System.Drawing.Size(251, 581);
+            this.panel_Menu_Bar.Size = new System.Drawing.Size(188, 472);
             this.panel_Menu_Bar.TabIndex = 5;
             // 
             // btn_Offline
@@ -211,11 +212,11 @@
             this.btn_Offline.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Offline.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Offline.HoverState.Parent = this.btn_Offline;
-            this.btn_Offline.Location = new System.Drawing.Point(12, 402);
-            this.btn_Offline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Offline.Location = new System.Drawing.Point(9, 327);
+            this.btn_Offline.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Offline.Name = "btn_Offline";
             this.btn_Offline.ShadowDecoration.Parent = this.btn_Offline;
-            this.btn_Offline.Size = new System.Drawing.Size(211, 42);
+            this.btn_Offline.Size = new System.Drawing.Size(158, 34);
             this.btn_Offline.TabIndex = 34;
             this.btn_Offline.Text = "Offline";
             this.btn_Offline.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -247,11 +248,11 @@
             this.btn_Download.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Download.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Download.HoverState.Parent = this.btn_Download;
-            this.btn_Download.Location = new System.Drawing.Point(7, 353);
-            this.btn_Download.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Download.Location = new System.Drawing.Point(5, 287);
+            this.btn_Download.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Download.Name = "btn_Download";
             this.btn_Download.ShadowDecoration.Parent = this.btn_Download;
-            this.btn_Download.Size = new System.Drawing.Size(211, 45);
+            this.btn_Download.Size = new System.Drawing.Size(158, 37);
             this.btn_Download.TabIndex = 33;
             this.btn_Download.Text = "Download";
             this.btn_Download.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -282,11 +283,11 @@
             this.btn_Albums.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Albums.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Albums.HoverState.Parent = this.btn_Albums;
-            this.btn_Albums.Location = new System.Drawing.Point(9, 305);
-            this.btn_Albums.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Albums.Location = new System.Drawing.Point(7, 248);
+            this.btn_Albums.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Albums.Name = "btn_Albums";
             this.btn_Albums.ShadowDecoration.Parent = this.btn_Albums;
-            this.btn_Albums.Size = new System.Drawing.Size(211, 44);
+            this.btn_Albums.Size = new System.Drawing.Size(158, 36);
             this.btn_Albums.TabIndex = 32;
             this.btn_Albums.Text = "Albums";
             this.btn_Albums.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -318,11 +319,11 @@
             this.btn_Favorite.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Favorite.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Favorite.HoverState.Parent = this.btn_Favorite;
-            this.btn_Favorite.Location = new System.Drawing.Point(12, 251);
-            this.btn_Favorite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Favorite.Location = new System.Drawing.Point(9, 204);
+            this.btn_Favorite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Favorite.Name = "btn_Favorite";
             this.btn_Favorite.ShadowDecoration.Parent = this.btn_Favorite;
-            this.btn_Favorite.Size = new System.Drawing.Size(211, 50);
+            this.btn_Favorite.Size = new System.Drawing.Size(158, 41);
             this.btn_Favorite.TabIndex = 31;
             this.btn_Favorite.Text = "Favorite";
             this.btn_Favorite.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -354,11 +355,11 @@
             this.btn_Artists.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Artists.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Artists.HoverState.Parent = this.btn_Artists;
-            this.btn_Artists.Location = new System.Drawing.Point(12, 131);
-            this.btn_Artists.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Artists.Location = new System.Drawing.Point(9, 106);
+            this.btn_Artists.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Artists.Name = "btn_Artists";
             this.btn_Artists.ShadowDecoration.Parent = this.btn_Artists;
-            this.btn_Artists.Size = new System.Drawing.Size(211, 46);
+            this.btn_Artists.Size = new System.Drawing.Size(158, 37);
             this.btn_Artists.TabIndex = 29;
             this.btn_Artists.Text = "Artists";
             this.btn_Artists.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -391,11 +392,11 @@
             this.btn_Explore.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(18)))), ((int)(((byte)(40)))));
             this.btn_Explore.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Explore.HoverState.Parent = this.btn_Explore;
-            this.btn_Explore.Location = new System.Drawing.Point(9, 81);
-            this.btn_Explore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Explore.Location = new System.Drawing.Point(7, 66);
+            this.btn_Explore.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Explore.Name = "btn_Explore";
             this.btn_Explore.ShadowDecoration.Parent = this.btn_Explore;
-            this.btn_Explore.Size = new System.Drawing.Size(211, 46);
+            this.btn_Explore.Size = new System.Drawing.Size(158, 37);
             this.btn_Explore.TabIndex = 26;
             this.btn_Explore.Text = "Explorer";
             this.btn_Explore.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -408,9 +409,10 @@
             this.lbl_Library.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Library.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Library.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_Library.Location = new System.Drawing.Point(3, 229);
+            this.lbl_Library.Location = new System.Drawing.Point(2, 186);
+            this.lbl_Library.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Library.Name = "lbl_Library";
-            this.lbl_Library.Size = new System.Drawing.Size(72, 20);
+            this.lbl_Library.Size = new System.Drawing.Size(56, 15);
             this.lbl_Library.TabIndex = 18;
             this.lbl_Library.Text = "LIBRARY";
             // 
@@ -420,9 +422,10 @@
             this.lbl_playlist.BackColor = System.Drawing.Color.Transparent;
             this.lbl_playlist.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_playlist.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_playlist.Location = new System.Drawing.Point(3, 446);
+            this.lbl_playlist.Location = new System.Drawing.Point(2, 362);
+            this.lbl_playlist.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_playlist.Name = "lbl_playlist";
-            this.lbl_playlist.Size = new System.Drawing.Size(75, 20);
+            this.lbl_playlist.Size = new System.Drawing.Size(58, 15);
             this.lbl_playlist.TabIndex = 22;
             this.lbl_playlist.Text = "PLAYLIST";
             // 
@@ -432,9 +435,10 @@
             this.lbl_Menu.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Menu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Menu.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lbl_Menu.Location = new System.Drawing.Point(3, 58);
+            this.lbl_Menu.Location = new System.Drawing.Point(2, 47);
+            this.lbl_Menu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Menu.Name = "lbl_Menu";
-            this.lbl_Menu.Size = new System.Drawing.Size(54, 20);
+            this.lbl_Menu.Size = new System.Drawing.Size(42, 15);
             this.lbl_Menu.TabIndex = 12;
             this.lbl_Menu.Text = "MENU";
             // 
@@ -445,9 +449,10 @@
             this.lb_endTime.BackColor = System.Drawing.Color.Transparent;
             this.lb_endTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_endTime.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lb_endTime.Location = new System.Drawing.Point(947, 58);
+            this.lb_endTime.Location = new System.Drawing.Point(710, 47);
+            this.lb_endTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_endTime.Name = "lb_endTime";
-            this.lb_endTime.Size = new System.Drawing.Size(40, 20);
+            this.lb_endTime.Size = new System.Drawing.Size(31, 15);
             this.lb_endTime.TabIndex = 62;
             this.lb_endTime.Text = "3:10";
             // 
@@ -458,9 +463,10 @@
             this.lb_startTime.BackColor = System.Drawing.Color.Transparent;
             this.lb_startTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_startTime.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lb_startTime.Location = new System.Drawing.Point(387, 58);
+            this.lb_startTime.Location = new System.Drawing.Point(290, 47);
+            this.lb_startTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_startTime.Name = "lb_startTime";
-            this.lb_startTime.Size = new System.Drawing.Size(40, 20);
+            this.lb_startTime.Size = new System.Drawing.Size(31, 15);
             this.lb_startTime.TabIndex = 61;
             this.lb_startTime.Text = "0:00";
             // 
@@ -479,10 +485,10 @@
             this.guna_drag.Controls.Add(this.txt_Search);
             this.guna_drag.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna_drag.Location = new System.Drawing.Point(0, 0);
-            this.guna_drag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna_drag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna_drag.Name = "guna_drag";
             this.guna_drag.ShadowDecoration.Parent = this.guna_drag;
-            this.guna_drag.Size = new System.Drawing.Size(1341, 57);
+            this.guna_drag.Size = new System.Drawing.Size(1006, 46);
             this.guna_drag.TabIndex = 6;
             // 
             // ControlBox_minimize
@@ -494,11 +500,11 @@
             this.ControlBox_minimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.ControlBox_minimize.HoverState.Parent = this.ControlBox_minimize;
             this.ControlBox_minimize.IconColor = System.Drawing.Color.White;
-            this.ControlBox_minimize.Location = new System.Drawing.Point(1180, 1);
-            this.ControlBox_minimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ControlBox_minimize.Location = new System.Drawing.Point(885, 1);
+            this.ControlBox_minimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ControlBox_minimize.Name = "ControlBox_minimize";
             this.ControlBox_minimize.ShadowDecoration.Parent = this.ControlBox_minimize;
-            this.ControlBox_minimize.Size = new System.Drawing.Size(53, 53);
+            this.ControlBox_minimize.Size = new System.Drawing.Size(40, 43);
             this.ControlBox_minimize.TabIndex = 55;
             // 
             // ControlBox_maximize
@@ -509,11 +515,11 @@
             this.ControlBox_maximize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.ControlBox_maximize.HoverState.Parent = this.ControlBox_maximize;
             this.ControlBox_maximize.IconColor = System.Drawing.Color.White;
-            this.ControlBox_maximize.Location = new System.Drawing.Point(1235, 1);
-            this.ControlBox_maximize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ControlBox_maximize.Location = new System.Drawing.Point(926, 1);
+            this.ControlBox_maximize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ControlBox_maximize.Name = "ControlBox_maximize";
             this.ControlBox_maximize.ShadowDecoration.Parent = this.ControlBox_maximize;
-            this.ControlBox_maximize.Size = new System.Drawing.Size(53, 53);
+            this.ControlBox_maximize.Size = new System.Drawing.Size(40, 43);
             this.ControlBox_maximize.TabIndex = 54;
             // 
             // ControlBox_Close
@@ -523,23 +529,23 @@
             this.ControlBox_Close.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(43)))), ((int)(((byte)(28)))));
             this.ControlBox_Close.HoverState.Parent = this.ControlBox_Close;
             this.ControlBox_Close.IconColor = System.Drawing.Color.White;
-            this.ControlBox_Close.Location = new System.Drawing.Point(1288, 1);
-            this.ControlBox_Close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ControlBox_Close.Location = new System.Drawing.Point(966, 1);
+            this.ControlBox_Close.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ControlBox_Close.Name = "ControlBox_Close";
             this.ControlBox_Close.ShadowDecoration.Parent = this.ControlBox_Close;
-            this.ControlBox_Close.Size = new System.Drawing.Size(53, 53);
+            this.ControlBox_Close.Size = new System.Drawing.Size(40, 43);
             this.ControlBox_Close.TabIndex = 53;
             // 
             // pic_User
             // 
             this.pic_User.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_User.Image = global::PQTMUSIC_APP.Properties.Resources.OIP__1_;
-            this.pic_User.Location = new System.Drawing.Point(1101, 0);
-            this.pic_User.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_User.Location = new System.Drawing.Point(826, 0);
+            this.pic_User.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pic_User.Name = "pic_User";
             this.pic_User.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.pic_User.ShadowDecoration.Parent = this.pic_User;
-            this.pic_User.Size = new System.Drawing.Size(60, 57);
+            this.pic_User.Size = new System.Drawing.Size(45, 46);
             this.pic_User.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_User.TabIndex = 52;
             this.pic_User.TabStop = false;
@@ -563,12 +569,12 @@
             this.btn_notification.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.btn_notification.HoverState.Parent = this.btn_notification;
             this.btn_notification.ImageOffset = new System.Drawing.Point(0, 20);
-            this.btn_notification.Location = new System.Drawing.Point(1041, 2);
-            this.btn_notification.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_notification.Location = new System.Drawing.Point(781, 2);
+            this.btn_notification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_notification.Name = "btn_notification";
             this.btn_notification.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btn_notification.ShadowDecoration.Parent = this.btn_notification;
-            this.btn_notification.Size = new System.Drawing.Size(59, 50);
+            this.btn_notification.Size = new System.Drawing.Size(44, 41);
             this.btn_notification.TabIndex = 30;
             // 
             // txt_Search
@@ -578,7 +584,7 @@
             this.txt_Search.Animated = true;
             this.txt_Search.AutoRoundedCorners = true;
             this.txt_Search.BorderColor = System.Drawing.Color.Black;
-            this.txt_Search.BorderRadius = 22;
+            this.txt_Search.BorderRadius = 17;
             this.txt_Search.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_Search.DefaultText = "";
             this.txt_Search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -596,15 +602,15 @@
             this.txt_Search.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.txt_Search.HoverState.Parent = this.txt_Search;
             this.txt_Search.IconLeft = global::PQTMUSIC_APP.Properties.Resources.search;
-            this.txt_Search.Location = new System.Drawing.Point(341, 5);
-            this.txt_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Search.Location = new System.Drawing.Point(256, 4);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.PasswordChar = '\0';
             this.txt_Search.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txt_Search.PlaceholderText = "Search";
             this.txt_Search.SelectedText = "";
             this.txt_Search.ShadowDecoration.Parent = this.txt_Search;
-            this.txt_Search.Size = new System.Drawing.Size(521, 46);
+            this.txt_Search.Size = new System.Drawing.Size(391, 37);
             this.txt_Search.TabIndex = 28;
             this.txt_Search.TextChanged += new System.EventHandler(this.txt_Search_TextChanged);
             this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
@@ -615,10 +621,10 @@
             this.trackBar_Volume.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(219)))), ((int)(((byte)(242)))));
             this.trackBar_Volume.HoverState.Parent = this.trackBar_Volume;
             this.trackBar_Volume.HoverState.ThumbColor = System.Drawing.Color.Green;
-            this.trackBar_Volume.Location = new System.Drawing.Point(1184, 32);
-            this.trackBar_Volume.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.trackBar_Volume.Location = new System.Drawing.Point(888, 26);
+            this.trackBar_Volume.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.trackBar_Volume.Name = "trackBar_Volume";
-            this.trackBar_Volume.Size = new System.Drawing.Size(109, 23);
+            this.trackBar_Volume.Size = new System.Drawing.Size(82, 19);
             this.trackBar_Volume.TabIndex = 60;
             this.trackBar_Volume.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.trackBar_Volume.Scroll += new System.Windows.Forms.ScrollEventHandler(this.trackBar_Volume_Scroll);
@@ -629,10 +635,10 @@
             this.trackBar_Play.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(219)))), ((int)(((byte)(242)))));
             this.trackBar_Play.HoverState.Parent = this.trackBar_Play;
             this.trackBar_Play.HoverState.ThumbColor = System.Drawing.Color.Green;
-            this.trackBar_Play.Location = new System.Drawing.Point(432, 54);
-            this.trackBar_Play.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.trackBar_Play.Location = new System.Drawing.Point(324, 44);
+            this.trackBar_Play.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.trackBar_Play.Name = "trackBar_Play";
-            this.trackBar_Play.Size = new System.Drawing.Size(509, 30);
+            this.trackBar_Play.Size = new System.Drawing.Size(382, 24);
             this.trackBar_Play.TabIndex = 59;
             this.trackBar_Play.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.trackBar_Play.Scroll += new System.Windows.Forms.ScrollEventHandler(this.TrackBar_Play_Scroll);
@@ -643,9 +649,10 @@
             this.lbl_Artist_Playing_MainFrom.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Artist_Playing_MainFrom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Artist_Playing_MainFrom.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbl_Artist_Playing_MainFrom.Location = new System.Drawing.Point(96, 57);
+            this.lbl_Artist_Playing_MainFrom.Location = new System.Drawing.Point(72, 46);
+            this.lbl_Artist_Playing_MainFrom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Artist_Playing_MainFrom.Name = "lbl_Artist_Playing_MainFrom";
-            this.lbl_Artist_Playing_MainFrom.Size = new System.Drawing.Size(0, 20);
+            this.lbl_Artist_Playing_MainFrom.Size = new System.Drawing.Size(0, 15);
             this.lbl_Artist_Playing_MainFrom.TabIndex = 51;
             // 
             // lb_TittleCurrentSong
@@ -654,9 +661,10 @@
             this.lb_TittleCurrentSong.BackColor = System.Drawing.Color.Transparent;
             this.lb_TittleCurrentSong.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_TittleCurrentSong.ForeColor = System.Drawing.Color.White;
-            this.lb_TittleCurrentSong.Location = new System.Drawing.Point(95, 32);
+            this.lb_TittleCurrentSong.Location = new System.Drawing.Point(71, 26);
+            this.lb_TittleCurrentSong.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_TittleCurrentSong.Name = "lb_TittleCurrentSong";
-            this.lb_TittleCurrentSong.Size = new System.Drawing.Size(0, 25);
+            this.lb_TittleCurrentSong.Size = new System.Drawing.Size(0, 20);
             this.lb_TittleCurrentSong.TabIndex = 50;
             // 
             // guna2Elipse1
@@ -682,11 +690,11 @@
             this.Panel_PlayMusic.Controls.Add(this.lb_TittleCurrentSong);
             this.Panel_PlayMusic.Controls.Add(this.pic_currently_Playing_MainForm);
             this.Panel_PlayMusic.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Panel_PlayMusic.Location = new System.Drawing.Point(0, 638);
-            this.Panel_PlayMusic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Panel_PlayMusic.Location = new System.Drawing.Point(0, 518);
+            this.Panel_PlayMusic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Panel_PlayMusic.Name = "Panel_PlayMusic";
             this.Panel_PlayMusic.ShadowDecoration.Parent = this.Panel_PlayMusic;
-            this.Panel_PlayMusic.Size = new System.Drawing.Size(1341, 96);
+            this.Panel_PlayMusic.Size = new System.Drawing.Size(1006, 78);
             this.Panel_PlayMusic.TabIndex = 7;
             
             // 
@@ -699,13 +707,13 @@
             this.btn_AddToPlaylist.HoverState.Parent = this.btn_AddToPlaylist;
             this.btn_AddToPlaylist.Image = global::PQTMUSIC_APP.Properties.Resources.playlist;
             this.btn_AddToPlaylist.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_AddToPlaylist.Location = new System.Drawing.Point(1031, 28);
-            this.btn_AddToPlaylist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_AddToPlaylist.Location = new System.Drawing.Point(773, 23);
+            this.btn_AddToPlaylist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_AddToPlaylist.Name = "btn_AddToPlaylist";
             this.btn_AddToPlaylist.PressedState.Image = global::PQTMUSIC_APP.Properties.Resources.mute__2_;
             this.btn_AddToPlaylist.PressedState.ImageSize = new System.Drawing.Size(27, 27);
             this.btn_AddToPlaylist.PressedState.Parent = this.btn_AddToPlaylist;
-            this.btn_AddToPlaylist.Size = new System.Drawing.Size(34, 29);
+            this.btn_AddToPlaylist.Size = new System.Drawing.Size(26, 24);
             this.btn_AddToPlaylist.TabIndex = 68;
             // 
             // btn_AddToFav
@@ -717,12 +725,12 @@
             this.btn_AddToFav.HoverState.Parent = this.btn_AddToFav;
             this.btn_AddToFav.Image = global::PQTMUSIC_APP.Properties.Resources.heart;
             this.btn_AddToFav.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_AddToFav.Location = new System.Drawing.Point(1081, 28);
-            this.btn_AddToFav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_AddToFav.Location = new System.Drawing.Point(811, 23);
+            this.btn_AddToFav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_AddToFav.Name = "btn_AddToFav";
             this.btn_AddToFav.PressedState.ImageSize = new System.Drawing.Size(27, 27);
             this.btn_AddToFav.PressedState.Parent = this.btn_AddToFav;
-            this.btn_AddToFav.Size = new System.Drawing.Size(57, 29);
+            this.btn_AddToFav.Size = new System.Drawing.Size(43, 24);
             this.btn_AddToFav.TabIndex = 67;
             this.btn_AddToFav.Click += new System.EventHandler(this.btn_AddToFav_Click);
             // 
@@ -735,12 +743,12 @@
             this.btn_playShuffle.HoverState.Parent = this.btn_playShuffle;
             this.btn_playShuffle.Image = global::PQTMUSIC_APP.Properties.Resources.mix__1_;
             this.btn_playShuffle.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_playShuffle.Location = new System.Drawing.Point(764, 7);
-            this.btn_playShuffle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_playShuffle.Location = new System.Drawing.Point(573, 6);
+            this.btn_playShuffle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_playShuffle.Name = "btn_playShuffle";
             this.btn_playShuffle.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn_playShuffle.PressedState.Parent = this.btn_playShuffle;
-            this.btn_playShuffle.Size = new System.Drawing.Size(44, 46);
+            this.btn_playShuffle.Size = new System.Drawing.Size(33, 37);
             this.btn_playShuffle.TabIndex = 64;
             this.btn_playShuffle.Click += new System.EventHandler(this.btn_playShuffle_Click);
             // 
@@ -754,13 +762,13 @@
             this.btn_volumn_mute.HoverState.Parent = this.btn_volumn_mute;
             this.btn_volumn_mute.Image = global::PQTMUSIC_APP.Properties.Resources.volume;
             this.btn_volumn_mute.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_volumn_mute.Location = new System.Drawing.Point(1144, 28);
-            this.btn_volumn_mute.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_volumn_mute.Location = new System.Drawing.Point(858, 23);
+            this.btn_volumn_mute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_volumn_mute.Name = "btn_volumn_mute";
             this.btn_volumn_mute.PressedState.Image = global::PQTMUSIC_APP.Properties.Resources.mute__2_;
             this.btn_volumn_mute.PressedState.ImageSize = new System.Drawing.Size(27, 27);
             this.btn_volumn_mute.PressedState.Parent = this.btn_volumn_mute;
-            this.btn_volumn_mute.Size = new System.Drawing.Size(34, 29);
+            this.btn_volumn_mute.Size = new System.Drawing.Size(26, 24);
             this.btn_volumn_mute.TabIndex = 63;
             this.btn_volumn_mute.Click += new System.EventHandler(this.btn_volumn_mute_Click);
             // 
@@ -774,12 +782,12 @@
             this.btn_PreSong.HoverState.Parent = this.btn_PreSong;
             this.btn_PreSong.Image = global::PQTMUSIC_APP.Properties.Resources.back;
             this.btn_PreSong.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_PreSong.Location = new System.Drawing.Point(613, 7);
-            this.btn_PreSong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_PreSong.Location = new System.Drawing.Point(460, 6);
+            this.btn_PreSong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_PreSong.Name = "btn_PreSong";
             this.btn_PreSong.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn_PreSong.PressedState.Parent = this.btn_PreSong;
-            this.btn_PreSong.Size = new System.Drawing.Size(44, 46);
+            this.btn_PreSong.Size = new System.Drawing.Size(33, 37);
             this.btn_PreSong.TabIndex = 58;
             this.btn_PreSong.UseTransparentBackground = true;
             this.btn_PreSong.Click += new System.EventHandler(this.btn_PreSong_Click);
@@ -793,12 +801,12 @@
             this.btn_NextSong.HoverState.Parent = this.btn_NextSong;
             this.btn_NextSong.Image = global::PQTMUSIC_APP.Properties.Resources.play_and_pause_button__1_;
             this.btn_NextSong.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_NextSong.Location = new System.Drawing.Point(715, 7);
-            this.btn_NextSong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NextSong.Location = new System.Drawing.Point(536, 6);
+            this.btn_NextSong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_NextSong.Name = "btn_NextSong";
             this.btn_NextSong.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn_NextSong.PressedState.Parent = this.btn_NextSong;
-            this.btn_NextSong.Size = new System.Drawing.Size(44, 46);
+            this.btn_NextSong.Size = new System.Drawing.Size(33, 37);
             this.btn_NextSong.TabIndex = 57;
             this.btn_NextSong.Click += new System.EventHandler(this.btn_NextSong_Click);
             // 
@@ -811,12 +819,12 @@
             this.btn_PlayPause.HoverState.Parent = this.btn_PlayPause;
             this.btn_PlayPause.Image = global::PQTMUSIC_APP.Properties.Resources.pause;
             this.btn_PlayPause.ImageSize = new System.Drawing.Size(35, 35);
-            this.btn_PlayPause.Location = new System.Drawing.Point(664, 7);
-            this.btn_PlayPause.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_PlayPause.Location = new System.Drawing.Point(498, 6);
+            this.btn_PlayPause.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_PlayPause.Name = "btn_PlayPause";
             this.btn_PlayPause.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn_PlayPause.PressedState.Parent = this.btn_PlayPause;
-            this.btn_PlayPause.Size = new System.Drawing.Size(44, 46);
+            this.btn_PlayPause.Size = new System.Drawing.Size(33, 37);
             this.btn_PlayPause.TabIndex = 56;
             this.btn_PlayPause.Click += new System.EventHandler(this.btn_PlayPause_Click);
             // 
@@ -829,23 +837,23 @@
             this.btn_loopCurrentSong.HoverState.Parent = this.btn_loopCurrentSong;
             this.btn_loopCurrentSong.Image = global::PQTMUSIC_APP.Properties.Resources.icons8_repeat_30;
             this.btn_loopCurrentSong.ImageSize = new System.Drawing.Size(27, 27);
-            this.btn_loopCurrentSong.Location = new System.Drawing.Point(564, 7);
-            this.btn_loopCurrentSong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_loopCurrentSong.Location = new System.Drawing.Point(423, 6);
+            this.btn_loopCurrentSong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_loopCurrentSong.Name = "btn_loopCurrentSong";
             this.btn_loopCurrentSong.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn_loopCurrentSong.PressedState.Parent = this.btn_loopCurrentSong;
-            this.btn_loopCurrentSong.Size = new System.Drawing.Size(44, 46);
+            this.btn_loopCurrentSong.Size = new System.Drawing.Size(33, 37);
             this.btn_loopCurrentSong.TabIndex = 54;
             this.btn_loopCurrentSong.Click += new System.EventHandler(this.btn_loopCurrentSong_Click);
             // 
             // pic_currently_Playing_MainForm
             // 
             this.pic_currently_Playing_MainForm.BackColor = System.Drawing.Color.Transparent;
-            this.pic_currently_Playing_MainForm.Location = new System.Drawing.Point(9, 7);
-            this.pic_currently_Playing_MainForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pic_currently_Playing_MainForm.Location = new System.Drawing.Point(7, 6);
+            this.pic_currently_Playing_MainForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pic_currently_Playing_MainForm.Name = "pic_currently_Playing_MainForm";
             this.pic_currently_Playing_MainForm.ShadowDecoration.Parent = this.pic_currently_Playing_MainForm;
-            this.pic_currently_Playing_MainForm.Size = new System.Drawing.Size(80, 78);
+            this.pic_currently_Playing_MainForm.Size = new System.Drawing.Size(60, 63);
             this.pic_currently_Playing_MainForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_currently_Playing_MainForm.TabIndex = 49;
             this.pic_currently_Playing_MainForm.TabStop = false;
@@ -858,26 +866,27 @@
             this.panel_Child.AutoScrollMinSize = new System.Drawing.Size(5, 0);
             this.panel_Child.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
             this.panel_Child.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Child.Location = new System.Drawing.Point(251, 57);
-            this.panel_Child.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel_Child.Location = new System.Drawing.Point(188, 46);
+            this.panel_Child.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_Child.Name = "panel_Child";
             this.panel_Child.ShadowDecoration.Parent = this.panel_Child;
-            this.panel_Child.Size = new System.Drawing.Size(1090, 581);
+            this.panel_Child.Size = new System.Drawing.Size(818, 472);
             this.panel_Child.TabIndex = 8;
+            this.panel_Child.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Child_Paint);
             // 
             // Main_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1341, 734);
+            this.ClientSize = new System.Drawing.Size(1006, 596);
             this.Controls.Add(this.panel_Child);
             this.Controls.Add(this.panel_Menu_Bar);
             this.Controls.Add(this.guna_drag);
             this.Controls.Add(this.Panel_PlayMusic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Main_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

@@ -107,30 +107,17 @@ namespace PQTMUSIC_APP
                 txtSIpass.PasswordChar = '*';
             }
         }
-        private async Task<int> GetNextUserId()
-        {
-            FirebaseResponse usersResponse = await client.GetAsync("Users");
-            var usersData = usersResponse.ResultAs<Dictionary<string, UserData>>();
-
-            if (usersData != null && usersData.Count > 0)
-            {
-                return usersData.Values.Max(u => u.userid) + 1;
-            }
-            else
-            {
-                return 1;
-            }
-        }
+ 
         
         private async void btnSignUp_Click(object sender, EventArgs e)
         {
 
-            int nextUserId = await GetNextUserId();
+          
             UserData userData = new UserData()
             {
                 username = txtSUusername.Text,
                 password = txtSUpass.Text,
-                userid = nextUserId,
+                
                 realname = txtRealName.Text,
                 gender = cbmGender.SelectedItem.ToString(),
                 birthday = int.Parse(txtBirthyear.Text),

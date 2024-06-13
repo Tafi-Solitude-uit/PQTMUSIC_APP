@@ -32,11 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pn_showIN4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtShowID = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtShowYear = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtShowGender = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtShowName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -80,18 +78,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "GENDER";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(24)))), ((int)(((byte)(45)))));
-            this.label5.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label5.Location = new System.Drawing.Point(183, 264);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "USER ID";
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
@@ -102,8 +88,6 @@
             this.pn_showIN4.Controls.Add(this.label4);
             this.pn_showIN4.Controls.Add(this.label1);
             this.pn_showIN4.Controls.Add(this.label2);
-            this.pn_showIN4.Controls.Add(this.label5);
-            this.pn_showIN4.Controls.Add(this.txtShowID);
             this.pn_showIN4.Controls.Add(this.txtShowYear);
             this.pn_showIN4.Controls.Add(this.txtShowGender);
             this.pn_showIN4.Controls.Add(this.txtShowName);
@@ -131,34 +115,6 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "BIRTHYEAR";
             // 
-            // txtShowID
-            // 
-            this.txtShowID.BorderColor = System.Drawing.Color.Transparent;
-            this.txtShowID.BorderRadius = 15;
-            this.txtShowID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtShowID.DefaultText = "";
-            this.txtShowID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtShowID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtShowID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtShowID.DisabledState.Parent = this.txtShowID;
-            this.txtShowID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtShowID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.txtShowID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtShowID.FocusedState.Parent = this.txtShowID;
-            this.txtShowID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtShowID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
-            this.txtShowID.HoverState.Parent = this.txtShowID;
-            this.txtShowID.Location = new System.Drawing.Point(177, 284);
-            this.txtShowID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtShowID.Name = "txtShowID";
-            this.txtShowID.PasswordChar = '\0';
-            this.txtShowID.PlaceholderText = "";
-            this.txtShowID.ReadOnly = true;
-            this.txtShowID.SelectedText = "";
-            this.txtShowID.ShadowDecoration.Parent = this.txtShowID;
-            this.txtShowID.Size = new System.Drawing.Size(119, 54);
-            this.txtShowID.TabIndex = 8;
-            // 
             // txtShowYear
             // 
             this.txtShowYear.BorderColor = System.Drawing.Color.Transparent;
@@ -177,7 +133,7 @@
             this.txtShowYear.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.txtShowYear.HoverState.Parent = this.txtShowYear;
             this.txtShowYear.Location = new System.Drawing.Point(28, 284);
-            this.txtShowYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtShowYear.Margin = new System.Windows.Forms.Padding(4);
             this.txtShowYear.Name = "txtShowYear";
             this.txtShowYear.PasswordChar = '\0';
             this.txtShowYear.PlaceholderText = "";
@@ -205,7 +161,7 @@
             this.txtShowGender.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.txtShowGender.HoverState.Parent = this.txtShowGender;
             this.txtShowGender.Location = new System.Drawing.Point(14, 187);
-            this.txtShowGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtShowGender.Margin = new System.Windows.Forms.Padding(4);
             this.txtShowGender.Name = "txtShowGender";
             this.txtShowGender.PasswordChar = '\0';
             this.txtShowGender.PlaceholderText = "";
@@ -234,7 +190,7 @@
             this.txtShowName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(188)))), ((int)(((byte)(109)))));
             this.txtShowName.HoverState.Parent = this.txtShowName;
             this.txtShowName.Location = new System.Drawing.Point(14, 111);
-            this.txtShowName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtShowName.Margin = new System.Windows.Forms.Padding(4);
             this.txtShowName.Name = "txtShowName";
             this.txtShowName.PasswordChar = '\0';
             this.txtShowName.PlaceholderText = "";
@@ -290,13 +246,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2GradientPanel pn_showIN4;
         private Guna.UI2.WinForms.Guna2Button btn_exitShowIN4;
         private Guna.UI2.WinForms.Guna2TextBox txtShowName;
         private Guna.UI2.WinForms.Guna2TextBox txtShowGender;
-        private Guna.UI2.WinForms.Guna2TextBox txtShowID;
         private Guna.UI2.WinForms.Guna2TextBox txtShowYear;
         private System.Windows.Forms.Label label4;
     }

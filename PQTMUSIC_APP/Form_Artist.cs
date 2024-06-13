@@ -185,7 +185,7 @@ namespace PQTMUSIC_APP
                         return Image.FromStream(stream);
                     }
                 }
-            }
+                }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading image: {ex.Message}");
@@ -194,6 +194,11 @@ namespace PQTMUSIC_APP
         }
 
         private void datagrid_SongOfSinger_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void datagrid_SongOfSinger_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {

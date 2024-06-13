@@ -459,7 +459,5 @@ namespace PQTMUSIC_APP
                 btn_volumn_mute.Image = Properties.Resources.volume;
             }
         }
-
-        
     }
 }
