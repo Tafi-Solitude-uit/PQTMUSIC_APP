@@ -24,14 +24,15 @@ namespace PQTMUSIC_APP
         private bool isLoop = false;
         private bool isMute = false;
 
-        private Frm_Ranking rankingForm;
+        private Frm_Ranking rankingForm = new Frm_Ranking();
         private frm_Explore explore = new frm_Explore();
         private frm_Fav fave = new frm_Fav();
-
+        private Form_Artist artistDT = new Form_Artist();
+        private frm_OffineMode Offline = new frm_OffineMode();
         public Main_Form(string currentUser)
         {
             InitializeComponent();
-            explore = new frm_Explore();
+            
             addForm_Child(explore);
             this.currentUser = currentUser;
             Frm_LgSU.client = new FireSharp.FirebaseClient(Frm_LgSU.config);
@@ -40,7 +41,6 @@ namespace PQTMUSIC_APP
             
             fave.SongSelected += HandleSongSelected;
             
-            rankingForm = new Frm_Ranking();
             rankingForm.SongSelected += HandleSongSelected;
 
             trackBar_Volume.Minimum = 0;
@@ -95,7 +95,7 @@ namespace PQTMUSIC_APP
 
         public void HandleArtistSelected(object sender, Class_Artist artist)
         {
-            Form_Artist artistDT = new Form_Artist();
+            
             artistDT.ShowArtistDetails(artist);
             artistDT.SongSelected += HandleSongSelected;
             addForm_Child(artistDT);
@@ -316,7 +316,7 @@ namespace PQTMUSIC_APP
 
         private void btn_Offline_Click(object sender, EventArgs e)
         {
-            frm_OffineMode Offline = new frm_OffineMode();
+            
             addForm_Child(Offline);
         }
 
@@ -332,8 +332,8 @@ namespace PQTMUSIC_APP
 
         private void btn_Artists_Click(object sender, EventArgs e)
         {
-            Form_Artist artist = new Form_Artist();
-            addForm_Child(artist);
+            
+            addForm_Child(artistDT);
         }
 
         private async Task<Image> LoadImage(string url)
