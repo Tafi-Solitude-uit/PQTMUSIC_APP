@@ -1,5 +1,5 @@
 # PQTMUSIC_APP - Ứng dụng phát nhạc và tra cứu thông tin ca sĩ, bài hát.
-Các chức năng chính:
+#Các chức năng chính:
   - Đăng nhập, đăng ký tài khoản.
   - Phát nhạc (Tua nhạc, next song, previous song, phát ngẫu nhiên, chế độ phát lặp lại) từ danh sách các bài nhạc (explore, ranking, favorite, các bài hát liên quan trả ra sau khi search).
   - Điều chỉnh âm lượng bài hát, mute âm lượng.
@@ -8,7 +8,8 @@ Các chức năng chính:
   - Search ca sĩ.
   - Hiển thị thông tin chi tiết của ca sĩ được chọn.
   - Nghe nhạc offline - Chọn bài nhạc bất kỳ từ thư mục chứa nhạc trong máy tính để phát có các chức năng control bài nhạc tương tự nghe nhạc online.
-Hướng phát triển và cải tiến:
+
+#Hướng phát triển và cải tiến:
   - Đăng nhập bằng tài khoản google.
   - Đăng ký tài khoản bằng gmail, gửi thông báo verify về gmail để xác nhận đăng ký.
   - Đổi, quên mật khẩu.
